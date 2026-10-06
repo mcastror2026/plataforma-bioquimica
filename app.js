@@ -149,7 +149,7 @@
       body.innerHTML = `
         <div class="bars" role="progressbar" aria-valuemin="1" aria-valuemax="${st.list.length}" aria-valuenow="${st.i + 1}">${st.list.map((_, k) => `<i class="${k < st.i ? "on" : k === st.i ? "cur" : ""}"></i>`).join("")}</div>
         <div class="qmeta"><span>Pregunta ${st.i + 1} de ${st.list.length}</span></div>
-        ${q.case ? `<div class="case"><b>Caso clínico</b>${esc(q.case)}</div>` : ""}
+        ${q.case ? `<div class="case"><b>Caso clínico</b>${esc(q.case)}${q.img ? `<a href="${q.img}" target="_blank" rel="noopener" aria-label="Ampliar la gráfica"><img class="qimg" src="${q.img}" alt="${esc(q.imgAlt || "")}"></a><small class="qzoom">Toca la gráfica para ampliarla</small>` : ""}</div>` : ""}
         <h2 class="q">${esc(q.q)}</h2>
         <div class="opts">${opts.map((o, k) => `<button class="opt" data-k="${k}"><span class="k">${L[k]}</span><span>${esc(o.t)}</span><span class="st"></span></button>`).join("")}</div>
         <div id="fb" aria-live="polite"></div>
