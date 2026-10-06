@@ -24,7 +24,6 @@ const MODULES = [
         "<b>Glucosa (6C) → 2 piruvato (3C)</b>, en 10 reacciones enzimáticas.",
         "<b>Fase preparatoria</b>: la glucosa se activa con gasto de 2 ATP y se forman 2 triosas fosfato. <b>Fase oxidativa o de ganancia</b>: se producen 4 ATP y 2 NADH.",
         "<b>Balance neto: 2 ATP + 2 NADH + 2 piruvato</b> por glucosa.",
-        "El ATP se forma por <b>fosforilación a nivel de sustrato</b> (fosfoglicerato quinasa y piruvato quinasa).",
         "Además de la glucosa, pueden entrar a la vía fructosa, galactosa y glicerol-fosfato."
       ]},
       { h: "Puntos de control (enzimas reguladas)", items: [
