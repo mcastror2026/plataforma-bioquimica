@@ -3,6 +3,7 @@
   "use strict";
   const KEY = "bqe_progress_v1";
   const ENZIMAS_URL = "https://enzimas.netlify.app/";
+  const INTRO_URL = "https://intromet.netlify.app/";
   const QUIZ_SIZE = 8;
   const app = document.getElementById("app");
 
@@ -55,9 +56,15 @@
           <span class="tag">Desafío · se abre en otra pestaña</span>
           <p>Cinética, inhibición y regulación enzimática.</p>
         </a>
+        <a class="card ext" href="${INTRO_URL}" target="_blank" rel="noopener">
+          <span class="num">02</span>
+          <h3>Introducción al metabolismo</h3>
+          <span class="tag">Desafío · se abre en otra pestaña</span>
+          <p>Catabolismo, anabolismo y energía celular.</p>
+        </a>
         ${MODULES.map((m, n) => { const k = mastery(m.id); return `
           <a class="card" href="#/m/${m.id}">
-            <span class="num">${String(n + 2).padStart(2, "0")}</span>
+            <span class="num">${String(n + 3).padStart(2, "0")}</span>
             <h3>${esc(m.title)}</h3>
             <span class="tag">${esc(m.tag)}</span>
             <p>${esc(m.blurb)}</p>
