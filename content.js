@@ -451,19 +451,19 @@ const QUESTIONS = [
     e: "El retorno de H⁺ por F₀ impulsa la reacción entre ADP y Pi en la unidad catalítica F₁." },
   /* ---------- Caso con gráfica de dobles recíprocos ---------- */
   { m: "casos",
-    case: "En un laboratorio se estudia I-234, un fármaco nuevo que inhibe a la hexoquinasa, la primera enzima de la glicólisis. Se midió la velocidad de la reacción con distintas cantidades de glucosa, con y sin el fármaco, y se hizo la gráfica de dobles recíprocos que se muestra.",
+    case: "En un laboratorio se estudia I-234, un fármaco nuevo que inhibe una enzima del metabolismo. Se midió la velocidad de la reacción con distintas cantidades de sustrato, con y sin el fármaco, y se hizo la gráfica de dobles recíprocos que se muestra.",
     img: "assets/lineweaver-burk.png",
     imgAlt: "Gráfica de dobles recíprocos. Las rectas con y sin inhibidor se cortan en el mismo punto del eje vertical, en 4. La recta sin inhibidor cruza el eje horizontal en menos 3 y la recta con inhibidor, en menos 2.",
     q: "¿Qué tipo de inhibidor es el I-234?",
     o: ["Competitivo", "No competitivo", "Irreversible", "No es un inhibidor"],
     hint: "Fíjate dónde se cortan las dos rectas: si lo hacen en el eje vertical, la velocidad máxima no cambia.",
-    e: "Las dos rectas se cortan en el mismo punto del eje vertical, así que la velocidad máxima (Vmax) no cambia. Eso es característico del inhibidor competitivo, que compite con la glucosa por el sitio activo de la hexoquinasa." },
+    e: "Las dos rectas se cortan en el mismo punto del eje vertical, así que la velocidad máxima (Vmax) no cambia. Eso es característico del inhibidor competitivo, que compite con el sustrato por el sitio activo de la enzima." },
   { m: "casos",
-    case: "En un laboratorio se estudia I-234, un fármaco nuevo que inhibe a la hexoquinasa, la primera enzima de la glicólisis. Se midió la velocidad de la reacción con distintas cantidades de glucosa, con y sin el fármaco, y se hizo la gráfica de dobles recíprocos que se muestra.",
+    case: "En un laboratorio se estudia I-234, un fármaco nuevo que inhibe una enzima del metabolismo. Se midió la velocidad de la reacción con distintas cantidades de sustrato, con y sin el fármaco, y se hizo la gráfica de dobles recíprocos que se muestra.",
     img: "assets/lineweaver-burk.png",
     imgAlt: "Gráfica de dobles recíprocos. Las rectas con y sin inhibidor se cortan en el mismo punto del eje vertical, en 4. La recta sin inhibidor cruza el eje horizontal en menos 3 y la recta con inhibidor, en menos 2.",
-    q: "¿Qué ocurre con el Km de la hexoquinasa en presencia de I-234?",
-    o: ["Aumenta: la enzima necesita más glucosa para trabajar a la mitad de su velocidad máxima", "Disminuye: la enzima tiene más afinidad por la glucosa", "No cambia", "Se vuelve cero"],
+    q: "¿Qué ocurre con el Km de la enzima en presencia de I-234?",
+    o: ["Aumenta: la enzima necesita más sustrato para trabajar a la mitad de su velocidad máxima", "Disminuye: la enzima tiene más afinidad por el sustrato", "No cambia", "Se vuelve cero"],
     hint: "La recta con inhibidor cruza el eje horizontal más cerca de cero, y ese valor es el inverso del Km con signo negativo.",
-    e: "Sin inhibidor la recta cruza el eje horizontal en −3 (Km ≈ 0,33 mM) y con inhibidor en −2 (Km = 0,5 mM). El Km aumenta, es decir, baja la afinidad aparente por la glucosa, y la Vmax se mantiene." }
+    e: "Sin inhibidor la recta cruza el eje horizontal en −3 (Km ≈ 0,33 mM) y con inhibidor en −2 (Km = 0,5 mM). El Km aumenta, es decir, baja la afinidad aparente por el sustrato, y la Vmax se mantiene." }
 ];
