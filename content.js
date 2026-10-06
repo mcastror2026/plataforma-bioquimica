@@ -49,7 +49,7 @@ const MODULES = [
     summary: [
       { h: "Lo esencial", items: [
         "Piruvato + NADH → <b>lactato + NAD⁺</b>, catalizado por la <b>lactato deshidrogenasa (LDH)</b>. Ocurre en el citosol.",
-        "Su función real es <b>regenerar NAD⁺</b>, para que la glicólisis (GAPDH) pueda seguir produciendo ATP.",
+        "Su función real es <b>regenerar NAD⁺</b>, para que la glicólisis pueda seguir produciendo ATP.",
         "Rendimiento: <b>2 ATP netos por glucosa</b> (solo los de la glicólisis).",
         "Se activa en <b>hipoxia</b>, en el músculo con ejercicio intenso y en células sin mitocondrias (eritrocitos).",
         "El destino del piruvato depende del oxígeno. Sin él: <b>fermentación láctica</b> (músculo esquelético, se excreta lactato) o <b>fermentación alcohólica</b> (levaduras, se forman etanol y CO₂).",
@@ -225,7 +225,7 @@ const QUESTIONS = [
   /* ---------------- FERMENTACIÓN LÁCTICA ---------------- */
   { m: "fermentacion", q: "¿Cuál es la función principal de convertir piruvato en lactato?",
     o: ["Regenerar NAD⁺ para que la glicólisis continúe", "Producir más ATP", "Generar CO₂", "Almacenar glucosa"],
-    hint: "La GAPDH necesita NAD⁺ para funcionar.",
+    hint: "Sin NAD⁺, la glicólisis se detiene.",
     e: "Sin O₂ no se reoxida el NADH en la cadena respiratoria. La LDH lo oxida a NAD⁺ y permite seguir con la glicólisis." },
   { m: "fermentacion", q: "¿Cuántos ATP netos se obtienen por glucosa en la fermentación láctica?",
     o: ["2", "4", "36–38", "0"],
