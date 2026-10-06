@@ -69,23 +69,4 @@ a.card:focus-visible,button:focus-visible{outline:3px solid var(--brand);outline
 .score{font-size:2.4rem;font-weight:800;color:var(--brand)}
 .wrong-item{border-top:1px solid var(--line);padding:10px 0}
 .wrong-item:first-child{border-top:0}
-
-/* juegos */
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-.chip{font:inherit;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:9px 12px;cursor:pointer;text-align:left}
-.chip:hover:not([disabled]){border-color:var(--brand)}
-.chip.sel{border-color:var(--brand);background:var(--brand-soft)}
-.chip.done{background:var(--ok-bg);border-color:var(--ok);cursor:default}
-.chip.shake{animation:shake .3s;border-color:var(--bad)}
-@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
-@media (prefers-reduced-motion:reduce){.chip.shake{animation:none}.bar>i{transition:none}}
-ol.placed{margin:10px 0 0;padding-left:1.4em}
-ol.placed li{margin:.3em 0}
-ol.placed small{color:var(--muted)}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.cols .chips{flex-direction:column;align-items:stretch}
-@media (max-width:560px){.cols{gap:10px}}
-.cardgame{font-size:1.2rem;font-weight:600;padding:20px;text-align:center;background:var(--brand-soft);border-radius:12px;margin:12px 0}
-.catrow{display:flex;gap:10px;flex-wrap:wrap}
-.catrow .btn{flex:1 1 110px}
 .errs{color:var(--muted);font-size:.9rem}

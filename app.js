@@ -34,7 +34,7 @@
   /* ---------- enrutador ---------- */
   function route() {
     const parts = (location.hash.replace(/^#\/?/, "") || "").split("/");
-    if (parts[0] === "m" && mod(parts[1])) return viewModule(parts[1], parts[2] || "resumen", parts[3]);
+    if (parts[0] === "m" && mod(parts[1])) return viewModule(parts[1], parts[2] || "resumen");
     if (parts[0] === "repaso") return viewQuiz(null, failedQs());
     viewHome();
     app.focus({ preventScroll: true });
@@ -46,7 +46,7 @@
     const failed = failedQs().length;
     app.innerHTML = `
       <h1>¿Qué quieres practicar hoy?</h1>
-      <p class="lead">Resúmenes breves, preguntas con pistas, juegos y casos clínicos para reforzar cada tema del curso.</p>
+      <p class="lead">Resúmenes breves, preguntas con pistas y casos clínicos para reforzar cada tema del curso.</p>
       ${failed ? `<div class="banner"><span>Tienes <b>${failed}</b> pregunta${failed > 1 ? "s" : ""} para repasar.</span><a class="btn" href="#/repaso">Repasar mis errores</a></div>` : ""}
       <div class="grid">
         <a class="card ext" href="${ENZIMAS_URL}" target="_blank" rel="noopener">
@@ -70,10 +70,9 @@
   }
 
   /* ---------- módulo ---------- */
-  function viewModule(id, tab, gi) {
+  function viewModule(id, tab) {
     const m = mod(id);
     const tabs = [["resumen", "Resumen"], ["quiz", "Preguntas"]];
-    if (m.games.length) tabs.push(["juego", "Juegos"]);
     if (!tabs.find((t) => t[0] === tab)) tab = "resumen";
     const nav = `
       <a class="crumb" href="#/">← Todos los módulos</a>
@@ -86,12 +85,11 @@
     const body = document.getElementById("body");
     if (tab === "resumen") return viewSummary(m, body);
     if (tab === "quiz") return viewQuiz(m, qsOf(id), body);
-    if (tab === "juego") return viewGames(m, body, gi);
   }
 
   function viewSummary(m, body) {
     body.innerHTML = m.summary.map((s) => `<section class="panel"><h2>${esc(s.h)}</h2><ul>${s.items.map((i) => `<li>${i}</li>`).join("")}</ul></section>`).join("") +
-      `<div class="row"><a class="btn" href="#/m/${m.id}/quiz">Practicar con preguntas</a>${m.games.length ? `<a class="btn ghost" href="#/m/${m.id}/juego">Jugar</a>` : ""}</div>`;
+      `<div class="row"><a class="btn" href="#/m/${m.id}/quiz">Practicar con preguntas</a></div>`;
   }
 
   /* ---------- quiz ---------- */
@@ -146,89 +144,6 @@
           </div>
         </div>`;
       body.querySelector("#again").onclick = () => (m ? viewQuiz(m, qsOf(m.id), body) : viewQuiz(null, failedQs(), body));
-    }
-  }
-
-  /* ---------- juegos ---------- */
-  function viewGames(m, body, gi) {
-    if (gi === undefined && m.games.length > 1) {
-      body.innerHTML = `<div class="grid">${m.games.map((g, k) => `<a class="card" href="#/m/${m.id}/juego/${k}"><h3>${esc(g.title)}</h3><p>${esc(g.intro)}</p></a>`).join("")}</div>`;
-      return;
-    }
-    const g = m.games[+gi || 0];
-    if (!g) return;
-    ({ order: gameOrder, match: gameMatch, classify: gameClassify })[g.type](g, body, () => viewGames(m, body, gi));
-  }
-  function finish(g, body, errors, again, extra) {
-    const s = store.get(); const prev = s.g[g.id];
-    if (prev === undefined || errors < prev) s.g[g.id] = errors; store.set(s);
-    const fin = document.createElement("div"); fin.className = "fb ok"; fin.setAttribute("role", "status");
-    fin.innerHTML = `✓ ¡Completado! ${errors === 0 ? "Sin errores." : errors + " error" + (errors > 1 ? "es" : "") + "."} ${extra || ""}<div class="row" style="margin-top:10px"><button class="btn" id="again">Jugar de nuevo</button></div>`;
-    body.querySelector(".panel").appendChild(fin);
-    fin.querySelector("#again").onclick = again;
-  }
-
-  function gameOrder(g, body, again) {
-    const items = g.items.map((it, i) => ({ ...it, i }));
-    const pool = shuffle(items); let next = 0, errors = 0;
-    body.innerHTML = `<div class="panel"><h2>${esc(g.title)}</h2><p class="lead" style="margin-bottom:0">${esc(g.intro)}</p>
-      <div class="chips" id="pool">${pool.map((it) => `<button class="chip" data-i="${it.i}">${esc(it.t)}</button>`).join("")}</div>
-      <p class="errs">Errores: <span id="err">0</span></p><ol class="placed" id="placed"></ol></div>`;
-    const placed = body.querySelector("#placed");
-    body.querySelectorAll(".chip").forEach((c) => c.onclick = () => {
-      if (c.disabled) return;
-      if (+c.dataset.i === next) {
-        const it = items[next]; c.classList.add("done"); c.disabled = true; next++;
-        placed.insertAdjacentHTML("beforeend", `<li>${esc(it.t)}${it.n ? ` <small>— ${esc(it.n)}</small>` : ""}</li>`);
-        if (next === items.length) finish(g, body, errors, again);
-      } else {
-        errors++; body.querySelector("#err").textContent = errors;
-        c.classList.remove("shake"); void c.offsetWidth; c.classList.add("shake");
-      }
-    });
-  }
-
-  function gameMatch(g, body, again) {
-    const L = shuffle(g.pairs.map((p, i) => ({ t: p[0], i }))), R = shuffle(g.pairs.map((p, i) => ({ t: p[1], i })));
-    let sel = null, errors = 0, left = g.pairs.length;
-    body.innerHTML = `<div class="panel"><h2>${esc(g.title)}</h2><p class="lead" style="margin-bottom:0">${esc(g.intro)}</p>
-      <div class="cols"><div class="chips">${L.map((x) => `<button class="chip" data-s="l" data-i="${x.i}">${esc(x.t)}</button>`).join("")}</div>
-      <div class="chips">${R.map((x) => `<button class="chip" data-s="r" data-i="${x.i}" data-t="${esc(x.t)}">${esc(x.t)}</button>`).join("")}</div></div>
-      <p class="errs">Errores: <span id="err">0</span></p></div>`;
-    const chips = [...body.querySelectorAll(".chip")];
-    chips.forEach((c) => c.onclick = () => {
-      if (c.disabled) return;
-      if (c.dataset.s === "l") { chips.filter((x) => x.dataset.s === "l").forEach((x) => x.classList.remove("sel")); sel = c; c.classList.add("sel"); return; }
-      if (!sel) return;
-      // las parejas con la misma respuesta (p. ej. dos "Citosol") también valen
-      const ok = g.pairs[+sel.dataset.i][1] === c.dataset.t;
-      if (ok) {
-        [sel, c].forEach((x) => { x.classList.remove("sel"); x.classList.add("done"); x.disabled = true; });
-        sel = null; left--; if (!left) finish(g, body, errors, again);
-      } else {
-        errors++; body.querySelector("#err").textContent = errors;
-        c.classList.remove("shake"); void c.offsetWidth; c.classList.add("shake");
-      }
-    });
-  }
-
-  function gameClassify(g, body, again) {
-    const list = shuffle(g.items); let i = 0, errors = 0, streak = 0, best = 0;
-    render();
-    function render() {
-      const it = list[i];
-      body.innerHTML = `<div class="panel"><h2>${esc(g.title)}</h2><div class="qhead"><span>${i + 1} de ${list.length}</span><span>Racha: ${streak} · Errores: ${errors}</span></div>
-        <div class="cardgame">${esc(it.t)}</div>
-        <div class="catrow">${g.categories.map((c, k) => `<button class="btn ghost" data-k="${k}">${esc(c)}</button>`).join("")}</div>
-        <div id="fb" aria-live="polite"></div></div>`;
-      body.querySelectorAll(".catrow .btn").forEach((b) => b.onclick = () => {
-        const ok = +b.dataset.k === it.c;
-        if (ok) { streak++; best = Math.max(best, streak); } else { errors++; streak = 0; }
-        body.querySelectorAll(".catrow .btn").forEach((x) => (x.disabled = true));
-        body.querySelector("#fb").innerHTML = `<div class="fb ${ok ? "ok" : "bad"}">${ok ? "✓ Correcto." : "✗ Era: <b>" + esc(g.categories[it.c]) + "</b>."}</div><div class="row" style="margin-top:10px"><button class="btn" id="n">${i + 1 === list.length ? "Terminar" : "Siguiente ▶"}</button></div>`;
-        const n = body.querySelector("#n"); n.focus();
-        n.onclick = () => { i++; if (i < list.length) render(); else { body.querySelector(".cardgame").remove(); body.querySelector(".catrow").remove(); body.querySelector("#fb").remove(); finish(g, body, errors, again, `Mejor racha: ${best}.`); } };
-      });
     }
   }
 

@@ -2,7 +2,7 @@
    CONTENIDOS DE LA PLATAFORMA  ·  Bases Bioquímicas para Enfermería
    Este es el único archivo que necesitas editar para agregar material.
 
-   MODULES   → módulos (resumen + juegos)
+   MODULES   → módulos (resumen de cada tema)
    QUESTIONS → banco de preguntas. En cada pregunta:
        m    : id del módulo
        q    : enunciado
@@ -34,25 +34,6 @@ const MODULES = [
         "Los <b>eritrocitos</b> no tienen mitocondrias: dependen solo de la glicólisis.",
         "El cerebro consume ~120 g de glucosa al día: por eso la glicemia debe mantenerse estable."
       ]}
-    ],
-    games: [
-      {
-        type: "order", id: "g-glucolisis-orden",
-        title: "Ordena la glicólisis",
-        intro: "Toca los intermediarios en el orden en que aparecen, desde la glucosa hasta el piruvato.",
-        items: [
-          { t: "Glucosa", n: "Entra a la célula" },
-          { t: "Glucosa-6-fosfato", n: "Hexoquinasa / glucoquinasa · gasta 1 ATP" },
-          { t: "Fructosa-6-fosfato", n: "Fosfoglucosa isomerasa" },
-          { t: "Fructosa-1,6-bisfosfato", n: "PFK-1 (paso regulador) · gasta 1 ATP" },
-          { t: "Gliceraldehído-3-fosfato (×2)", n: "Aldolasa; DHAP se isomeriza a G3P" },
-          { t: "1,3-bisfosfoglicerato", n: "GAPDH · se produce NADH" },
-          { t: "3-fosfoglicerato", n: "Fosfoglicerato quinasa · se produce ATP" },
-          { t: "2-fosfoglicerato", n: "Fosfoglicerato mutasa" },
-          { t: "Fosfoenolpiruvato (PEP)", n: "Enolasa" },
-          { t: "Piruvato", n: "Piruvato quinasa · se produce ATP" }
-        ]
-      }
     ]
   },
   {
@@ -75,20 +56,6 @@ const MODULES = [
         "<b>Acidosis láctica</b>: shock, sepsis o hipoperfusión → hipoxia tisular → lactato ↑ y pH ↓.",
         "El lactato sérico elevado es un marcador de gravedad en pacientes críticos."
       ]}
-    ],
-    games: [
-      {
-        type: "order", id: "g-cori",
-        title: "Ordena el ciclo de Cori",
-        intro: "Toca los pasos en el orden en que ocurren.",
-        items: [
-          { t: "Músculo en ejercicio intenso: glucosa → piruvato → lactato", n: "Glicólisis + LDH, regenera NAD⁺" },
-          { t: "El lactato sale a la sangre", n: "" },
-          { t: "El hígado capta el lactato y lo convierte en piruvato", n: "LDH en sentido inverso" },
-          { t: "El hígado sintetiza glucosa", n: "Gluconeogénesis (gasta ATP)" },
-          { t: "La glucosa vuelve por la sangre al músculo", n: "Se completa el ciclo" }
-        ]
-      }
     ]
   },
   {
@@ -114,23 +81,6 @@ const MODULES = [
       { h: "Para la práctica de enfermería", items: [
         "<b>Déficit de tiamina</b> (alcoholismo, desnutrición): PDH falla → se acumulan piruvato y lactato."
       ]}
-    ],
-    games: [
-      {
-        type: "order", id: "g-krebs-orden",
-        title: "Ordena el ciclo de Krebs",
-        intro: "Parte desde el citrato (acetil-CoA + oxaloacetato). Toca los intermediarios en orden.",
-        items: [
-          { t: "Citrato", n: "Citrato sintasa" },
-          { t: "Isocitrato", n: "Aconitasa" },
-          { t: "α-Cetoglutarato", n: "Isocitrato deshidrogenasa · NADH + CO₂" },
-          { t: "Succinil-CoA", n: "α-cetoglutarato deshidrogenasa · NADH + CO₂" },
-          { t: "Succinato", n: "Succinil-CoA sintetasa · GTP" },
-          { t: "Fumarato", n: "Succinato deshidrogenasa · FADH₂" },
-          { t: "Malato", n: "Fumarasa" },
-          { t: "Oxaloacetato", n: "Malato deshidrogenasa · NADH" }
-        ]
-      }
     ]
   },
   {
@@ -153,33 +103,6 @@ const MODULES = [
         "<b>Cianuro</b> y <b>monóxido de carbono</b> inhiben el complejo IV: la célula no puede usar el O₂ aunque haya.",
         "<b>Desacopladores</b> (ej. 2,4-dinitrofenol, termogenina de la grasa parda) disipan el gradiente: se consume O₂ pero se produce calor en vez de ATP."
       ]}
-    ],
-    games: [
-      {
-        type: "match", id: "g-complejos",
-        title: "Une cada elemento con su función",
-        intro: "Toca un elemento de la izquierda y luego su pareja a la derecha.",
-        pairs: [
-          ["Complejo I", "Recibe los electrones del NADH"],
-          ["Complejo II", "Recibe los electrones del FADH₂ (succinato deshidrogenasa)"],
-          ["Complejo IV", "Reduce el O₂ a agua"],
-          ["ATP sintasa", "Fosforila ADP usando el gradiente de H⁺"],
-          ["Cianuro", "Bloquea el complejo IV"],
-          ["Desacoplante", "Disipa el gradiente y genera calor"]
-        ]
-      },
-      {
-        type: "match", id: "g-donde",
-        title: "¿Dónde ocurre cada proceso?",
-        intro: "Une el proceso con su ubicación en la célula.",
-        pairs: [
-          ["Glicólisis", "Citosol"],
-          ["Fermentación láctica", "Citosol"],
-          ["Descarboxilación del piruvato (PDH)", "Matriz mitocondrial"],
-          ["Ciclo de Krebs", "Matriz mitocondrial"],
-          ["Cadena de transporte de electrones", "Membrana mitocondrial interna"]
-        ]
-      }
     ]
   },
   {
@@ -206,21 +129,6 @@ const MODULES = [
         "<b>Von Gierke</b> (déficit de glucosa-6-fosfatasa): hipoglicemia en ayuno y hepatomegalia.",
         "<b>McArdle</b> (déficit de fosforilasa muscular): calambres con el ejercicio y lactato que no sube."
       ]}
-    ],
-    games: [
-      {
-        type: "order", id: "g-glucagon",
-        title: "Ordena la cascada del glucagón",
-        intro: "Toca los pasos desde la hormona hasta la liberación de glucosa.",
-        items: [
-          { t: "El glucagón se une a su receptor en el hepatocito", n: "Receptor acoplado a proteína G" },
-          { t: "Se activa la adenilato ciclasa y sube el AMPc", n: "Segundo mensajero" },
-          { t: "El AMPc activa la proteína quinasa A (PKA)", n: "" },
-          { t: "La PKA fosforila a la fosforilasa quinasa", n: "" },
-          { t: "La fosforilasa quinasa fosforila (activa) a la glucógeno fosforilasa", n: "Y la glucógeno sintasa queda inactiva" },
-          { t: "Glucógeno → glucosa-1-P → glucosa-6-P → glucosa libre", n: "Glucosa-6-fosfatasa (hígado)" }
-        ]
-      }
     ]
   },
   {
@@ -247,26 +155,6 @@ const MODULES = [
         "<b>DM tipo 2:</b> resistencia a la insulina.",
         "<b>Hipoglicemia</b> (&lt; 70 mg/dL): sudoración, temblor y taquicardia por liberación de adrenalina."
       ]}
-    ],
-    games: [
-      {
-        type: "classify", id: "g-hormonas",
-        title: "¿Insulina, glucagón o adrenalina?",
-        intro: "Elige la hormona a la que corresponde cada efecto o situación.",
-        categories: ["Insulina", "Glucagón", "Adrenalina"],
-        items: [
-          { t: "Aumenta la entrada de glucosa vía GLUT4 en músculo", c: 0 },
-          { t: "Se libera tras comer, con glicemia alta", c: 0 },
-          { t: "Activa la glucógeno sintasa", c: 0 },
-          { t: "Inhibe la gluconeogénesis hepática", c: 0 },
-          { t: "Se libera en ayuno prolongado, con glicemia baja", c: 1 },
-          { t: "Activa la gluconeogénesis en el hígado", c: 1 },
-          { t: "Estimula la glucogenólisis hepática, pero no la muscular", c: 1 },
-          { t: "Aumenta la lipólisis y la cetogénesis", c: 1 },
-          { t: "Prepara el cuerpo para el estrés: actúa en glucógeno de músculo e hígado", c: 2 },
-          { t: "Responsable de la taquicardia y sudoración en una hipoglicemia", c: 2 }
-        ]
-      }
     ]
   },
   {
@@ -281,7 +169,6 @@ const MODULES = [
         "3. Deduce la <b>consecuencia fisiológica</b> y qué esperarías en los exámenes o síntomas."
       ]}
     ],
-    games: []
   }
 ];
 
