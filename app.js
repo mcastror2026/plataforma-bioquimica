@@ -12,6 +12,7 @@
   ];
   const BOT_URL = "https://bot-bioquimico.zapier.app/";
   const QUIZ_SIZE = 8;
+  const PASS = 70; // % de correctas para considerar un tema listo
   const app = document.getElementById("app");
 
   const shuffle = (a) => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
@@ -54,7 +55,7 @@
   /* ---------- inicio ---------- */
   function viewHome() {
     const failed = failedQs().length;
-    const next = MODULES.find((m) => mastery(m.id).pct < 100 && m.id !== "casos") || MODULES[0];
+    const next = MODULES.find((m) => mastery(m.id).pct < PASS && m.id !== "casos") || MODULES[0];
     const k = mastery(next.id), started = k.seen > 0;
     let n = 2;
     const stops = [
@@ -64,8 +65,8 @@
           <span><span class="t">${esc(e.t)}</span><span class="m">${esc(e.m)}</span></span>
           <span class="c">${ICON.ext}</span></a></li>`),
       ...MODULES.map((m, i) => { const q = mastery(m.id), num = String(i + 1 + n).padStart(2, "0"); return `
-        <li class="stop${q.pct === 100 ? " done" : ""}"><a href="#/m/${m.id}">
-          <span class="node">${ring(q.pct)}<b>${q.pct === 100 ? ICON.ok.replace("<svg", '<svg width="18" height="18"') : num}</b></span>
+        <li class="stop${q.pct >= PASS ? " done" : ""}"><a href="#/m/${m.id}">
+          <span class="node">${ring(q.pct)}<b>${q.pct >= PASS ? ICON.ok.replace("<svg", '<svg width="18" height="18"') : num}</b></span>
           <span><span class="t">${esc(m.title)}</span><span class="m">${esc(m.tag)}</span></span>
           <span class="c">${q.seen ? q.done + "/" + q.total : q.total + " preg."}</span></a></li>`; }),
       ...SOON.map((s) => `
