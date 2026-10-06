@@ -76,7 +76,7 @@
       <div class="home">
         <section class="intro">
           <h1 class="display">Conceptos básicos para Bioquímica</h1>
-          <p class="lead">Resúmenes, preguntas y casos clínicos de tu curso.</p>
+          <p class="lead">Resúmenes, preguntas y aplicaciones.</p>
           <div class="resume">
             <a class="btn btn-primary" href="#/m/${next.id}/${started ? "quiz" : "resumen"}">${started ? "Continuar con" : "Empezar con"} ${esc(next.title)}</a>
             ${started ? `<span class="stat">${k.done} de ${k.total} correctas en este tema</span>` : ""}
