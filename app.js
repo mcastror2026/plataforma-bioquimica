@@ -187,5 +187,14 @@
     }
   }
 
+  const resetBtn = document.getElementById("reset");
+  if (resetBtn) resetBtn.onclick = () => {
+    if (!confirm("¿Borrar todo tu avance en este dispositivo? Esta acción no se puede deshacer.")) return;
+    store.set({ q: {}, g: {} });
+    location.hash = "#/";
+    route();
+    window.scrollTo(0, 0);
+  };
+
   route();
 })();

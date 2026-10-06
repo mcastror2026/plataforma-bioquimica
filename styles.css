@@ -168,3 +168,5 @@ main{outline:none;max-width:1080px;margin:0 auto;padding:0 var(--gutter) 40px}
 .helper span span{display:block;font-size:.88rem;color:var(--muted);line-height:1.35}
 .qimg{display:block;width:100%;max-width:520px;height:auto;margin-top:12px;border-radius:12px;background:#fff}
 .qzoom{display:block;margin-top:6px;font-size:.85rem;color:var(--muted)}
+.reset{background:none;border:0;padding:6px 8px;min-height:44px;font:500 13px/1.4 var(--body);color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.reset:hover{color:var(--ink)}
