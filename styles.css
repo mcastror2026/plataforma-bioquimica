@@ -3,7 +3,7 @@
   --brand:#2F4BDE; --brand-ink:#FFFFFF; --brand-soft:#E8ECFC;
   --atp:#F2A11B; --atp-soft:#FFF1D6;
   --ok:#158A4A; --ok-soft:#E1F5E9; --bad:#C8323A; --bad-soft:#FDE7E8;
-  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --display:var(--body);
   --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
   --r:16px; --gutter:20px;
@@ -29,7 +29,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .skip:focus{left:8px}
 main{outline:none;max-width:1080px;margin:0 auto;padding:0 var(--gutter) 40px}
 .eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.display{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-height:1.05}
+.display{font-family:var(--display);font-weight:600;letter-spacing:-.025em;line-height:1.12;text-wrap:balance}
 .lead{color:var(--muted);font-size:1.05rem;max-width:44ch}
 
 /* ---------- botones ---------- */
@@ -43,7 +43,7 @@ main{outline:none;max-width:1080px;margin:0 auto;padding:0 var(--gutter) 40px}
 /* ---------- inicio ---------- */
 .home{display:grid;gap:32px;padding-top:36px}
 .intro{display:grid;gap:18px;align-content:start}
-.intro h1{font-size:clamp(2.1rem,8.5vw,3.4rem)}
+.intro h1{font-size:clamp(2rem,8vw,3.2rem)}
 .intro .resume{display:grid;gap:10px;margin-top:6px}
 .intro .stat{font-size:.9rem;color:var(--muted)}
 .review{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--atp-soft);border-radius:14px;padding:12px 14px;font-size:.95rem}
@@ -82,7 +82,7 @@ main{outline:none;max-width:1080px;margin:0 auto;padding:0 var(--gutter) 40px}
 .back{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:600;color:var(--muted)}
 .back:hover{color:var(--ink)}
 .mhead{display:grid;gap:12px;padding:18px 0 8px}
-.mhead h1{font-size:clamp(2rem,7.5vw,3rem)}
+.mhead h1{font-size:clamp(1.75rem,6.4vw,2.6rem)}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .chip{font:500 12px/1 var(--mono);padding:7px 10px;border-radius:99px;background:var(--brand-soft);color:var(--brand)}
 .seg{display:flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:4px;margin:18px 0 20px}
