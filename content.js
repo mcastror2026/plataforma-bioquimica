@@ -121,7 +121,7 @@ const MODULES = [
   },
   {
     id: "glucogeno",
-    facts: [["α-1,4", "enlaces lineales"], ["α-1,6", "ramificaciones"], ["G6Pasa", "solo en hígado"]],
+    facts: [["α-1,4", "enlaces lineales"], ["α-1,6", "ramificaciones"], ["Hígado", "tiene glucosa-6-fosfatasa"]],
     title: "Síntesis y degradación de glicógeno",
     tag: "Hígado y músculo",
     blurb: "Cómo se almacena y se moviliza la glucosa según las necesidades.",
