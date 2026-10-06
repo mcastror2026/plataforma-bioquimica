@@ -15,6 +15,7 @@
 const MODULES = [
   {
     id: "glucolisis",
+    facts: [["2", "ATP netos"], ["2", "NADH"], ["2", "piruvato"]],
     title: "Glicólisis",
     tag: "Citosol · 10 reacciones",
     blurb: "La vía que parte la glucosa en dos piruvatos y deja ATP y NADH.",
@@ -41,6 +42,7 @@ const MODULES = [
   },
   {
     id: "fermentacion",
+    facts: [["2", "ATP netos"], ["LDH", "enzima clave"], ["Cori", "músculo ↔ hígado"]],
     title: "Fermentación láctica",
     tag: "Citosol · sin oxígeno",
     blurb: "Qué hace la célula con el piruvato cuando no hay oxígeno o mitocondrias.",
@@ -65,6 +67,7 @@ const MODULES = [
   },
   {
     id: "krebs",
+    facts: [["3", "NADH por vuelta"], ["1", "FADH₂ y 1 GTP"], ["2", "CO₂"]],
     title: "Ciclo de Krebs",
     tag: "Matriz mitocondrial",
     blurb: "Oxida el acetil-CoA a CO₂ y carga coenzimas para la cadena de transporte.",
@@ -93,6 +96,7 @@ const MODULES = [
   },
   {
     id: "fosforilacion",
+    facts: [["O₂", "aceptor final"], ["3 · 2", "ATP por NADH · FADH₂"], ["36–38", "ATP por glucosa"]],
     title: "Cadena de transporte y fosforilación oxidativa",
     tag: "Membrana mitocondrial interna",
     blurb: "Donde se produce la mayor parte del ATP, gracias al oxígeno.",
@@ -116,6 +120,7 @@ const MODULES = [
   },
   {
     id: "glucogeno",
+    facts: [["α-1,4", "enlaces lineales"], ["α-1,6", "ramificaciones"], ["G6Pasa", "solo en hígado"]],
     title: "Síntesis y degradación de glucógeno",
     tag: "Hígado y músculo",
     blurb: "Cómo se almacena y se moviliza la glucosa según las necesidades.",
@@ -142,6 +147,7 @@ const MODULES = [
   },
   {
     id: "hormonas",
+    facts: [["70–99", "mg/dL en ayunas"], ["Insulina", "baja la glicemia"], ["Glucagón", "sube la glicemia"]],
     title: "Regulación por insulina y glucagón",
     tag: "Homeostasis de la glicemia",
     blurb: "Dos hormonas opuestas que mantienen la glicemia entre 70 y 99 mg/dL en ayunas.",
