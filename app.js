@@ -50,14 +50,14 @@
       ${failed ? `<div class="banner"><span>Tienes <b>${failed}</b> pregunta${failed > 1 ? "s" : ""} para repasar.</span><a class="btn" href="#/repaso">Repasar mis errores</a></div>` : ""}
       <div class="grid">
         <a class="card ext" href="${ENZIMAS_URL}" target="_blank" rel="noopener">
-          <span class="num">00</span>
+          <span class="num">01</span>
           <h3>Enzimas</h3>
           <span class="tag">Desafío · se abre en otra pestaña</span>
           <p>Cinética, inhibición y regulación enzimática.</p>
         </a>
         ${MODULES.map((m, n) => { const k = mastery(m.id); return `
           <a class="card" href="#/m/${m.id}">
-            <span class="num">${String(n + 1).padStart(2, "0")}</span>
+            <span class="num">${String(n + 2).padStart(2, "0")}</span>
             <h3>${esc(m.title)}</h3>
             <span class="tag">${esc(m.tag)}</span>
             <p>${esc(m.blurb)}</p>
