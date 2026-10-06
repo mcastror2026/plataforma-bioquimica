@@ -465,5 +465,17 @@ const QUESTIONS = [
     q: "¿Qué ocurre con el Km de la enzima en presencia de I-234?",
     o: ["Aumenta: la enzima necesita más sustrato para trabajar a la mitad de su velocidad máxima", "Disminuye: la enzima tiene más afinidad por el sustrato", "No cambia", "Se vuelve cero"],
     hint: "La recta con inhibidor cruza el eje horizontal más cerca de cero, y ese valor es el inverso del Km con signo negativo.",
-    e: "Sin inhibidor la recta cruza el eje horizontal en −3 (Km ≈ 0,33 mM) y con inhibidor en −2 (Km = 0,5 mM). El Km aumenta, es decir, baja la afinidad aparente por el sustrato, y la Vmax se mantiene." }
+    e: "Sin inhibidor la recta cruza el eje horizontal en −3 (Km ≈ 0,33 mM) y con inhibidor en −2 (Km = 0,5 mM). El Km aumenta, es decir, baja la afinidad aparente por el sustrato, y la Vmax se mantiene." },
+  /* ---------- Caso: enfermedad de Hers ---------- */
+  { m: "casos",
+    case: "La enfermedad de Hers afecta a las células del hígado, que no pueden producir la enzima glicógeno fosforilasa, necesaria para degradar el glicógeno hepático. Los pacientes tienen períodos de glicemia muy baja (hipoglicemia).",
+    q: "¿Por qué aumentan los cuerpos cetónicos en la sangre de estos pacientes?",
+    o: ["Con la hipoglicemia, el glucagón activa la lipólisis; los ácidos grasos llegan al hígado y se transforman en cuerpos cetónicos", "Con la hipoglicemia aumenta la insulina, que estimula la formación de cuerpos cetónicos", "El hígado convierte el glicógeno acumulado en cuerpos cetónicos", "El músculo libera cuerpos cetónicos al degradar su glicógeno"],
+    hint: "Con la glicemia baja se libera glucagón.",
+    e: "Por la hipoglicemia, el glucagón favorece la lipólisis en el tejido adiposo. Los ácidos grasos libres llegan al hígado, donde se degradan por β-oxidación y se forman cuerpos cetónicos (cetogénesis)." },
+  { m: "casos",
+    case: "La enfermedad de Hers afecta a las células del hígado, que no pueden producir la enzima glicógeno fosforilasa, necesaria para degradar el glicógeno hepático. Los pacientes tienen períodos de glicemia muy baja (hipoglicemia).",
+    q: "Después de correr 15 minutos, ¿cómo estará el glicógeno del músculo de un paciente con esta enfermedad, comparado con una persona sana?",
+    o: ["Igual que en una persona sana: disminuido, porque la enfermedad solo afecta al hígado", "Más alto, porque el músculo no puede degradar su glicógeno", "Más bajo que en una persona sana, porque el hígado no libera glucosa", "No se puede degradar el glicógeno en ningún tejido"],
+    e: "La enfermedad afecta la enzima del hígado. El músculo tiene la suya, por lo que degrada su glicógeno con normalidad al correr. Lo que queda alterado es el glicógeno del hígado, que no se puede degradar." }
 ];
