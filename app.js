@@ -139,7 +139,7 @@
   /* ---------- preguntas ---------- */
   function runQuiz(m, pool, body) {
     if (!pool.length) { body.innerHTML = `<div class="block"><h2>Todo al día</h2><p>No hay preguntas para repasar.</p></div>`; return; }
-    const st = { i: 0, ok: 0, wrong: [], list: pick(pool, QUIZ_SIZE) };
+    const st = { i: 0, ok: 0, wrong: [], list: m && m.all ? shuffle(pool) : pick(pool, QUIZ_SIZE) };
     const L = "ABCD";
     render();
     function render() {

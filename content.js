@@ -3,6 +3,7 @@
    Este es el único archivo que necesitas editar para agregar material.
 
    MODULES   → módulos (resumen de cada tema)
+   all  : (opcional, en un módulo) true = cada ronda muestra todas sus preguntas
    QUESTIONS → banco de preguntas. En cada pregunta:
        m    : id del módulo
        q    : enunciado
@@ -183,6 +184,7 @@ const MODULES = [
   },
   {
     id: "casos",
+    all: true, // cada ronda muestra todas las preguntas del módulo
     title: "Casos clínicos de integración",
     tag: "Razonamiento analítico",
     blurb: "Situaciones de enfermería que integran las vías y las hormonas.",
