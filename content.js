@@ -177,7 +177,6 @@ const MODULES = [
       { h: "Para la práctica de enfermería", items: [
         "<b>Diabetes mellitus tipo 1:</b> falta de insulina → hiperglicemia y, si es grave, cetoacidosis.",
         "<b>Diabetes mellitus tipo 2:</b> resistencia a la insulina.",
-        "<b>Hiperglicemia</b> (&gt; 125 mg/dL en ayunas): glicemia sobre lo normal. Si se repite en más de una medición, sugiere diabetes.",
         "<b>Hipoglicemia</b> (&lt; 70 mg/dL): sudoración, temblor y taquicardia por liberación de adrenalina."
       ]}
     ]
