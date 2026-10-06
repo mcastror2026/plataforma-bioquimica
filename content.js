@@ -15,8 +15,7 @@
 const MODULES = [
   {
     id: "glucolisis",
-    title: "Glucólisis",
-    icon: "🔥",
+    title: "Glicólisis",
     tag: "Citosol · 10 reacciones",
     blurb: "La vía que parte la glucosa en dos piruvatos y deja ATP y NADH.",
     summary: [
@@ -32,14 +31,14 @@ const MODULES = [
         "<b>Piruvato quinasa</b>: activada por fructosa-1,6-bisfosfato; inhibida por glucagón (hígado) y ATP."
       ]},
       { h: "Para la práctica de enfermería", items: [
-        "Los <b>eritrocitos</b> no tienen mitocondrias: dependen solo de la glucólisis.",
+        "Los <b>eritrocitos</b> no tienen mitocondrias: dependen solo de la glicólisis.",
         "El cerebro consume ~120 g de glucosa al día: por eso la glicemia debe mantenerse estable."
       ]}
     ],
     games: [
       {
         type: "order", id: "g-glucolisis-orden",
-        title: "Ordena la glucólisis",
+        title: "Ordena la glicólisis",
         intro: "Toca los intermediarios en el orden en que aparecen, desde la glucosa hasta el piruvato.",
         items: [
           { t: "Glucosa", n: "Entra a la célula" },
@@ -59,14 +58,13 @@ const MODULES = [
   {
     id: "fermentacion",
     title: "Fermentación láctica",
-    icon: "💪",
     tag: "Citosol · sin oxígeno",
     blurb: "Qué hace la célula con el piruvato cuando no hay oxígeno o mitocondrias.",
     summary: [
       { h: "Lo esencial", items: [
         "Piruvato + NADH → <b>lactato + NAD⁺</b>, catalizado por la <b>lactato deshidrogenasa (LDH)</b>. Ocurre en el citosol.",
-        "Su función real es <b>regenerar NAD⁺</b>, para que la glucólisis (GAPDH) pueda seguir produciendo ATP.",
-        "Rendimiento: <b>2 ATP netos por glucosa</b> (solo los de la glucólisis).",
+        "Su función real es <b>regenerar NAD⁺</b>, para que la glicólisis (GAPDH) pueda seguir produciendo ATP.",
+        "Rendimiento: <b>2 ATP netos por glucosa</b> (solo los de la glicólisis).",
         "Se activa en <b>hipoxia</b>, en el músculo con ejercicio intenso y en células sin mitocondrias (eritrocitos)."
       ]},
       { h: "Ciclo de Cori", items: [
@@ -84,7 +82,7 @@ const MODULES = [
         title: "Ordena el ciclo de Cori",
         intro: "Toca los pasos en el orden en que ocurren.",
         items: [
-          { t: "Músculo en ejercicio intenso: glucosa → piruvato → lactato", n: "Glucólisis + LDH, regenera NAD⁺" },
+          { t: "Músculo en ejercicio intenso: glucosa → piruvato → lactato", n: "Glicólisis + LDH, regenera NAD⁺" },
           { t: "El lactato sale a la sangre", n: "" },
           { t: "El hígado capta el lactato y lo convierte en piruvato", n: "LDH en sentido inverso" },
           { t: "El hígado sintetiza glucosa", n: "Gluconeogénesis (gasta ATP)" },
@@ -96,7 +94,6 @@ const MODULES = [
   {
     id: "krebs",
     title: "Ciclo de Krebs",
-    icon: "🔄",
     tag: "Matriz mitocondrial",
     blurb: "Oxida el acetil-CoA a CO₂ y carga coenzimas para la cadena de transporte.",
     summary: [
@@ -139,7 +136,6 @@ const MODULES = [
   {
     id: "fosforilacion",
     title: "Cadena de transporte y fosforilación oxidativa",
-    icon: "⚡",
     tag: "Membrana mitocondrial interna",
     blurb: "Donde se produce la mayor parte del ATP, gracias al oxígeno.",
     summary: [
@@ -177,7 +173,7 @@ const MODULES = [
         title: "¿Dónde ocurre cada proceso?",
         intro: "Une el proceso con su ubicación en la célula.",
         pairs: [
-          ["Glucólisis", "Citosol"],
+          ["Glicólisis", "Citosol"],
           ["Fermentación láctica", "Citosol"],
           ["Descarboxilación del piruvato (PDH)", "Matriz mitocondrial"],
           ["Ciclo de Krebs", "Matriz mitocondrial"],
@@ -189,7 +185,6 @@ const MODULES = [
   {
     id: "glucogeno",
     title: "Síntesis y degradación de glucógeno",
-    icon: "📦",
     tag: "Hígado y músculo",
     blurb: "Cómo se almacena y se moviliza la glucosa según las necesidades.",
     summary: [
@@ -201,7 +196,7 @@ const MODULES = [
       { h: "Glucogenólisis (degradación)", items: [
         "<b>Glucógeno fosforilasa</b> libera glucosa-1-fosfato; la enzima desramificante actúa sobre las ramas.",
         "<b>Hígado:</b> tiene glucosa-6-fosfatasa → libera <b>glucosa libre a la sangre</b> (mantiene la glicemia).",
-        "<b>Músculo:</b> no tiene glucosa-6-fosfatasa → usa la glucosa-6-P solo para su propia glucólisis."
+        "<b>Músculo:</b> no tiene glucosa-6-fosfatasa → usa la glucosa-6-P solo para su propia glicólisis."
       ]},
       { h: "Regulación (fosforilación)", items: [
         "<b>Glucagón</b> (hígado) y <b>adrenalina</b> (hígado y músculo) → AMPc → PKA → fosforilan: <b>fosforilasa activa, sintasa inactiva</b>.",
@@ -231,19 +226,18 @@ const MODULES = [
   {
     id: "hormonas",
     title: "Regulación por insulina y glucagón",
-    icon: "⚖️",
     tag: "Homeostasis de la glicemia",
     blurb: "Dos hormonas opuestas que mantienen la glicemia entre 70 y 99 mg/dL en ayunas.",
     summary: [
       { h: "Insulina (células β · estado postprandial)", items: [
         "Se libera con <b>glicemia alta</b>.",
-        "↑ captación de glucosa en músculo y tejido adiposo (<b>GLUT4</b>); ↑ glucólisis; ↑ glucogenogénesis; ↑ síntesis de lípidos.",
+        "↑ captación de glucosa en músculo y tejido adiposo (<b>GLUT4</b>); ↑ glicólisis; ↑ glucogenogénesis; ↑ síntesis de lípidos.",
         "↓ gluconeogénesis, ↓ glucogenólisis, ↓ lipólisis."
       ]},
       { h: "Glucagón (células α · ayuno)", items: [
         "Se libera con <b>glicemia baja</b>. Actúa principalmente en el hígado.",
         "↑ glucogenólisis y ↑ gluconeogénesis; ↑ lipólisis y cetogénesis.",
-        "↓ glucólisis y ↓ glucogenogénesis hepática."
+        "↓ glicólisis y ↓ glucogenogénesis hepática."
       ]},
       { h: "Adrenalina", items: [
         "Estrés y ejercicio: ↑ glucogenólisis en hígado y músculo, ↑ glicemia."
@@ -278,7 +272,6 @@ const MODULES = [
   {
     id: "casos",
     title: "Casos clínicos de integración",
-    icon: "🩺",
     tag: "Razonamiento analítico",
     blurb: "Situaciones de enfermería que integran las vías y las hormonas.",
     summary: [
@@ -294,19 +287,19 @@ const MODULES = [
 
 const QUESTIONS = [
   /* ---------------- GLUCÓLISIS ---------------- */
-  { m: "glucolisis", q: "¿En qué parte de la célula ocurre la glucólisis?",
+  { m: "glucolisis", q: "¿En qué parte de la célula ocurre la glicólisis?",
     o: ["Citosol", "Matriz mitocondrial", "Membrana mitocondrial interna", "Núcleo"],
     hint: "No requiere mitocondrias: los eritrocitos también la realizan.",
-    e: "La glucólisis es citosólica. Por eso los eritrocitos, que no tienen mitocondrias, obtienen ATP solo de ella." },
-  { m: "glucolisis", q: "¿Cuál es el balance neto de la glucólisis por cada molécula de glucosa?",
+    e: "La glicólisis es citosólica. Por eso los eritrocitos, que no tienen mitocondrias, obtienen ATP solo de ella." },
+  { m: "glucolisis", q: "¿Cuál es el balance neto de la glicólisis por cada molécula de glucosa?",
     o: ["2 ATP, 2 NADH y 2 piruvato", "4 ATP y 2 piruvato, sin NADH", "2 ATP y 2 FADH₂", "36 ATP y 6 CO₂"],
     hint: "Se invierten 2 ATP y se producen 4.",
     e: "Se gastan 2 ATP y se forman 4 → ganancia neta de 2 ATP, más 2 NADH y 2 piruvato." },
-  { m: "glucolisis", q: "¿Cuál es la enzima limitante (principal punto de control) de la glucólisis?",
+  { m: "glucolisis", q: "¿Cuál es la enzima limitante (principal punto de control) de la glicólisis?",
     o: ["Fosfofructoquinasa-1 (PFK-1)", "Enolasa", "Aldolasa", "Fosfoglucosa isomerasa"],
     hint: "Cataliza F6P → fructosa-1,6-bisfosfato.",
     e: "La PFK-1 es el paso comprometido: la activan AMP y fructosa-2,6-bisfosfato; la inhiben ATP y citrato." },
-  { m: "glucolisis", q: "Una célula tiene mucho ATP y mucho citrato. ¿Qué esperarías de la glucólisis?",
+  { m: "glucolisis", q: "Una célula tiene mucho ATP y mucho citrato. ¿Qué esperarías de la glicólisis?",
     o: ["Disminuye, porque la PFK-1 se inhibe", "Aumenta, porque la PFK-1 se activa", "No cambia", "Se detiene la hexoquinasa por falta de glucosa"],
     hint: "Energía abundante: la célula no necesita producir más.",
     e: "ATP y citrato son señales de abundancia energética e inhiben alostéricamente la PFK-1." },
@@ -322,19 +315,19 @@ const QUESTIONS = [
     o: ["Por fosforilación a nivel de sustrato", "Por fosforilación oxidativa", "Por el gradiente de protones", "Por acción de la ATP sintasa"],
     e: "Un grupo fosfato de alta energía del sustrato se transfiere directamente al ADP." },
   { m: "glucolisis", q: "¿Cuál es la fuente de energía de un eritrocito?",
-    o: ["Glucólisis anaerobia", "Ciclo de Krebs", "Fosforilación oxidativa", "β-oxidación de ácidos grasos"],
+    o: ["Glicólisis anaerobia", "Ciclo de Krebs", "Fosforilación oxidativa", "β-oxidación de ácidos grasos"],
     hint: "Los eritrocitos maduros no tienen mitocondrias.",
-    e: "Sin mitocondrias no pueden usar Krebs ni la cadena respiratoria; dependen de la glucólisis y el lactato." },
+    e: "Sin mitocondrias no pueden usar Krebs ni la cadena respiratoria; dependen de la glicólisis y el lactato." },
 
   /* ---------------- FERMENTACIÓN LÁCTICA ---------------- */
   { m: "fermentacion", q: "¿Cuál es la función principal de convertir piruvato en lactato?",
-    o: ["Regenerar NAD⁺ para que la glucólisis continúe", "Producir más ATP", "Generar CO₂", "Almacenar glucosa"],
+    o: ["Regenerar NAD⁺ para que la glicólisis continúe", "Producir más ATP", "Generar CO₂", "Almacenar glucosa"],
     hint: "La GAPDH necesita NAD⁺ para funcionar.",
-    e: "Sin O₂ no se reoxida el NADH en la cadena respiratoria. La LDH lo oxida a NAD⁺ y permite seguir con la glucólisis." },
+    e: "Sin O₂ no se reoxida el NADH en la cadena respiratoria. La LDH lo oxida a NAD⁺ y permite seguir con la glicólisis." },
   { m: "fermentacion", q: "¿Cuántos ATP netos se obtienen por glucosa en la fermentación láctica?",
     o: ["2", "4", "30–32", "0"],
-    hint: "Solo cuentan los de la glucólisis.",
-    e: "La conversión de piruvato a lactato no produce ATP. El total es el de la glucólisis: 2 ATP netos." },
+    hint: "Solo cuentan los de la glicólisis.",
+    e: "La conversión de piruvato a lactato no produce ATP. El total es el de la glicólisis: 2 ATP netos." },
   { m: "fermentacion", q: "¿Qué enzima cataliza la conversión de piruvato en lactato?",
     o: ["Lactato deshidrogenasa (LDH)", "Piruvato deshidrogenasa", "Piruvato quinasa", "Enolasa"],
     e: "La LDH usa NADH como donador de electrones, que pasa a NAD⁺." },
@@ -346,8 +339,8 @@ const QUESTIONS = [
     hint: "¿Cuál no tiene mitocondrias?",
     e: "El eritrocito maduro no tiene mitocondrias, así que siempre produce lactato." },
   { m: "fermentacion", q: "En un deportista, el lactato aumenta con un esprint de 100 m. La razón más directa es que…",
-    o: ["La demanda de ATP supera el aporte de oxígeno y se acelera la glucólisis anaerobia", "El ciclo de Krebs se acelera y libera lactato", "Se detiene la glucólisis", "El hígado deja de producir glucosa"],
-    e: "La glucólisis rápida produce piruvato más rápido de lo que la mitocondria puede oxidar; el exceso pasa a lactato." },
+    o: ["La demanda de ATP supera el aporte de oxígeno y se acelera la glicólisis anaerobia", "El ciclo de Krebs se acelera y libera lactato", "Se detiene la glicólisis", "El hígado deja de producir glucosa"],
+    e: "La glicólisis rápida produce piruvato más rápido de lo que la mitocondria puede oxidar; el exceso pasa a lactato." },
 
   /* ---------------- KREBS ---------------- */
   { m: "krebs", q: "¿Qué complejo convierte el piruvato en acetil-CoA?",
@@ -390,13 +383,13 @@ const QUESTIONS = [
     e: "NADH → complejo I; FADH₂ → complejo II. Por eso el FADH₂ rinde menos ATP." },
   { m: "fosforilacion", q: "¿Cuántos ATP se obtienen aproximadamente por glucosa en condiciones aerobias?",
     o: ["≈ 30–32", "2", "≈ 10", "≈ 100"],
-    e: "2 de la glucólisis, 2 de Krebs y el resto de la fosforilación oxidativa. En anaerobiosis solo 2." },
+    e: "2 de la glicólisis, 2 de Krebs y el resto de la fosforilación oxidativa. En anaerobiosis solo 2." },
   { m: "fosforilacion", q: "¿Qué ocurre con un desacoplante de la cadena respiratoria?",
     o: ["Se consume O₂ pero se produce calor en lugar de ATP", "Se produce más ATP", "Se bloquea el consumo de O₂", "Aumenta el gradiente de protones"],
     hint: "Disipa el gradiente sin pasar por la ATP sintasa.",
     e: "La energía del gradiente se pierde como calor. Es el mecanismo de la termogenina en la grasa parda." },
   { m: "fosforilacion", q: "¿Por qué el cianuro es tan tóxico?",
-    o: ["Inhibe el complejo IV y detiene la producción aerobia de ATP", "Bloquea la glucólisis", "Destruye la hemoglobina", "Activa la ATP sintasa"],
+    o: ["Inhibe el complejo IV y detiene la producción aerobia de ATP", "Bloquea la glicólisis", "Destruye la hemoglobina", "Activa la ATP sintasa"],
     e: "Aunque haya oxígeno disponible, la célula no puede usarlo. Los tejidos con mayor demanda (cerebro, corazón) fallan primero." },
 
   /* ---------------- GLUCÓGENO ---------------- */
@@ -406,7 +399,7 @@ const QUESTIONS = [
   { m: "glucogeno", q: "¿Por qué el glucógeno muscular no sirve para subir la glicemia?",
     o: ["Porque el músculo no tiene glucosa-6-fosfatasa", "Porque no tiene fosforilasa", "Porque el músculo no sintetiza glucógeno", "Porque el glucagón no lo degrada"],
     hint: "¿Qué enzima convierte la glucosa-6-P en glucosa libre?",
-    e: "Sin glucosa-6-fosfatasa, la glucosa-6-P queda en el músculo y alimenta su propia glucólisis." },
+    e: "Sin glucosa-6-fosfatasa, la glucosa-6-P queda en el músculo y alimenta su propia glicólisis." },
   { m: "glucogeno", q: "¿Qué enzima libera glucosa-1-fosfato desde el glucógeno?",
     o: ["Glucógeno fosforilasa", "Glucógeno sintasa", "Hexoquinasa", "Glucoquinasa"],
     e: "La fosforilasa rompe enlaces α-1,4 por fosforólisis (usa Pi, no gasta ATP)." },
@@ -453,18 +446,18 @@ const QUESTIONS = [
   { m: "casos",
     case: "Un maratonista de 30 años llega con calambres. Su lactato sérico está elevado tras el esfuerzo máximo.",
     q: "¿Qué explica el aumento de lactato?",
-    o: ["La glucólisis anaerobia produjo más piruvato que el que la mitocondria pudo oxidar", "Falla del ciclo de Krebs por exceso de oxígeno", "Aumento de la gluconeogénesis muscular", "Déficit de insulina"],
+    o: ["La glicólisis anaerobia produjo más piruvato que el que la mitocondria pudo oxidar", "Falla del ciclo de Krebs por exceso de oxígeno", "Aumento de la gluconeogénesis muscular", "Déficit de insulina"],
     hint: "¿Qué hace el músculo cuando la demanda de ATP supera el oxígeno?",
-    e: "Al regenerar NAD⁺ con la LDH, la glucólisis puede seguir. El lactato viajará al hígado (ciclo de Cori)." },
+    e: "Al regenerar NAD⁺ con la LDH, la glicólisis puede seguir. El lactato viajará al hígado (ciclo de Cori)." },
   { m: "casos",
     case: "Una persona llega de un incendio con intoxicación por humo. Tiene lactato muy elevado y SpO₂ aparentemente normal. Se sospecha intoxicación por cianuro.",
     q: "¿Cuál es el mecanismo de daño?",
-    o: ["Inhibición del complejo IV: no se puede usar el O₂ y se detiene la producción aerobia de ATP", "Bloqueo de la glucólisis", "Exceso de gluconeogénesis", "Inhibición de la hexoquinasa"],
+    o: ["Inhibición del complejo IV: no se puede usar el O₂ y se detiene la producción aerobia de ATP", "Bloqueo de la glicólisis", "Exceso de gluconeogénesis", "Inhibición de la hexoquinasa"],
     e: "La célula pasa a metabolismo anaerobio y produce lactato, aunque haya oxígeno en sangre." },
   { m: "casos",
     case: "Una persona lleva 18 horas en ayunas por una cirugía programada. Su glicemia es de 78 mg/dL.",
     q: "¿Qué mecanismo hormonal y metabólico mantiene su glicemia?",
-    o: ["Glucagón: glucogenólisis y gluconeogénesis hepática", "Insulina: glucogenogénesis hepática", "Aumento de GLUT4 en músculo", "Glucólisis hepática acelerada"],
+    o: ["Glucagón: glucogenólisis y gluconeogénesis hepática", "Insulina: glucogenogénesis hepática", "Aumento de GLUT4 en músculo", "Glicólisis hepática acelerada"],
     hint: "¿Hay insulina alta o baja en ayuno?",
     e: "Con insulina baja y glucagón alto, el hígado libera glucosa desde el glucógeno y sintetiza glucosa nueva." },
   { m: "casos",
@@ -480,12 +473,12 @@ const QUESTIONS = [
   { m: "casos",
     case: "Un lactante tiene hipoglicemia en ayuno y hepatomegalia. Se diagnostica enfermedad de Von Gierke (déficit de glucosa-6-fosfatasa).",
     q: "¿Por qué hay hipoglicemia?",
-    o: ["El hígado no puede convertir glucosa-6-P en glucosa libre", "No puede sintetizar glucógeno", "Tiene exceso de glucagón", "No hay glucólisis"],
+    o: ["El hígado no puede convertir glucosa-6-P en glucosa libre", "No puede sintetizar glucógeno", "Tiene exceso de glucagón", "No hay glicólisis"],
     hint: "La hepatomegalia se debe a acumulación de glucógeno.",
     e: "Se acumula glucógeno (hepatomegalia) y la glucogenólisis y la gluconeogénesis no pueden liberar glucosa a la sangre." },
   { m: "casos",
     case: "Una joven presenta calambres y dolor muscular intenso con el ejercicio. Durante la prueba, su lactato no aumenta. Se diagnostica enfermedad de McArdle (déficit de fosforilasa muscular).",
     q: "¿Por qué el lactato no aumenta?",
-    o: ["No puede degradar el glucógeno muscular, por lo que no hay sustrato para la glucólisis", "Se forma más ATP por la fosforilación oxidativa", "Su LDH es hiperactiva", "No tiene glucólisis"],
-    e: "Sin fosforilasa, el glucógeno muscular no se moviliza. Sin sustrato glucolítico, hay poco piruvato y poco lactato." }
+    o: ["No puede degradar el glucógeno muscular, por lo que no hay sustrato para la glicólisis", "Se forma más ATP por la fosforilación oxidativa", "Su LDH es hiperactiva", "No tiene glicólisis"],
+    e: "Sin fosforilasa, el glucógeno muscular no se moviliza. Sin sustrato glicolítico, hay poco piruvato y poco lactato." }
 ];

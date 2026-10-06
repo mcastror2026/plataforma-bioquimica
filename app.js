@@ -46,32 +46,26 @@
     const failed = failedQs().length;
     app.innerHTML = `
       <h1>¿Qué quieres practicar hoy?</h1>
-      <p class="lead">Resúmenes breves, preguntas con pistas, juegos y casos clínicos para reforzar cada unidad del curso.</p>
+      <p class="lead">Resúmenes breves, preguntas con pistas, juegos y casos clínicos para reforzar cada tema del curso.</p>
       ${failed ? `<div class="banner"><span>Tienes <b>${failed}</b> pregunta${failed > 1 ? "s" : ""} para repasar.</span><a class="btn" href="#/repaso">Repasar mis errores</a></div>` : ""}
-      <h2 class="sec-title">Unidad II · Metabolismo de carbohidratos</h2>
       <div class="grid">
-        ${MODULES.map((m) => { const k = mastery(m.id); return `
+        <a class="card ext" href="${ENZIMAS_URL}" target="_blank" rel="noopener">
+          <span class="num">00</span>
+          <h3>Enzimas</h3>
+          <span class="tag">Desafío · se abre en otra pestaña</span>
+          <p>Cinética, inhibición y regulación enzimática.</p>
+        </a>
+        ${MODULES.map((m, n) => { const k = mastery(m.id); return `
           <a class="card" href="#/m/${m.id}">
-            <span class="ico" aria-hidden="true">${m.icon}</span>
+            <span class="num">${String(n + 1).padStart(2, "0")}</span>
             <h3>${esc(m.title)}</h3>
             <span class="tag">${esc(m.tag)}</span>
             <p>${esc(m.blurb)}</p>
             <div class="meta"><span>${k.done}/${k.total} dominadas</span><span>${k.pct}%</span></div>
             <div class="bar" role="progressbar" aria-valuenow="${k.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${k.pct}%"></i></div>
           </a>`; }).join("")}
-      </div>
-      <h2 class="sec-title">Unidad I · Enzimas</h2>
-      <div class="grid">
-        <a class="card ext" href="${ENZIMAS_URL}" target="_blank" rel="noopener">
-          <span class="ico" aria-hidden="true">🧬</span><h3>Desafío de enzimas</h3>
-          <span class="tag">Se abre en otra pestaña</span>
-          <p>Cinética, inhibición y regulación enzimática.</p>
-        </a>
-      </div>
-      <h2 class="sec-title">Próximamente</h2>
-      <div class="grid">
-        <div class="card soon"><span class="ico" aria-hidden="true">🥑</span><h3>Metabolismo de lípidos</h3><p>β-oxidación, cuerpos cetónicos y lipoproteínas.</p></div>
-        <div class="card soon"><span class="ico" aria-hidden="true">🥩</span><h3>Aminoácidos y ciclo de la urea</h3><p>Transaminación, desaminación e integración metabólica.</p></div>
+        <div class="card soon"><span class="num">··</span><h3>Metabolismo de lípidos</h3><span class="tag">Próximamente</span><p>β-oxidación, cuerpos cetónicos y lipoproteínas.</p></div>
+        <div class="card soon"><span class="num">··</span><h3>Aminoácidos y ciclo de la urea</h3><span class="tag">Próximamente</span><p>Transaminación, desaminación e integración metabólica.</p></div>
       </div>`;
   }
 
@@ -83,7 +77,7 @@
     if (!tabs.find((t) => t[0] === tab)) tab = "resumen";
     const nav = `
       <a class="crumb" href="#/">← Todos los módulos</a>
-      <h1>${m.icon} ${esc(m.title)}</h1>
+      <h1>${esc(m.title)}</h1>
       <p class="lead">${esc(m.blurb)}</p>
       <nav class="tabs" aria-label="Secciones del módulo">
         ${tabs.map((t) => `<a href="#/m/${id}/${t[0]}" ${t[0] === tab ? 'aria-current="page"' : ""}>${t[1]}</a>`).join("")}
@@ -122,11 +116,11 @@
           <p class="q">${esc(q.q)}</p>
           <div class="opts">${opts.map((o, k) => `<button class="opt" data-k="${k}">${esc(o.t)}</button>`).join("")}</div>
           <div id="fb" aria-live="polite"></div>
-          <div class="row" style="margin-top:14px"><button class="btn ghost" id="hint">${q.hint ? "💡 Ver pista" : "Sin pista"}</button><button class="btn" id="next" hidden>${st.i + 1 === st.list.length ? "Ver resultado" : "Siguiente ▶"}</button></div>
+          <div class="row" style="margin-top:14px"><button class="btn ghost" id="hint">${q.hint ? "Ver pista" : "Sin pista"}</button><button class="btn" id="next" hidden>${st.i + 1 === st.list.length ? "Ver resultado" : "Siguiente ▶"}</button></div>
         </div>`;
       const fb = body.querySelector("#fb"), hintBtn = body.querySelector("#hint"), next = body.querySelector("#next");
       if (!q.hint) hintBtn.disabled = true;
-      hintBtn.onclick = () => { if (answered) return; hinted = true; fb.innerHTML = `<div class="fb hint">💡 ${esc(q.hint)}</div>`; };
+      hintBtn.onclick = () => { if (answered) return; hinted = true; fb.innerHTML = `<div class="fb hint">${esc(q.hint)}</div>`; };
       body.querySelectorAll(".opt").forEach((b) => b.onclick = () => {
         if (answered) return; answered = true;
         const o = opts[+b.dataset.k];
@@ -134,7 +128,7 @@
         if (o.ok) { st.score += hinted ? 5 : 10; } else { b.classList.add("bad"); st.wrong.push(q); }
         record(q, o.ok);
         hintBtn.hidden = true; next.hidden = false; next.focus();
-        fb.innerHTML = `<div class="fb ${o.ok ? "ok" : "bad"}">${o.ok ? "✅ ¡Correcto!" : "❌ Incorrecto."} ${esc(q.e)}</div>`;
+        fb.innerHTML = `<div class="fb ${o.ok ? "ok" : "bad"}">${o.ok ? "✓ ¡Correcto!" : "✗ Incorrecto."} ${esc(q.e)}</div>`;
       });
       next.onclick = () => { st.i++; st.i < st.list.length ? renderQ() : renderEnd(); };
     }
@@ -169,7 +163,7 @@
     const s = store.get(); const prev = s.g[g.id];
     if (prev === undefined || errors < prev) s.g[g.id] = errors; store.set(s);
     const fin = document.createElement("div"); fin.className = "fb ok"; fin.setAttribute("role", "status");
-    fin.innerHTML = `🎉 ¡Completado! ${errors === 0 ? "Sin errores." : errors + " error" + (errors > 1 ? "es" : "") + "."} ${extra || ""}<div class="row" style="margin-top:10px"><button class="btn" id="again">Jugar de nuevo</button></div>`;
+    fin.innerHTML = `✓ ¡Completado! ${errors === 0 ? "Sin errores." : errors + " error" + (errors > 1 ? "es" : "") + "."} ${extra || ""}<div class="row" style="margin-top:10px"><button class="btn" id="again">Jugar de nuevo</button></div>`;
     body.querySelector(".panel").appendChild(fin);
     fin.querySelector("#again").onclick = again;
   }
@@ -231,7 +225,7 @@
         const ok = +b.dataset.k === it.c;
         if (ok) { streak++; best = Math.max(best, streak); } else { errors++; streak = 0; }
         body.querySelectorAll(".catrow .btn").forEach((x) => (x.disabled = true));
-        body.querySelector("#fb").innerHTML = `<div class="fb ${ok ? "ok" : "bad"}">${ok ? "✅ Correcto." : "❌ Era: <b>" + esc(g.categories[it.c]) + "</b>."}</div><div class="row" style="margin-top:10px"><button class="btn" id="n">${i + 1 === list.length ? "Terminar" : "Siguiente ▶"}</button></div>`;
+        body.querySelector("#fb").innerHTML = `<div class="fb ${ok ? "ok" : "bad"}">${ok ? "✓ Correcto." : "✗ Era: <b>" + esc(g.categories[it.c]) + "</b>."}</div><div class="row" style="margin-top:10px"><button class="btn" id="n">${i + 1 === list.length ? "Terminar" : "Siguiente ▶"}</button></div>`;
         const n = body.querySelector("#n"); n.focus();
         n.onclick = () => { i++; if (i < list.length) render(); else { body.querySelector(".cardgame").remove(); body.querySelector(".catrow").remove(); body.querySelector("#fb").remove(); finish(g, body, errors, again, `Mejor racha: ${best}.`); } };
       });
