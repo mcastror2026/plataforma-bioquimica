@@ -122,19 +122,26 @@ const MODULES = [
   {
     id: "glucogeno",
     facts: [["α-1,4", "enlaces lineales"], ["α-1,6", "ramificaciones"], ["G6Pasa", "solo en hígado"]],
-    title: "Síntesis y degradación de glucógeno",
+    title: "Síntesis y degradación de glicógeno",
     tag: "Hígado y músculo",
     blurb: "Cómo se almacena y se moviliza la glucosa según las necesidades.",
     summary: [
-      { h: "Glucogenogénesis (síntesis)", items: [
-        "Glucosa → glucosa-6-P → glucosa-1-P → <b>UDP-glucosa</b>.",
-        "<b>Glucógeno sintasa</b> (enzima regulada) forma enlaces <b>α-1,4</b>; la enzima ramificante forma enlaces <b>α-1,6</b>.",
-        "Se activa con <b>insulina</b> (defosforilada = activa)."
+      { h: "¿Qué es?", items: [
+        "El <b>glicógeno</b> es un homopolisacárido formado por cadenas ramificadas de glucosa.",
+        "Se almacena en el <b>hígado</b> y en el <b>músculo</b>."
       ]},
-      { h: "Glucogenólisis (degradación)", items: [
-        "<b>Glucógeno fosforilasa</b> libera glucosa-1-fosfato; la enzima desramificante actúa sobre las ramas.",
-        "<b>Hígado:</b> tiene glucosa-6-fosfatasa → libera <b>glucosa libre a la sangre</b> (mantiene la glicemia).",
-        "<b>Músculo:</b> no tiene glucosa-6-fosfatasa → usa la glucosa-6-P solo para su propia glicólisis."
+      { h: "Glicogenogénesis (síntesis)", items: [
+        "La glucosa que entra a la célula se fosforila a <b>glucosa-6-fosfato</b> (glucoquinasa, una isoenzima de la hexoquinasa).",
+        "La <b>fosfoglucomutasa</b> la convierte en glucosa-1-fosfato y luego en <b>UDP-glucosa</b>.",
+        "La <b>glicógeno sintasa</b> une las moléculas de UDP-glucosa con enlaces <b>α-1,4</b>; la <b>enzima ramificante</b> agrega los enlaces <b>α-1,6</b> de las ramificaciones.",
+        "Este proceso se activa con <b>insulina</b>."
+      ]},
+      { h: "Glicogenólisis (degradación)", items: [
+        "La <b>glicógeno fosforilasa</b> libera glucosa-1-fosfato al romper los enlaces <b>α-1,4</b>; no puede romper los <b>α-1,6</b> de las ramificaciones.",
+        "La <b>enzima desramificante</b> traslada 3 glucosas de la rama a la cadena vecina y libera la glucosa que queda unida por el enlace α-1,6, para que la fosforilasa siga trabajando.",
+        "La glucosa-1-fosfato se convierte en glucosa-6-fosfato por la fosfoglucomutasa.",
+        "<b>Hígado:</b> se activa con glucagón. La <b>glucosa-6-fosfatasa</b> libera glucosa libre a la sangre y restaura la glicemia, por ejemplo en el ayuno (hipoglicemia).",
+        "<b>Músculo:</b> no tiene glucosa-6-fosfatasa, por lo que la glucosa se usa en el propio músculo. Se activa con adrenalina (epinefrina)."
       ]},
       { h: "Regulación (fosforilación)", items: [
         "<b>Glucagón</b> (hígado) y <b>adrenalina</b> (hígado y músculo) → AMPc → PKA → fosforilan: <b>fosforilasa activa, sintasa inactiva</b>.",
@@ -155,16 +162,16 @@ const MODULES = [
     summary: [
       { h: "Insulina (células β · estado postprandial)", items: [
         "Se libera con <b>glicemia alta</b>.",
-        "↑ captación de glucosa en músculo y tejido adiposo (<b>GLUT4</b>); ↑ glicólisis; ↑ glucogenogénesis; ↑ síntesis de lípidos.",
-        "↓ gluconeogénesis, ↓ glucogenólisis, ↓ lipólisis."
+        "↑ captación de glucosa en músculo y tejido adiposo (<b>GLUT4</b>); ↑ glicólisis; ↑ glicogenogénesis; ↑ síntesis de lípidos.",
+        "↓ gluconeogénesis, ↓ glicogenólisis, ↓ lipólisis."
       ]},
       { h: "Glucagón (células α · ayuno)", items: [
         "Se libera con <b>glicemia baja</b>. Actúa principalmente en el hígado.",
-        "↑ glucogenólisis y ↑ gluconeogénesis; ↑ lipólisis y cetogénesis.",
-        "↓ glicólisis y ↓ glucogenogénesis hepática."
+        "↑ glicogenólisis y ↑ gluconeogénesis; ↑ lipólisis y cetogénesis.",
+        "↓ glicólisis y ↓ glicogenogénesis hepática."
       ]},
       { h: "Adrenalina", items: [
-        "Estrés y ejercicio: ↑ glucogenólisis en hígado y músculo, ↑ glicemia."
+        "Estrés y ejercicio: ↑ glicogenólisis en hígado y músculo, ↑ glicemia."
       ]},
       { h: "Para la práctica de enfermería", items: [
         "<b>DM tipo 1:</b> falta de insulina → hiperglicemia y, si es grave, cetoacidosis.",
@@ -207,7 +214,7 @@ const QUESTIONS = [
     hint: "Si ya hay energía, la célula no necesita producir más.",
     e: "El ATP es una señal de energía abundante: inhibe enzimas de la vía y la glicólisis se frena." },
   { m: "glucolisis", q: "¿Qué consigue la hexoquinasa al fosforilar la glucosa?",
-    o: ["La glucosa queda atrapada dentro de la célula", "Se libera ATP", "La glucosa sale de la célula", "Se forma glucógeno"],
+    o: ["La glucosa queda atrapada dentro de la célula", "Se libera ATP", "La glucosa sale de la célula", "Se forma glicógeno"],
     hint: "La glucosa-6-fosfato no puede salir por los transportadores.",
     e: "Al agregar el fosfato, la glucosa queda retenida en la célula y puede continuar por la vía." },
   { m: "glucolisis", q: "Tres enzimas actúan sobre la glucosa y tienen un Km de 0,1 mM, 1 mM y 10 mM. ¿Cuál tiene mayor afinidad por el sustrato?",
@@ -299,27 +306,27 @@ const QUESTIONS = [
     e: "Aunque haya oxígeno disponible, la célula no puede usarlo. Los tejidos con mayor demanda (cerebro, corazón) fallan primero." },
 
   /* ---------------- GLUCÓGENO ---------------- */
-  { m: "glucogeno", q: "¿Qué tipo de enlaces forma la glucógeno sintasa y cuáles la enzima ramificante?",
+  { m: "glucogeno", q: "¿Qué tipo de enlaces forma la glicógeno sintasa y cuáles la enzima ramificante?",
     o: ["Sintasa: α-1,4; ramificante: α-1,6", "Sintasa: α-1,6; ramificante: α-1,4", "Ambas forman α-1,4", "Sintasa: β-1,4; ramificante: α-1,6"],
     e: "Las cadenas lineales son α-1,4 y los puntos de ramificación α-1,6." },
-  { m: "glucogeno", q: "¿Por qué el glucógeno muscular no sirve para subir la glicemia?",
-    o: ["Porque el músculo no tiene glucosa-6-fosfatasa", "Porque no tiene fosforilasa", "Porque el músculo no sintetiza glucógeno", "Porque el glucagón no lo degrada"],
+  { m: "glucogeno", q: "¿Por qué el glicógeno muscular no sirve para subir la glicemia?",
+    o: ["Porque el músculo no tiene glucosa-6-fosfatasa", "Porque no tiene fosforilasa", "Porque el músculo no sintetiza glicógeno", "Porque el glucagón no lo degrada"],
     hint: "¿Qué enzima convierte la glucosa-6-P en glucosa libre?",
     e: "Sin glucosa-6-fosfatasa, la glucosa-6-P queda en el músculo y alimenta su propia glicólisis." },
-  { m: "glucogeno", q: "¿Qué enzima libera glucosa-1-fosfato desde el glucógeno?",
-    o: ["Glucógeno fosforilasa", "Glucógeno sintasa", "Hexoquinasa", "Glucoquinasa"],
+  { m: "glucogeno", q: "¿Qué enzima libera glucosa-1-fosfato desde el glicógeno?",
+    o: ["Glicógeno fosforilasa", "Glicógeno sintasa", "Hexoquinasa", "Glucoquinasa"],
     e: "La fosforilasa rompe enlaces α-1,4 por fosforólisis (usa Pi, no gasta ATP)." },
-  { m: "glucogeno", q: "En el hígado, tras la acción del glucagón, ¿cuál es el estado de las enzimas del glucógeno?",
+  { m: "glucogeno", q: "En el hígado, tras la acción del glucagón, ¿cuál es el estado de las enzimas del glicógeno?",
     o: ["Fosforilasa activa y sintasa inactiva", "Fosforilasa inactiva y sintasa activa", "Ambas activas", "Ambas inactivas"],
     hint: "El glucagón promueve la degradación.",
     e: "La cascada AMPc → PKA fosforila: activa la fosforilasa e inactiva la sintasa." },
-  { m: "glucogeno", q: "¿Qué hormona NO actúa sobre el glucógeno muscular?",
+  { m: "glucogeno", q: "¿Qué hormona NO actúa sobre el glicógeno muscular?",
     o: ["Glucagón", "Adrenalina", "Insulina", "Todas actúan"],
-    e: "El músculo no tiene receptor de glucagón. La adrenalina sí activa la glucogenólisis muscular." },
-  { m: "glucogeno", q: "¿Cuál es el efecto de la insulina sobre la glucógeno fosforilasa y la glucógeno sintasa?",
+    e: "El músculo no tiene receptor de glucagón. La adrenalina sí activa la glicogenólisis muscular." },
+  { m: "glucogeno", q: "¿Cuál es el efecto de la insulina sobre la glicógeno fosforilasa y la glicógeno sintasa?",
     o: ["Inactiva la fosforilasa y activa la sintasa", "Activa ambas", "Activa la fosforilasa e inactiva la sintasa", "No tiene efecto"],
     e: "La insulina activa fosfatasas que defosforilan ambas enzimas, favoreciendo el almacenamiento." },
-  { m: "glucogeno", q: "En una situación de ejercicio intenso, ¿qué hormona estimula la degradación de glucógeno en el músculo?",
+  { m: "glucogeno", q: "En una situación de ejercicio intenso, ¿qué hormona estimula la degradación de glicógeno en el músculo?",
     o: ["Adrenalina", "Glucagón", "Insulina", "Cortisol únicamente"],
     e: "La adrenalina activa la cascada del AMPc en el músculo (el Ca²⁺ también activa la fosforilasa quinasa)." },
 
@@ -335,7 +342,7 @@ const QUESTIONS = [
     o: ["La inhibe", "La activa", "No tiene efecto", "La invierte"],
     e: "La insulina favorece el uso y almacenamiento de la glucosa, y reduce su producción." },
   { m: "hormonas", q: "¿Cuál de estos efectos corresponde al glucagón?",
-    o: ["↑ gluconeogénesis y ↑ glucogenólisis hepática", "↑ glucogenogénesis", "↑ captación de glucosa por GLUT4", "↓ glicemia"],
+    o: ["↑ gluconeogénesis y ↑ glicogenólisis hepática", "↑ glicogenogénesis", "↑ captación de glucosa por GLUT4", "↓ glicemia"],
     e: "El glucagón aumenta la producción hepática de glucosa." },
   { m: "hormonas", q: "¿Qué valor de glicemia en ayunas se considera normal?",
     o: ["70–99 mg/dL", "40–60 mg/dL", "126–180 mg/dL", "200–250 mg/dL"],
@@ -363,9 +370,9 @@ const QUESTIONS = [
   { m: "casos",
     case: "Una persona lleva 18 horas en ayunas por una cirugía programada. Su glicemia es de 78 mg/dL.",
     q: "¿Qué mecanismo hormonal y metabólico mantiene su glicemia?",
-    o: ["Glucagón: glucogenólisis y gluconeogénesis hepática", "Insulina: glucogenogénesis hepática", "Aumento de GLUT4 en músculo", "Glicólisis hepática acelerada"],
+    o: ["Glucagón: glicogenólisis y gluconeogénesis hepática", "Insulina: glicogenogénesis hepática", "Aumento de GLUT4 en músculo", "Glicólisis hepática acelerada"],
     hint: "¿Hay insulina alta o baja en ayuno?",
-    e: "Con insulina baja y glucagón alto, el hígado libera glucosa desde el glucógeno y sintetiza glucosa nueva." },
+    e: "Con insulina baja y glucagón alto, el hígado libera glucosa desde el glicógeno y sintetiza glucosa nueva." },
   { m: "casos",
     case: "Un paciente con DM tipo 1 se administra su dosis habitual de insulina rápida pero omite el almuerzo. A los 40 minutos presenta sudoración, temblor y confusión.",
     q: "¿Qué ocurre en este paciente?",
@@ -379,14 +386,14 @@ const QUESTIONS = [
   { m: "casos",
     case: "Un lactante tiene hipoglicemia en ayuno y hepatomegalia. Se diagnostica enfermedad de Von Gierke (déficit de glucosa-6-fosfatasa).",
     q: "¿Por qué hay hipoglicemia?",
-    o: ["El hígado no puede convertir glucosa-6-P en glucosa libre", "No puede sintetizar glucógeno", "Tiene exceso de glucagón", "No hay glicólisis"],
-    hint: "La hepatomegalia se debe a acumulación de glucógeno.",
-    e: "Se acumula glucógeno (hepatomegalia) y la glucogenólisis y la gluconeogénesis no pueden liberar glucosa a la sangre." },
+    o: ["El hígado no puede convertir glucosa-6-P en glucosa libre", "No puede sintetizar glicógeno", "Tiene exceso de glucagón", "No hay glicólisis"],
+    hint: "La hepatomegalia se debe a acumulación de glicógeno.",
+    e: "Se acumula glicógeno (hepatomegalia) y la glicogenólisis y la gluconeogénesis no pueden liberar glucosa a la sangre." },
   { m: "casos",
     case: "Una joven presenta calambres y dolor muscular intenso con el ejercicio. Durante la prueba, su lactato no aumenta. Se diagnostica enfermedad de McArdle (déficit de fosforilasa muscular).",
     q: "¿Por qué el lactato no aumenta?",
-    o: ["No puede degradar el glucógeno muscular, por lo que no hay sustrato para la glicólisis", "Se forma más ATP por la fosforilación oxidativa", "Su LDH es hiperactiva", "No tiene glicólisis"],
-    e: "Sin fosforilasa, el glucógeno muscular no se moviliza. Sin sustrato glicolítico, hay poco piruvato y poco lactato." },
+    o: ["No puede degradar el glicógeno muscular, por lo que no hay sustrato para la glicólisis", "Se forma más ATP por la fosforilación oxidativa", "Su LDH es hiperactiva", "No tiene glicólisis"],
+    e: "Sin fosforilasa, el glicógeno muscular no se moviliza. Sin sustrato glicolítico, hay poco piruvato y poco lactato." },
 
   /* ---------- Ampliación con el libro de aula (agrega siempre al final) ---------- */
   { m: "glucolisis", q: "La glicólisis se divide en dos fases. ¿Qué ocurre en la fase preparatoria?",
@@ -410,7 +417,7 @@ const QUESTIONS = [
     o: ["Fructosa, galactosa y glicerol-fosfato", "Solo lactato", "Colesterol y triglicéridos", "Urea"],
     e: "Varios azúcares y el glicerol-fosfato se incorporan a la vía en distintos pasos." },
   { m: "fermentacion", q: "¿Qué se forma en la fermentación alcohólica de las levaduras?",
-    o: ["Etanol y CO₂", "Lactato", "Acetil-CoA", "Glucógeno"],
+    o: ["Etanol y CO₂", "Lactato", "Acetil-CoA", "Glicógeno"],
     e: "En el músculo esquelético se forma lactato; en las levaduras, etanol y CO₂." },
   { m: "fermentacion", q: "En el músculo esquelético, sin oxígeno, el piruvato se convierte en…",
     o: ["Lactato", "Acetil-CoA", "Etanol", "CO₂ y agua"],
@@ -423,7 +430,7 @@ const QUESTIONS = [
     hint: "Los activadores son señales de baja energía.",
     e: "ATP, NADH y acetil-CoA la inhiben, igual que la fosforilación de E1. AMP, NAD⁺ y la desfosforilación la activan." },
   { m: "krebs", q: "¿Qué ocurre con los carbonos del acetil-CoA durante el ciclo de Krebs?",
-    o: ["Se oxidan por completo y se liberan como CO₂", "Se convierten en glucosa", "Se convierten en lactato", "Se almacenan como glucógeno"],
+    o: ["Se oxidan por completo y se liberan como CO₂", "Se convierten en glucosa", "Se convierten en lactato", "Se almacenan como glicógeno"],
     hint: "Es el mismo gas que eliminamos al respirar.",
     e: "Los dos carbonos del acetil-CoA se oxidan por completo y salen de la célula como dióxido de carbono." },
   { m: "fosforilacion", q: "¿Qué complejo de la cadena respiratoria NO bombea protones?",
