@@ -103,7 +103,8 @@ const MODULES = [
     summary: [
       { h: "Cómo funciona", items: [
         "Ocurre en la <b>membrana mitocondrial interna</b>.",
-        "Cuatro complejos: <b>I</b> (NADH deshidrogenasa), <b>II</b> (succinato deshidrogenasa), <b>III</b> (citocromo bc1) y <b>IV</b> (citocromo oxidasa). La <b>ubiquinona</b> y el <b>citocromo c</b> llevan los electrones entre ellos.",
+        "Cuatro complejos:<br><b>I</b> (NADH deshidrogenasa)<br><b>II</b> (succinato deshidrogenasa)<br><b>III</b> (citocromo bc1)<br><b>IV</b> (citocromo oxidasa)",
+        "La <b>ubiquinona</b> y el <b>citocromo c</b> llevan los electrones entre los complejos.",
         "NADH entrega electrones al <b>complejo I</b>; FADH₂ al <b>complejo II</b>; luego pasan por III y IV. El <b>O₂ es el aceptor final</b> y se reduce a H₂O (complejo IV).",
         "Los complejos I, III y IV bombean H⁺ al espacio intermembrana → <b>gradiente de protones</b>. El <b>complejo II no bombea</b> protones.",
         "La <b>ATP sintasa</b> (F₁F₀) usa el retorno de H⁺ para fosforilar ADP → ATP: los protones pasan por el canal F₀ y la síntesis ocurre en F₁."
