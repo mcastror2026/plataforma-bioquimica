@@ -75,7 +75,6 @@
     app.innerHTML = `
       <div class="home">
         <section class="intro">
-          <p class="eyebrow">Bases Bioquímicas · Enfermería</p>
           <h1 class="display">Conceptos básicos para Bioquímica</h1>
           <p class="lead">Resúmenes, preguntas y casos clínicos de tu curso.</p>
           <div class="resume">
