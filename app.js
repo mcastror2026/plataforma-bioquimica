@@ -10,6 +10,7 @@
     { t: "Metabolismo de lípidos", m: "Próximamente" },
     { t: "Aminoácidos y ciclo de la urea", m: "Próximamente" }
   ];
+  const BOT_URL = "https://bot-bioquimico.zapier.app/";
   const QUIZ_SIZE = 8;
   const app = document.getElementById("app");
 
@@ -83,7 +84,14 @@
           </div>
           ${failed ? `<div class="review"><span><b>${failed}</b> pregunta${failed > 1 ? "s" : ""} para repasar</span><a href="#/repaso">Repasar errores</a></div>` : ""}
         </section>
-        <ol class="route" aria-label="Ruta del curso">${stops.join("")}</ol>
+        <div class="rcol">
+          <ol class="route" aria-label="Ruta del curso">${stops.join("")}</ol>
+          <a class="helper" href="${BOT_URL}" target="_blank" rel="noopener">
+            <img src="assets/bot-bioquimico.webp" alt="" width="48" height="48">
+            <span><strong>¿Tienes dudas?</strong><span>Pregunta al Bot Bioquímico · se abre en otra pestaña</span></span>
+            ${ICON.ext}
+          </a>
+        </div>
       </div>`;
   }
 

@@ -160,3 +160,9 @@ main{outline:none;max-width:1080px;margin:0 auto;padding:0 var(--gutter) 40px}
 .foot{max-width:1080px;margin:0 auto;padding:8px var(--gutter) 28px;text-align:center;font:500 13px/1.4 var(--mono);color:var(--muted)}
 .foot p{margin:0}
 .foot .legal{margin-top:6px;font:400 13px/1.45 var(--body);max-width:52ch;margin-inline:auto}
+
+.helper{display:grid;grid-template-columns:48px 1fr auto;gap:14px;align-items:center;margin-top:28px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);transition:border-color .15s}
+.helper:hover{border-color:var(--brand)}
+.helper img{width:48px;height:48px;border-radius:50%;display:block}
+.helper strong{display:block;font-weight:600}
+.helper span span{display:block;font-size:.88rem;color:var(--muted);line-height:1.35}
