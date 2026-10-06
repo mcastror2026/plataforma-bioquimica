@@ -158,3 +158,5 @@ main{outline:none;max-width:1080px;margin:0 auto;padding:0 var(--gutter) 40px}
 .actions{display:flex;gap:10px;flex-wrap:wrap}
 
 .foot{max-width:1080px;margin:0 auto;padding:8px var(--gutter) 28px;text-align:center;font:500 13px/1.4 var(--mono);color:var(--muted)}
+.foot p{margin:0}
+.foot .legal{margin-top:6px;font:400 13px/1.45 var(--body);max-width:52ch;margin-inline:auto}
