@@ -61,7 +61,7 @@
             <h3>${esc(m.title)}</h3>
             <span class="tag">${esc(m.tag)}</span>
             <p>${esc(m.blurb)}</p>
-            <div class="meta"><span>${k.done}/${k.total} dominadas</span><span>${k.pct}%</span></div>
+            <div class="meta"><span title="Preguntas que respondiste bien la última vez">${k.done} de ${k.total} correctas</span><span>${k.pct}%</span></div>
             <div class="bar" role="progressbar" aria-valuenow="${k.pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${k.pct}%"></i></div>
           </a>`; }).join("")}
         <div class="card soon"><span class="num">··</span><h3>Metabolismo de lípidos</h3><span class="tag">Próximamente</span><p>β-oxidación, cuerpos cetónicos y lipoproteínas.</p></div>
