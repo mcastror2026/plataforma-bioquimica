@@ -29,10 +29,10 @@ const MODULES = [
       ]},
       { h: "Puntos de control (enzimas reguladas)", items: [
         "Se regula en sus <b>3 puntos irreversibles</b>: hexoquinasa, fosfofructoquinasa-1 (PFK-1) y piruvato quinasa.",
-        "<b>Hexoquinasa / glucoquinasa</b>: atrapa la glucosa como glucosa-6-fosfato. La hexoquinasa es inhibida por su producto, la glucosa-6-fosfato; la glucoquinasa (hígado, células β) tiene Km alto y actúa cuando hay mucha glucosa.",
+        "<b>Hexoquinasa / glucoquinasa</b>: atrapa la glucosa como glucosa-6-fosfato. La hexoquinasa es inhibida por su producto, la glucosa-6-fosfato; la glucoquinasa (hígado) tiene Km alto y actúa cuando hay mucha glucosa.",
         "<b>Fosfofructoquinasa-1 (PFK-1)</b>: paso limitante. Activada por ADP y AMP; inhibida por ATP y citrato.",
         "<b>Piruvato quinasa</b>: inhibida por ATP y acetil-CoA.",
-        "<b>Hormonas</b>: al subir la glicemia, la insulina (células β) activa la vía; el glucagón la disminuye."
+        "<b>Hormonas</b>: al subir la glicemia, la insulina (que libera el páncreas) activa la vía; el glucagón la disminuye."
       ]},
       { h: "Para la práctica de enfermería", items: [
         "Los <b>eritrocitos</b> no tienen mitocondrias: dependen solo de la glicólisis.",
@@ -157,17 +157,17 @@ const MODULES = [
   {
     id: "hormonas",
     facts: [["70–99", "mg/dL en ayunas"], ["Insulina", "baja la glicemia"], ["Glucagón", "sube la glicemia"]],
-    title: "Regulación por insulina y glucagón",
-    tag: "Homeostasis de la glicemia",
+    title: "Homeostasis de la glicemia",
+    tag: "Regulación por insulina y glucagón",
     blurb: "Dos hormonas opuestas que mantienen la glicemia entre 70 y 99 mg/dL en ayunas.",
     summary: [
-      { h: "Insulina (células β · estado postprandial)", items: [
-        "Se libera con <b>glicemia alta</b>.",
+      { h: "Insulina", items: [
+        "Es una hormona del <b>páncreas</b> que se libera <b>después de comer</b>, cuando la glicemia está alta.",
         "↑ captación de glucosa en músculo y tejido adiposo (<b>GLUT4</b>); ↑ glicólisis; ↑ glicogenogénesis; ↑ síntesis de lípidos.",
         "↓ gluconeogénesis, ↓ glicogenólisis, ↓ lipólisis."
       ]},
-      { h: "Glucagón (células α · ayuno)", items: [
-        "Se libera con <b>glicemia baja</b>. Actúa principalmente en el hígado.",
+      { h: "Glucagón", items: [
+        "Es una hormona del <b>páncreas</b> que se libera <b>en el ayuno</b>, cuando la glicemia está baja. Actúa principalmente en el hígado.",
         "↑ glicogenólisis y ↑ gluconeogénesis; ↑ lipólisis y cetogénesis.",
         "↓ glicólisis y ↓ glicogenogénesis hepática."
       ]},
@@ -335,7 +335,7 @@ const QUESTIONS = [
   /* ---------------- HORMONAS ---------------- */
   { m: "hormonas", q: "¿Qué hormona se libera cuando la glicemia está baja?",
     o: ["Glucagón", "Insulina", "Calcitonina", "Oxitocina"],
-    e: "Las células α del páncreas liberan glucagón con glicemia baja." },
+    e: "El páncreas libera glucagón cuando la glicemia está baja." },
   { m: "hormonas", q: "¿Qué transportador permite a la insulina aumentar la captación de glucosa en músculo y tejido adiposo?",
     o: ["GLUT4", "GLUT1", "GLUT2", "GLUT3"],
     hint: "Es el único dependiente de insulina.",
@@ -414,7 +414,7 @@ const QUESTIONS = [
   { m: "glucolisis", q: "La glicólisis responde a la regulación hormonal de la siguiente manera:",
     o: ["La insulina la activa y el glucagón la disminuye", "El glucagón la activa y la insulina la disminuye", "La insulina y el glucagón la activan por igual", "Ninguna de las dos hormonas la regula"],
     hint: "Después de comer sube la glicemia.",
-    e: "Al subir la glucosa en sangre, las células β del páncreas liberan insulina, que activa el proceso. El glucagón lo disminuye." },
+    e: "Al subir la glucosa en sangre, el páncreas libera insulina, que activa el proceso. El glucagón lo disminuye." },
   { m: "glucolisis", q: "Además de la glucosa, ¿qué otras moléculas pueden entrar a la glicólisis?",
     o: ["Fructosa, galactosa y glicerol-fosfato", "Solo lactato", "Colesterol y triglicéridos", "Urea"],
     e: "Varios azúcares y el glicerol-fosfato se incorporan a la vía en distintos pasos." },
