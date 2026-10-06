@@ -10,7 +10,7 @@
        o    : alternativas. LA PRIMERA ES LA CORRECTA (la app las mezcla)
        hint : pista (opcional)
        e    : explicación que se muestra después de responder
-       case : texto del caso clínico (opcional)
+       case : texto de la situación o caso (opcional)
    ===================================================================== */
 
 const MODULES = [
@@ -185,12 +185,12 @@ const MODULES = [
   {
     id: "casos",
     all: true, // cada ronda muestra todas las preguntas del módulo
-    title: "Casos clínicos de integración",
+    title: "Preguntas de aplicación",
     tag: "Razonamiento analítico",
-    blurb: "Situaciones de enfermería que integran las vías y las hormonas.",
+    blurb: "Situaciones que integran las vías y las hormonas.",
     summary: [
-      { h: "Cómo abordar un caso", items: [
-        "1. Identifica <b>qué le pasa al paciente</b> (hipoxia, ayuno, falta de insulina…).",
+      { h: "Cómo abordar una pregunta de aplicación", items: [
+        "1. Identifica <b>qué ocurre en la situación</b> (hipoxia, ayuno, falta de insulina…).",
         "2. Piensa en la <b>vía o enzima</b> comprometida.",
         "3. Deduce la <b>consecuencia fisiológica</b> y qué esperarías en los exámenes o síntomas."
       ]}
@@ -359,7 +359,7 @@ const QUESTIONS = [
     o: ["Falta de insulina, hiperglicemia y riesgo de cetoacidosis", "Exceso de insulina e hipoglicemia", "Falta de glucagón", "Exceso de GLUT4"],
     e: "Sin insulina la glucosa no entra a las células, hay lipólisis exagerada y producción de cuerpos cetónicos." },
 
-  /* ---------------- CASOS CLÍNICOS ---------------- */
+  /* ---------------- PREGUNTAS DE APLICACIÓN ---------------- */
   { m: "casos",
     case: "Un maratonista de 30 años llega con calambres después de una carrera. Su lactato sérico está elevado.",
     q: "¿Qué explica el aumento de lactato?",
