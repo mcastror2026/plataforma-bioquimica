@@ -21,14 +21,18 @@ const MODULES = [
     summary: [
       { h: "Lo esencial", items: [
         "Ocurre en el <b>citosol</b> de todas las células; no necesita oxígeno.",
-        "<b>Glucosa (6C) → 2 piruvato (3C)</b>. Fase de inversión (gasta 2 ATP) y fase de beneficio (produce 4 ATP y 2 NADH).",
+        "<b>Glucosa (6C) → 2 piruvato (3C)</b>, en 10 reacciones enzimáticas.",
+        "<b>Fase preparatoria</b>: la glucosa se activa con gasto de 2 ATP y se forman 2 triosas fosfato. <b>Fase oxidativa o de ganancia</b>: se producen 4 ATP y 2 NADH.",
         "<b>Balance neto: 2 ATP + 2 NADH + 2 piruvato</b> por glucosa.",
-        "El ATP se forma por <b>fosforilación a nivel de sustrato</b> (fosfoglicerato quinasa y piruvato quinasa)."
+        "El ATP se forma por <b>fosforilación a nivel de sustrato</b> (fosfoglicerato quinasa y piruvato quinasa).",
+        "Además de la glucosa, pueden entrar a la vía fructosa, galactosa y glicerol-fosfato."
       ]},
       { h: "Puntos de control (enzimas reguladas)", items: [
-        "<b>Hexoquinasa / glucoquinasa</b>: atrapa la glucosa como glucosa-6-fosfato. La hexoquinasa es inhibida por su producto; la glucoquinasa (hígado, células β) tiene Km alto y actúa cuando hay mucha glucosa.",
-        "<b>Fosfofructoquinasa-1 (PFK-1)</b>: paso limitante. Activada por AMP y fructosa-2,6-bisfosfato; inhibida por ATP y citrato.",
-        "<b>Piruvato quinasa</b>: activada por fructosa-1,6-bisfosfato; inhibida por glucagón (hígado) y ATP."
+        "Se regula en sus <b>3 puntos irreversibles</b>: hexoquinasa, PFK-1 y piruvato quinasa.",
+        "<b>Hexoquinasa / glucoquinasa</b>: atrapa la glucosa como glucosa-6-fosfato. La hexoquinasa es inhibida por su producto, la glucosa-6-fosfato; la glucoquinasa (hígado, células β) tiene Km alto y actúa cuando hay mucha glucosa.",
+        "<b>Fosfofructoquinasa-1 (PFK-1)</b>: paso limitante. Activada por ADP y AMP; inhibida por ATP y citrato.",
+        "<b>Piruvato quinasa</b>: inhibida por ATP y acetil-CoA.",
+        "<b>Hormonas</b>: al subir la glicemia, la insulina (células β) activa la vía; el glucagón la disminuye."
       ]},
       { h: "Para la práctica de enfermería", items: [
         "Los <b>eritrocitos</b> no tienen mitocondrias: dependen solo de la glicólisis.",
@@ -46,7 +50,9 @@ const MODULES = [
         "Piruvato + NADH → <b>lactato + NAD⁺</b>, catalizado por la <b>lactato deshidrogenasa (LDH)</b>. Ocurre en el citosol.",
         "Su función real es <b>regenerar NAD⁺</b>, para que la glicólisis (GAPDH) pueda seguir produciendo ATP.",
         "Rendimiento: <b>2 ATP netos por glucosa</b> (solo los de la glicólisis).",
-        "Se activa en <b>hipoxia</b>, en el músculo con ejercicio intenso y en células sin mitocondrias (eritrocitos)."
+        "Se activa en <b>hipoxia</b>, en el músculo con ejercicio intenso y en células sin mitocondrias (eritrocitos).",
+        "El destino del piruvato depende del oxígeno. Sin él: <b>fermentación láctica</b> (músculo esquelético, se excreta lactato) o <b>fermentación alcohólica</b> (levaduras, se forman etanol y CO₂).",
+        "El <b>eritrocito</b> termina siempre en lactato, incluso con oxígeno, porque no tiene mitocondrias."
       ]},
       { h: "Ciclo de Cori", items: [
         "El músculo exporta lactato → el hígado lo convierte en glucosa (<b>gluconeogénesis</b>) → la glucosa vuelve al músculo.",
@@ -65,18 +71,21 @@ const MODULES = [
     blurb: "Oxida el acetil-CoA a CO₂ y carga coenzimas para la cadena de transporte.",
     summary: [
       { h: "Del piruvato al ciclo", items: [
-        "El piruvato entra a la mitocondria y el <b>complejo piruvato deshidrogenasa (PDH)</b> lo convierte en <b>acetil-CoA + CO₂ + NADH</b>.",
+        "Con oxígeno, el piruvato entra a la mitocondria por la <b>piruvato translocasa</b> y el <b>complejo piruvato deshidrogenasa (PDH)</b> lo convierte en <b>acetil-CoA + CO₂ + NADH</b> (descarboxilación oxidativa). Es el punto de partida de la respiración celular.",
+        "<b>Regulación de la PDH</b>: inhibida por ATP, NADH, acetil-CoA y por fosforilación de la subunidad E1; activada por AMP, NAD⁺ y por desfosforilación de E1.",
         "La PDH necesita cofactores: <b>tiamina (B1)</b>, riboflavina, niacina, ácido pantoténico y ácido lipoico."
       ]},
       { h: "El ciclo (matriz mitocondrial)", items: [
         "Acetil-CoA (2C) + oxaloacetato (4C) → <b>citrato</b> (6C), por la citrato sintasa.",
         "<b>Por vuelta (1 acetil-CoA):</b> 3 NADH + 1 FADH₂ + 1 GTP/ATP + 2 CO₂.",
+        "El ciclo tiene <b>8 reacciones</b>; 4 son redox (3 reducen NAD⁺ y 1 reduce FAD).",
         "Por glucosa hay 2 vueltas (2 acetil-CoA).",
         "Es una vía <b>aerobia</b>: no usa O₂ directamente, pero depende de él para reoxidar NADH y FADH₂ en la cadena respiratoria."
       ]},
       { h: "Puntos de control", items: [
         "<b>Citrato sintasa</b>, <b>isocitrato deshidrogenasa</b> y <b>α-cetoglutarato deshidrogenasa</b>.",
-        "Se inhiben con alta energía (ATP, NADH) y se activan con baja energía (ADP, Ca²⁺)."
+        "Se inhiben con alta energía (ATP, NADH) y se activan con baja energía (NAD⁺, FAD, ADP, AMP).",
+        "Un NADH alto indica mucho poder reductor disponible y, por lo tanto, alta energía."
       ]},
       { h: "Para la práctica de enfermería", items: [
         "<b>Déficit de tiamina</b> (alcoholismo, desnutrición): PDH falla → se acumulan piruvato y lactato."
@@ -91,13 +100,14 @@ const MODULES = [
     summary: [
       { h: "Cómo funciona", items: [
         "Ocurre en la <b>membrana mitocondrial interna</b>.",
+        "Cuatro complejos: <b>I</b> (NADH deshidrogenasa), <b>II</b> (succinato deshidrogenasa), <b>III</b> (citocromo bc1) y <b>IV</b> (citocromo oxidasa). La <b>ubiquinona</b> y el <b>citocromo c</b> llevan los electrones entre ellos.",
         "NADH entrega electrones al <b>complejo I</b>; FADH₂ al <b>complejo II</b>; luego pasan por III y IV. El <b>O₂ es el aceptor final</b> y se reduce a H₂O (complejo IV).",
-        "Los complejos I, III y IV bombean H⁺ al espacio intermembrana → <b>gradiente de protones</b>.",
-        "La <b>ATP sintasa</b> (complejo V) usa el retorno de H⁺ para fosforilar ADP → ATP."
+        "Los complejos I, III y IV bombean H⁺ al espacio intermembrana → <b>gradiente de protones</b>. El <b>complejo II no bombea</b> protones.",
+        "La <b>ATP sintasa</b> (F₁F₀) usa el retorno de H⁺ para fosforilar ADP → ATP: los protones pasan por el canal F₀ y la síntesis ocurre en F₁."
       ]},
       { h: "Rendimiento", items: [
-        "≈ <b>2,5 ATP por NADH</b> y ≈ <b>1,5 ATP por FADH₂</b>.",
-        "Glucosa en condiciones aerobias: <b>≈ 30–32 ATP</b>. En anaerobiosis: <b>2 ATP</b>."
+        "Según el material del curso: <b>3 ATP por NADH</b> y <b>2 ATP por FADH₂</b>.",
+        "Glucosa en condiciones aerobias: <b>36–38 ATP</b>. En anaerobiosis: <b>2 ATP</b>."
       ]},
       { h: "Para la práctica de enfermería", items: [
         "<b>Cianuro</b> y <b>monóxido de carbono</b> inhiben el complejo IV: la célula no puede usar el O₂ aunque haya.",
@@ -185,7 +195,7 @@ const QUESTIONS = [
   { m: "glucolisis", q: "¿Cuál es la enzima limitante (principal punto de control) de la glicólisis?",
     o: ["Fosfofructoquinasa-1 (PFK-1)", "Enolasa", "Aldolasa", "Fosfoglucosa isomerasa"],
     hint: "Cataliza F6P → fructosa-1,6-bisfosfato.",
-    e: "La PFK-1 es el paso comprometido: la activan AMP y fructosa-2,6-bisfosfato; la inhiben ATP y citrato." },
+    e: "La PFK-1 es el paso comprometido: la activan ADP y AMP; la inhiben ATP y citrato." },
   { m: "glucolisis", q: "Una célula tiene mucho ATP y mucho citrato. ¿Qué esperarías de la glicólisis?",
     o: ["Disminuye, porque la PFK-1 se inhibe", "Aumenta, porque la PFK-1 se activa", "No cambia", "Se detiene la hexoquinasa por falta de glucosa"],
     hint: "Energía abundante: la célula no necesita producir más.",
@@ -212,7 +222,7 @@ const QUESTIONS = [
     hint: "La GAPDH necesita NAD⁺ para funcionar.",
     e: "Sin O₂ no se reoxida el NADH en la cadena respiratoria. La LDH lo oxida a NAD⁺ y permite seguir con la glicólisis." },
   { m: "fermentacion", q: "¿Cuántos ATP netos se obtienen por glucosa en la fermentación láctica?",
-    o: ["2", "4", "30–32", "0"],
+    o: ["2", "4", "36–38", "0"],
     hint: "Solo cuentan los de la glicólisis.",
     e: "La conversión de piruvato a lactato no produce ATP. El total es el de la glicólisis: 2 ATP netos." },
   { m: "fermentacion", q: "¿Qué enzima cataliza la conversión de piruvato en lactato?",
@@ -269,8 +279,8 @@ const QUESTIONS = [
     hint: "El FADH₂ entra por el complejo II.",
     e: "NADH → complejo I; FADH₂ → complejo II. Por eso el FADH₂ rinde menos ATP." },
   { m: "fosforilacion", q: "¿Cuántos ATP se obtienen aproximadamente por glucosa en condiciones aerobias?",
-    o: ["≈ 30–32", "2", "≈ 10", "≈ 100"],
-    e: "2 de la glicólisis, 2 de Krebs y el resto de la fosforilación oxidativa. En anaerobiosis solo 2." },
+    o: ["36–38", "2", "≈ 10", "≈ 100"],
+    e: "Suman 2 ATP de la glicólisis, 2 GTP de Krebs y el resto de la fosforilación oxidativa (3 ATP por NADH y 2 por FADH₂). En anaerobiosis solo 2." },
   { m: "fosforilacion", q: "¿Qué ocurre con un desacoplante de la cadena respiratoria?",
     o: ["Se consume O₂ pero se produce calor en lugar de ATP", "Se produce más ATP", "Se bloquea el consumo de O₂", "Aumenta el gradiente de protones"],
     hint: "Disipa el gradiente sin pasar por la ATP sintasa.",
@@ -367,5 +377,59 @@ const QUESTIONS = [
     case: "Una joven presenta calambres y dolor muscular intenso con el ejercicio. Durante la prueba, su lactato no aumenta. Se diagnostica enfermedad de McArdle (déficit de fosforilasa muscular).",
     q: "¿Por qué el lactato no aumenta?",
     o: ["No puede degradar el glucógeno muscular, por lo que no hay sustrato para la glicólisis", "Se forma más ATP por la fosforilación oxidativa", "Su LDH es hiperactiva", "No tiene glicólisis"],
-    e: "Sin fosforilasa, el glucógeno muscular no se moviliza. Sin sustrato glicolítico, hay poco piruvato y poco lactato." }
+    e: "Sin fosforilasa, el glucógeno muscular no se moviliza. Sin sustrato glicolítico, hay poco piruvato y poco lactato." },
+
+  /* ---------- Ampliación con el libro de aula (agrega siempre al final) ---------- */
+  { m: "glucolisis", q: "La glicólisis se divide en dos fases. ¿Qué ocurre en la fase preparatoria?",
+    o: ["Se gastan 2 ATP, la glucosa se activa y se forman 2 triosas fosfato", "Se producen 4 ATP y 2 NADH", "El piruvato se convierte en lactato", "Ocurre dentro de la mitocondria"],
+    hint: "Es la fase en que la célula invierte energía.",
+    e: "La fase preparatoria gasta 2 ATP. La fase oxidativa o de ganancia produce 4 ATP y 2 NADH." },
+  { m: "glucolisis", q: "¿Cuáles son los tres puntos irreversibles donde se regula la glicólisis?",
+    o: ["Hexoquinasa, PFK-1 y piruvato quinasa", "Aldolasa, enolasa y fosfoglicerato mutasa", "Fosfoglucosa isomerasa, aldolasa y enolasa", "GAPDH, fosfoglicerato quinasa y mutasa"],
+    e: "Las tres reacciones irreversibles son las catalizadas por hexoquinasa, PFK-1 y piruvato quinasa." },
+  { m: "glucolisis", q: "¿Qué molécula inhibe a la hexoquinasa?",
+    o: ["Su producto, la glucosa-6-fosfato", "El piruvato", "El ADP", "La insulina"],
+    e: "Es una retroalimentación negativa: si se acumula glucosa-6-fosfato, la hexoquinasa se frena." },
+  { m: "glucolisis", q: "La piruvato quinasa se inhibe cuando hay niveles altos de…",
+    o: ["ATP y acetil-CoA", "ADP y AMP", "Glucosa", "Insulina"],
+    e: "Ambos indican abundancia de energía y de combustible: no hace falta seguir con la vía." },
+  { m: "glucolisis", q: "¿Cómo regulan las hormonas la glicólisis?",
+    o: ["La insulina la activa y el glucagón la disminuye", "El glucagón la activa y la insulina la disminuye", "Ninguna hormona la regula", "Ambas la inhiben"],
+    hint: "Después de comer sube la glicemia.",
+    e: "Al subir la glucosa en sangre, las células β liberan insulina, que activa el proceso. El glucagón lo disminuye." },
+  { m: "glucolisis", q: "Además de la glucosa, ¿qué otras moléculas pueden entrar a la glicólisis?",
+    o: ["Fructosa, galactosa y glicerol-fosfato", "Solo lactato", "Colesterol y triglicéridos", "Urea"],
+    e: "Varios azúcares y el glicerol-fosfato se incorporan a la vía en distintos pasos." },
+  { m: "fermentacion", q: "¿Qué se forma en la fermentación alcohólica de las levaduras?",
+    o: ["Etanol y CO₂", "Lactato", "Acetil-CoA", "Glucógeno"],
+    e: "En el músculo esquelético se forma lactato; en las levaduras, etanol y CO₂." },
+  { m: "fermentacion", q: "En el músculo esquelético, sin oxígeno, el piruvato se convierte en…",
+    o: ["Lactato", "Acetil-CoA", "Etanol", "CO₂ y agua"],
+    e: "Es la fermentación láctica. El lactato se excreta de la célula." },
+  { m: "krebs", q: "¿Qué transportador introduce el piruvato a la mitocondria?",
+    o: ["Piruvato translocasa", "GLUT4", "Carnitina", "ATP sintasa"],
+    e: "Una vez en la matriz, la PDH lo convierte en acetil-CoA." },
+  { m: "krebs", q: "¿Cuál de estas moléculas inhibe a la piruvato deshidrogenasa?",
+    o: ["ATP, NADH y acetil-CoA", "AMP y NAD⁺", "Desfosforilación de la subunidad E1", "ADP"],
+    hint: "Los activadores son señales de baja energía.",
+    e: "ATP, NADH y acetil-CoA la inhiben, igual que la fosforilación de E1. AMP, NAD⁺ y la desfosforilación la activan." },
+  { m: "krebs", q: "En el ciclo de Krebs hay 4 reacciones redox con coenzimas. ¿Cuáles son?",
+    o: ["3 reducen NAD⁺ a NADH y 1 reduce FAD a FADH₂", "2 reducen NAD⁺ y 2 reducen FAD", "Las 4 reducen NAD⁺", "Las 4 reducen FAD"],
+    e: "Por eso cada vuelta rinde 3 NADH y 1 FADH₂, además de 1 GTP y 2 CO₂." },
+  { m: "krebs", q: "Si hay niveles altos de NADH en la mitocondria, ¿qué indica?",
+    o: ["Mucho poder reductor disponible y alta energía: el ciclo se inhibe", "Falta de energía: el ciclo se activa", "Que no hay oxígeno y se activa la PDH", "Que el ciclo no puede detenerse"],
+    e: "Un NADH alto significa abundancia de electrones para la cadena y, por lo tanto, altos niveles de ATP." },
+  { m: "fosforilacion", q: "¿Qué complejo de la cadena respiratoria NO bombea protones?",
+    o: ["Complejo II (succinato deshidrogenasa)", "Complejo I", "Complejo III", "Complejo IV"],
+    hint: "Es el que también participa en el ciclo de Krebs.",
+    e: "Los complejos I, III y IV bombean protones. El II solo transfiere electrones desde el FADH₂." },
+  { m: "fosforilacion", q: "¿Qué moléculas llevan los electrones entre los complejos de la cadena?",
+    o: ["Ubiquinona (coenzima Q) y citocromo c", "NAD⁺ y FAD", "Acetil-CoA y CoA", "ATP y ADP"],
+    e: "La ubiquinona conecta los complejos I y II con el III; el citocromo c conecta el III con el IV." },
+  { m: "fosforilacion", q: "Según el material del curso, ¿cuántos ATP rinde cada NADH y cada FADH₂ en la cadena?",
+    o: ["3 y 2", "2 y 3", "1 y 1", "5 y 4"],
+    e: "Con esos valores, la oxidación completa de una glucosa rinde entre 36 y 38 ATP." },
+  { m: "fosforilacion", q: "En la ATP sintasa, ¿por dónde pasan los protones y dónde se sintetiza el ATP?",
+    o: ["Pasan por el canal F₀ y el ATP se forma en F₁", "Pasan por F₁ y el ATP se forma en F₀", "Pasan por el complejo I", "Pasan por la ubiquinona"],
+    e: "El retorno de H⁺ por F₀ impulsa la reacción entre ADP y Pi en la unidad catalítica F₁." }
 ];
