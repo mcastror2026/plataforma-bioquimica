@@ -175,8 +175,8 @@ const MODULES = [
         "Estrés y ejercicio: ↑ glicogenólisis en hígado y músculo, ↑ glicemia."
       ]},
       { h: "Para la práctica de enfermería", items: [
-        "<b>DM tipo 1:</b> falta de insulina → hiperglicemia y, si es grave, cetoacidosis.",
-        "<b>DM tipo 2:</b> resistencia a la insulina.",
+        "<b>Diabetes mellitus tipo 1:</b> falta de insulina → hiperglicemia y, si es grave, cetoacidosis.",
+        "<b>Diabetes mellitus tipo 2:</b> resistencia a la insulina.",
         "<b>Hipoglicemia</b> (&lt; 70 mg/dL): sudoración, temblor y taquicardia por liberación de adrenalina."
       ]}
     ]
@@ -376,7 +376,7 @@ const QUESTIONS = [
     hint: "¿Hay insulina alta o baja en ayuno?",
     e: "Con insulina baja y glucagón alto, el hígado libera glucosa desde el glicógeno y sintetiza glucosa nueva." },
   { m: "casos",
-    case: "Un paciente con DM tipo 1 se administra su dosis habitual de insulina rápida pero omite el almuerzo. A los 40 minutos presenta sudoración, temblor y confusión.",
+    case: "Un paciente con diabetes mellitus tipo 1 se administra su dosis habitual de insulina rápida pero omite el almuerzo. A los 40 minutos presenta sudoración, temblor y confusión.",
     q: "¿Qué ocurre en este paciente?",
     o: ["La insulina bajó la glicemia sin aporte de glucosa: hipoglicemia con respuesta de adrenalina", "Falta de insulina: cetoacidosis", "Exceso de glucagón: hiperglicemia", "Aumento de la gluconeogénesis por la insulina"],
     e: "La insulina activa GLUT4 y bloquea la producción hepática de glucosa. La conducta es administrar glucosa de absorción rápida según protocolo." },
