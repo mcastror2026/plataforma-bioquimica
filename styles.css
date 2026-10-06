@@ -156,3 +156,5 @@ main{outline:none;max-width:1080px;margin:0 auto;padding:0 var(--gutter) 40px}
 .wrong div:first-of-type{border-top:0}
 .wrong small{display:block;color:var(--muted);margin-top:4px}
 .actions{display:flex;gap:10px;flex-wrap:wrap}
+
+.foot{max-width:1080px;margin:0 auto;padding:8px var(--gutter) 28px;text-align:center;font:500 13px/1.4 var(--mono);color:var(--muted)}
