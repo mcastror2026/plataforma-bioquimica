@@ -82,7 +82,7 @@ const MODULES = [
         "<b>Por vuelta (1 acetil-CoA):</b> 3 NADH + 1 FADH₂ + 1 GTP/ATP + 2 CO₂.",
         "El ciclo tiene <b>8 reacciones</b>; 4 son redox (3 reducen NAD⁺ y 1 reduce FAD).",
         "Por glucosa hay 2 vueltas (2 acetil-CoA).",
-        "Es una vía <b>aerobia</b>: no usa O₂ directamente, pero depende de él para reoxidar NADH y FADH₂ en la cadena respiratoria."
+        "<b>En presencia de oxígeno</b>, el ciclo funciona con normalidad: no usa O₂ directamente, pero depende de él para reoxidar NADH y FADH₂ en la cadena respiratoria."
       ]},
       { h: "Puntos de control", items: [
         "<b>Citrato sintasa</b>, <b>isocitrato deshidrogenasa</b> y <b>α-cetoglutarato deshidrogenasa</b>.",
