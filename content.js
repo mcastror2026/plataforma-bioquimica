@@ -143,9 +143,10 @@ const MODULES = [
         "<b>Hígado:</b> se activa con glucagón. La <b>glucosa-6-fosfatasa</b> libera glucosa libre a la sangre y restaura la glicemia, por ejemplo en el ayuno (hipoglicemia).",
         "<b>Músculo:</b> no tiene glucosa-6-fosfatasa, por lo que la glucosa se usa en el propio músculo. Se activa con adrenalina (epinefrina)."
       ]},
-      { h: "Regulación (fosforilación)", items: [
-        "<b>Glucagón</b> (hígado) y <b>adrenalina</b> (hígado y músculo) → AMPc → PKA → fosforilan: <b>fosforilasa activa, sintasa inactiva</b>.",
-        "<b>Insulina</b> → activa fosfatasas → <b>sintasa activa, fosforilasa inactiva</b>."
+      { h: "Regulación hormonal", items: [
+        "<b>Insulina</b> (después de comer): <b>activa</b> la síntesis de glicógeno e <b>inhibe</b> su degradación.",
+        "<b>Glucagón</b> (ayuno): <b>activa</b> la degradación de glicógeno en el hígado e <b>inhibe</b> su síntesis.",
+        "<b>Adrenalina</b> (estrés o ejercicio): <b>activa</b> la degradación de glicógeno en el hígado y en el músculo."
       ]},
       { h: "Para la práctica de enfermería", items: [
         "<b>Von Gierke</b> (déficit de glucosa-6-fosfatasa): hipoglicemia en ayuno y hepatomegalia.",
