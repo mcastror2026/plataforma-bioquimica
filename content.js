@@ -22,7 +22,7 @@ const MODULES = [
     summary: [
       { h: "Lo esencial", items: [
         "Ocurre en el <b>citosol</b> de todas las células; no necesita oxígeno.",
-        "<b>Glucosa (6C) → 2 piruvato (3C)</b>, en 10 reacciones enzimáticas.",
+        "<b>Glucosa (6C) → 2 piruvato (3C) + 2 ATP + 2 NADH</b>, en 10 reacciones enzimáticas.",
         "<b>Fase preparatoria</b>: la glucosa se activa con gasto de 2 ATP y se forman 2 triosas fosfato. <b>Fase oxidativa o de ganancia</b>: se producen 4 ATP y 2 NADH.",
         "<b>Balance neto: 2 ATP + 2 NADH + 2 piruvato</b> por glucosa.",
         "Además de la glucosa, pueden entrar a la vía fructosa, galactosa y glicerol-fosfato."
