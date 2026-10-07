@@ -371,7 +371,7 @@ const QUESTIONS = [
     q: "¿Por qué aumenta el lactato?",
     o: ["El CO inhibe la citocromo oxidasa: la cadena respiratoria se detiene y el piruvato se convierte en lactato", "El CO inhibe la hexoquinasa: la glucosa se acumula y se convierte en lactato", "El CO activa el ciclo de Krebs: se forma más acetil-CoA y sube el lactato", "El CO aumenta la insulina: se bloquea la glicólisis y sube el lactato"],
     hint: "Piensa en qué ocurre con la cadena respiratoria si se bloquea uno de sus complejos.",
-    e: "El monóxido de carbono inhibe la citocromo oxidasa (complejo IV), por lo que la cadena respiratoria se detiene aunque haya oxígeno. Sin poder reoxidar el NADH, el piruvato se convierte en lactato (fermentación láctica) y la célula sigue obteniendo ATP por glicólisis." },
+    e: "El monóxido de carbono inhibe la citocromo oxidasa (complejo IV), por lo que la cadena respiratoria se detiene aunque haya oxígeno. Sin poder reoxidar el NADH, el piruvato se convierte en lactato (fermentación láctica) y la célula sigue obteniendo ATP por glicólisis. Además, el CO se une a la hemoglobina y reduce el transporte de oxígeno a los tejidos." },
   { m: "casos",
     case: "Una persona lleva 18 horas en ayunas por una cirugía programada. Su glicemia es de 78 mg/dL.",
     q: "¿Qué mecanismo hormonal y metabólico mantiene su glicemia?",
