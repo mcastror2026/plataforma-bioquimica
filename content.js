@@ -27,19 +27,29 @@ const MODULES = [
         "Es el conjunto de reacciones químicas que ocurren dentro de un organismo.",
         "Algunas producen energía a partir de los nutrientes; otras usan energía para sintetizar las moléculas que el organismo necesita."
       ]},
-      { h: "Catabolismo", items: [
-        "Degrada carbohidratos, lípidos y proteínas (los nutrientes) por reacciones de <b>oxidación</b>.",
-        "Libera energía química, que se guarda como <b>ATP</b>.",
-        "Los electrones que se obtienen son recogidos por coenzimas como <b>NADH</b> y <b>FADH₂</b>."
+      { h: "Cómo obtienen la energía los organismos", items: [
+        "<b>Autótrofos</b>: satisfacen por sí mismos todos sus requerimientos de energía, como los organismos fotosintéticos.",
+        "<b>Heterótrofos</b>: necesitan un suministro constante de moléculas de las que obtener energía. Los animales, incluidos los seres humanos, son heterótrofos."
       ]},
-      { h: "Anabolismo", items: [
-        "Usa la energía del ATP para sintetizar biomoléculas a partir de precursores pequeños.",
+      { h: "Catabolismo", items: [
+        "Degrada moléculas grandes (carbohidratos, lípidos y proteínas) en moléculas simples, por reacciones de <b>oxidación</b>.",
+        "Libera energía química, que se guarda como <b>ATP</b>.",
+        "Los electrones que se obtienen son recogidos por coenzimas como <b>NADH</b> y <b>FADH₂</b>.",
+        "Las moléculas simples que se forman pueden usarse después como precursores de estructuras más complejas."
+      ]},
+      { h: "Anabolismo (rutas biosintéticas)", items: [
+        "Usa la energía del ATP para sintetizar macromoléculas a partir de precursores pequeños.",
         "Son reacciones de <b>reducción</b>."
       ]},
       { h: "Cómo se conectan", items: [
         "La energía liberada por el catabolismo se usa en las reacciones del anabolismo, por medio del ATP.",
         "El <b>acetil-CoA</b> es el punto de integración del metabolismo: participa en las vías de carbohidratos, lípidos y aminoácidos.",
         "Se obtiene del piruvato de la glicólisis, de los ácidos grasos y de los aminoácidos, y es el punto de partida de muchas rutas anabólicas."
+      ]},
+      { h: "Respiración celular y fermentación", items: [
+        "La <b>respiración celular</b> incluye la oxidación del piruvato, el ciclo de Krebs y la fosforilación oxidativa. Ocurre en la mitocondria y necesita oxígeno.",
+        "Con oxígeno se obtienen <b>36–38 ATP</b> por glucosa; sin oxígeno, solo <b>2 ATP</b>.",
+        "Sin oxígeno, el piruvato va a <b>fermentación</b>: láctica en el músculo y alcohólica en las levaduras."
       ]}
     ]
   },
