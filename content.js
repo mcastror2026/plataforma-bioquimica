@@ -49,7 +49,8 @@ const MODULES = [
       { h: "Respiración celular y fermentación", items: [
         "La <b>respiración celular</b> incluye la oxidación del piruvato, el ciclo de Krebs y la fosforilación oxidativa. Ocurre en la mitocondria y necesita oxígeno.",
         "Con oxígeno se obtienen <b>36–38 ATP</b> por glucosa; sin oxígeno, solo <b>2 ATP</b>.",
-        "Sin oxígeno, el piruvato va a <b>fermentación</b>: láctica en el músculo y alcohólica en las levaduras."
+        "Sin oxígeno, el piruvato va a <b>fermentación</b>: láctica en el músculo y alcohólica en las levaduras.",
+        "La <b>fotosíntesis</b> produce la glucosa y el oxígeno que se usan en la respiración celular: los dos procesos se complementan."
       ]}
     ]
   },
