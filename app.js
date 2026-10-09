@@ -2,9 +2,7 @@
 (function () {
   "use strict";
   const KEY = "bqe_progress_v1";
-  const EXTERNAL = [
-    { t: "Enzimas", m: "Desafío · se abre en otra pestaña", url: "https://enzimas.netlify.app/" }
-  ];
+  const EXTERNAL = [];
   const SOON = [
     { t: "Metabolismo de lípidos", m: "Próximamente" },
     { t: "Aminoácidos y ciclo de la urea", m: "Próximamente" }
@@ -56,7 +54,7 @@
     const failed = failedQs().length;
     const next = MODULES.find((m) => mastery(m.id).pct < PASS && m.id !== "casos") || MODULES[0];
     const k = mastery(next.id), started = k.seen > 0;
-    let n = 1;
+    let n = 0;
     const stops = [
       ...EXTERNAL.map((e, i) => `
         <li class="stop ext"><a href="${e.url}" target="_blank" rel="noopener">
@@ -97,7 +95,7 @@
 
   /* ---------- módulo ---------- */
   function shell(m, tab, inner) {
-    const idx = MODULES.indexOf(m) + 2;
+    const idx = MODULES.indexOf(m) + 1;
     if (tab === "quiz") return `
       <div class="topbar"><a class="back" href="#/m/${m.id}/resumen">${ICON.back} ${esc(m.title)}</a></div>
       <div style="padding-top:8px">${inner}</div>`;
@@ -158,6 +156,8 @@
     body.querySelectorAll("[data-e]").forEach((b) => b.onclick = () => runQuiz(m, QUESTIONS.filter((q) => q.m === m.id && q.etapa === +b.dataset.e), body, { etapa: +b.dataset.e }));
   }
 
+  const figHtml = (q) => `<a href="${q.img}" target="_blank" rel="noopener" aria-label="Ampliar la gráfica"><img class="qimg" src="${q.img}" alt="${esc(q.imgAlt || "")}"></a><small class="qzoom">Toca la gráfica para ampliarla</small>`;
+
   /* ---------- preguntas ---------- */
   function runQuiz(m, pool, body, opts) {
     const stg = opts && opts.etapa;
@@ -172,7 +172,7 @@
       body.innerHTML = `
         <div class="bars" role="progressbar" aria-valuemin="1" aria-valuemax="${st.list.length}" aria-valuenow="${st.i + 1}">${st.list.map((_, k) => `<i class="${k < st.i ? "on" : k === st.i ? "cur" : ""}"></i>`).join("")}</div>
         <div class="qmeta"><span>${stg ? "Etapa " + stg + " · " : ""}Pregunta ${st.i + 1} de ${st.list.length}</span></div>
-        ${q.case ? `<div class="case"><b>Situación</b>${esc(q.case)}${q.img ? `<a href="${q.img}" target="_blank" rel="noopener" aria-label="Ampliar la gráfica"><img class="qimg" src="${q.img}" alt="${esc(q.imgAlt || "")}"></a><small class="qzoom">Toca la gráfica para ampliarla</small>` : ""}</div>` : ""}
+        ${q.case ? `<div class="case"><b>Situación</b>${esc(q.case)}${q.img ? figHtml(q) : ""}</div>` : q.img ? `<div class="qfig">${figHtml(q)}</div>` : ""}
         <h2 class="q">${esc(q.q)}</h2>
         <div class="opts">${opts.map((o, k) => `<button class="opt" data-k="${k}"><span class="k">${L[k]}</span><span>${esc(o.t)}</span><span class="st"></span></button>`).join("")}</div>
         <div id="fb" aria-live="polite"></div>

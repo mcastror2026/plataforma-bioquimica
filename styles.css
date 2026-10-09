@@ -179,3 +179,4 @@ main{outline:none;max-width:1080px;margin:0 auto;padding:0 var(--gutter) 40px}
 .stage .lock{font:500 13px/1 var(--mono);color:var(--muted);white-space:nowrap}
 .stage .btn{min-height:46px;padding:0 18px;white-space:nowrap}
 .stagehint{font-size:.9rem;color:var(--muted);margin:4px 2px 0}
+.qfig{margin-bottom:16px}
