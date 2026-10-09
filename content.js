@@ -11,9 +11,38 @@
        hint : pista (opcional)
        e    : explicación que se muestra después de responder
        case : texto de la situación o caso (opcional)
+       etapa: 1 o 2 (solo en módulos con "desafio": cada etapa tiene sus preguntas)
    ===================================================================== */
 
 const MODULES = [
+  {
+    id: "intro",
+    desafio: { need: 8 }, // desafío por etapas: se necesitan 8 de 10 correctas para abrir la Etapa 2
+    facts: [["Catabolismo", "degrada y libera ATP"], ["Anabolismo", "sintetiza y usa ATP"], ["Acetil-CoA", "punto de integración"]],
+    title: "Introducción al metabolismo",
+    tag: "Catabolismo y anabolismo",
+    blurb: "Cómo la célula obtiene y usa la energía.",
+    summary: [
+      { h: "¿Qué es el metabolismo?", items: [
+        "Es el conjunto de reacciones químicas que ocurren dentro de un organismo.",
+        "Algunas producen energía a partir de los nutrientes; otras usan energía para sintetizar las moléculas que el organismo necesita."
+      ]},
+      { h: "Catabolismo", items: [
+        "Degrada carbohidratos, lípidos y proteínas (los nutrientes) por reacciones de <b>oxidación</b>.",
+        "Libera energía química, que se guarda como <b>ATP</b>.",
+        "Los electrones que se obtienen son recogidos por coenzimas como <b>NADH</b> y <b>FADH₂</b>."
+      ]},
+      { h: "Anabolismo", items: [
+        "Usa la energía del ATP para sintetizar biomoléculas a partir de precursores pequeños.",
+        "Son reacciones de <b>reducción</b>."
+      ]},
+      { h: "Cómo se conectan", items: [
+        "La energía liberada por el catabolismo se usa en las reacciones del anabolismo, por medio del ATP.",
+        "El <b>acetil-CoA</b> es el punto de integración del metabolismo: participa en las vías de carbohidratos, lípidos y aminoácidos.",
+        "Se obtiene del piruvato de la glicólisis, de los ácidos grasos y de los aminoácidos, y es el punto de partida de muchas rutas anabólicas."
+      ]}
+    ]
+  },
   {
     id: "glucolisis",
     facts: [["2", "ATP netos"], ["2", "NADH"], ["2", "piruvato"]],
@@ -470,5 +499,66 @@ const QUESTIONS = [
     case: "La enfermedad de Hers afecta a las células del hígado, que no pueden producir la enzima glicógeno fosforilasa, necesaria para degradar el glicógeno hepático. Los pacientes tienen períodos de glicemia muy baja (hipoglicemia).",
     q: "Después de correr 15 minutos, ¿cómo estará el glicógeno del músculo de un paciente con esta enfermedad, comparado con una persona sana?",
     o: ["Igual que en una persona sana: disminuido, porque la enfermedad solo afecta al hígado", "Más alto, porque el músculo no puede degradar su glicógeno", "Más bajo que en una persona sana, porque el hígado no libera glucosa", "No se puede degradar el glicógeno en ningún tejido"],
-    e: "La enfermedad afecta la enzima del hígado. El músculo tiene la suya, por lo que degrada su glicógeno con normalidad al correr. Lo que queda alterado es el glicógeno del hígado, que no se puede degradar." }
+    e: "La enfermedad afecta la enzima del hígado. El músculo tiene la suya, por lo que degrada su glicógeno con normalidad al correr. Lo que queda alterado es el glicógeno del hígado, que no se puede degradar." },
+  /* ---------- Desafío: Introducción al metabolismo (2 etapas de 10) ---------- */
+  { m: "intro", etapa: 1, q: "¿Qué entendemos por metabolismo?",
+    o: ["El conjunto de reacciones químicas que ocurren en los seres vivos", "Solo las reacciones que consumen energía", "Reacciones que ocurren solo en mitocondrias", "Todas las reacciones no enzimáticas del cuerpo"],
+    e: "El metabolismo abarca todas las reacciones químicas reguladas por enzimas que permiten la vida. Recuerda: incluye tanto procesos que consumen como los que liberan energía." },
+  { m: "intro", etapa: 1, q: "¿Cuál es la función principal del metabolismo?",
+    o: ["Permitir el crecimiento, reparación y mantenimiento del organismo", "Regular la temperatura corporal sin producir energía", "Convertir toda la energía de los alimentos en calor", "Almacenar energía exclusivamente sin producir precursores"],
+    e: "El metabolismo provee energía y materiales para las funciones vitales. Recuerda: no se limita a generar calor, sino que construye y mantiene tejidos vivos." },
+  { m: "intro", etapa: 1, q: "¿Qué diferencia existe entre anabolismo y catabolismo?",
+    o: ["El anabolismo construye moléculas y el catabolismo las degrada", "Ambos usan las mismas enzimas en la misma dirección", "El anabolismo degrada moléculas para obtener energía", "No hay diferencia entre ambos"],
+    e: "El anabolismo requiere energía para formar estructuras; el catabolismo libera energía al degradarlas. Recuerda: son procesos complementarios, no opuestos absolutos." },
+  { m: "intro", etapa: 1, q: "¿Qué molécula es la principal fuente de energía celular?",
+    o: ["ATP", "NADH", "GTP", "Glucosa"],
+    e: "El ATP actúa como moneda energética universal. Recuerda: aunque la glucosa es el combustible, el ATP es quien entrega la energía directamente." },
+  { m: "intro", etapa: 1, q: "¿Dónde ocurre principalmente la obtención de energía en las células eucariontes animales?",
+    o: ["En la mitocondria", "En el citosol", "En el núcleo", "En los peroxisomas"],
+    e: "Las mitocondrias son las 'centrales energéticas' celulares. Recuerda: ahí ocurre la respiración celular aeróbica, donde se genera la mayor parte del ATP." },
+  { m: "intro", etapa: 1, q: "¿Qué proceso permite a la célula sobrevivir sin usar oxígeno?",
+    o: ["Fermentación", "Gluconeogénesis", "Respiración anaerobia con nitratos", "Respiración aeróbica"],
+    e: "La fermentación regenera NAD⁺ para mantener la glicólisis funcionando. Recuerda: la fermentación no produce ATP por sí sola, solo permite que la glicólisis continúe." },
+  { m: "intro", etapa: 1, q: "¿Qué gas es necesario para la respiración aeróbica?",
+    o: ["Oxígeno", "Ozono", "Óxido nítrico", "Dióxido de carbono"],
+    e: "El oxígeno es esencial como aceptor final de electrones. Recuerda: sin oxígeno, la cadena respiratoria se detiene y baja la producción de ATP." },
+  { m: "intro", etapa: 1, q: "¿Por qué es importante la glucosa en el metabolismo?",
+    o: ["Porque es una fuente inmediata de energía", "Porque es el principal almacén de energía a largo plazo", "Porque aporta nitrógeno a los aminoácidos", "Porque produce oxígeno en la respiración"],
+    e: "La glucosa es el combustible principal para obtener ATP. Recuerda: los lípidos almacenan energía, pero la glucosa se usa primero por rapidez." },
+  { m: "intro", etapa: 1, q: "¿Qué relación tiene la respiración celular con la fotosíntesis?",
+    o: ["La fotosíntesis produce la glucosa usada en la respiración", "La respiración produce oxígeno y la fotosíntesis lo consume", "La fotosíntesis usa oxígeno para fijar CO₂", "La respiración ocurre solo en plantas"],
+    e: "Los productos de la fotosíntesis (glucosa y oxígeno) se usan en la respiración. Recuerda: son procesos complementarios en el ciclo de la energía." },
+  { m: "intro", etapa: 1, q: "¿Qué ocurre cuando una célula eucarionte animal no recibe suficiente oxígeno?",
+    o: ["Recurre a la fermentación para regenerar NAD⁺ y sostener la glicólisis (ATP por nivel de sustrato)", "Detiene completamente la glicólisis", "Aumenta el uso de oxígeno en la mitocondria", "Cambia el ADN para producir más energía"],
+    e: "En condiciones de hipoxia, la célula eucarionte animal recurre a la fermentación para regenerar NAD⁺ y mantener la glicólisis activa. Recuerda: la fermentación no genera energía directamente, pero permite sostener la producción de ATP por glicólisis a nivel de sustrato." },
+  { m: "intro", etapa: 2, q: "¿Qué sucede con la energía liberada en las reacciones catabólicas?",
+    o: ["Se almacena en forma de ATP", "Se disipa completamente como calor", "Se almacena solo como grasa", "Se usa solo para movimiento"],
+    e: "El ATP guarda la energía liberada para que la célula la use. Recuerda: el calor es inevitable, pero el ATP conserva parte de esa energía para reacciones futuras." },
+  { m: "intro", etapa: 2, q: "¿Qué ocurre cuando la célula necesita fabricar nuevas proteínas?",
+    o: ["Utiliza energía del ATP para unir aminoácidos", "Ocurre en la mitocondria sin gasto energético", "No requiere energía si hay suficientes aminoácidos", "Usa solo energía de la glicólisis"],
+    e: "La síntesis de proteínas requiere energía del ATP. Recuerda: esta energía impulsa la unión entre aminoácidos para formar cadenas polipeptídicas." },
+  { m: "intro", etapa: 2, q: "¿Qué describe mejor la función del ATP en la célula?",
+    o: ["Transportar y suministrar energía a reacciones que la necesitan", "Almacenar información genética", "Ser cofactor sin valor energético", "Generar ADN"],
+    e: "El ATP transfiere energía a procesos biológicos. Recuerda: actúa como intermediario entre las reacciones que liberan energía y las que la consumen." },
+  { m: "intro", etapa: 2, q: "¿Cómo se libera la energía del ATP?",
+    o: ["Cuando se rompe un enlace de fosfato", "Cuando se une al ADN", "Cuando se separa en AMP y P sin energía", "Al absorber luz"],
+    e: "Al romperse un enlace de fosfato se libera energía útil. Recuerda: ese proceso se llama hidrólisis y permite impulsar funciones celulares." },
+  { m: "intro", etapa: 2, q: "¿Qué organismos realizan respiración celular?",
+    o: ["Todos los seres vivos que usan oxígeno", "Solo animales", "Solo plantas", "Solo microorganismos"],
+    e: "La respiración celular ocurre en animales, plantas y microorganismos. Recuerda: todos necesitan liberar energía de los nutrientes." },
+  { m: "intro", etapa: 2, q: "¿Qué relación hay entre la alimentación y el metabolismo?",
+    o: ["Los nutrientes aportan materia y energía para las reacciones metabólicas", "Aporta solo vitaminas sin afectar la energía", "Solo aporta energía sin dar materia", "No tiene relación con el metabolismo"],
+    e: "Los nutrientes son la base del metabolismo. Recuerda: sin ellos, la célula no tendría ni materiales ni energía para sus funciones." },
+  { m: "intro", etapa: 2, q: "¿Qué pasa con el ATP una vez utilizado?",
+    o: ["Se regenera a partir del ADP", "Se exporta fuera de la célula", "Se oxida a AMP y no se regenera", "Se almacena para uso futuro"],
+    e: "El ADP puede volver a transformarse en ATP mediante la respiración celular. Recuerda: el ciclo ATP↔ADP ocurre constantemente en las células." },
+  { m: "intro", etapa: 2, q: "¿Cuál es el papel del oxígeno en la respiración celular?",
+    o: ["Aceptar electrones al final de la cadena respiratoria", "Ser donador de electrones al inicio", "Activar enzimas del ciclo de Krebs", "Formar glucosa"],
+    e: "El oxígeno acepta electrones al final de la cadena respiratoria. Recuerda: sin oxígeno, el flujo de electrones se detiene y baja el ATP." },
+  { m: "intro", etapa: 2, q: "¿Qué importancia tiene el metabolismo en la vida diaria?",
+    o: ["Permite obtener energía de los alimentos y mantener funciones vitales", "Funciona solo durante el sueño", "Actúa solo después de comer mucho", "Opera solo en músculos"],
+    e: "El metabolismo está activo todo el tiempo. Recuerda: incluso al dormir, tu cuerpo sigue usando energía para mantener la vida." },
+  { m: "intro", etapa: 2, q: "¿Qué ocurre si el metabolismo se desequilibra?",
+    o: ["Puede causar enfermedades como diabetes o hipotiroidismo", "Se compensa con más apetito", "Solo baja el rendimiento físico", "No hay efectos"],
+    e: "Un desequilibrio metabólico puede causar enfermedades. Recuerda: el metabolismo equilibrado es esencial para mantener la salud." }
 ];

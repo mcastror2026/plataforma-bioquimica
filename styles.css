@@ -170,3 +170,12 @@ main{outline:none;max-width:1080px;margin:0 auto;padding:0 var(--gutter) 40px}
 .qzoom{display:block;margin-top:6px;font-size:.85rem;color:var(--muted)}
 .reset{background:none;border:0;padding:6px 8px;min-height:44px;font:500 13px/1.4 var(--body);color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .reset:hover{color:var(--ink)}
+
+.stage{display:flex;justify-content:space-between;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:10px}
+.stage b{display:block;font-size:1.05rem;font-weight:600}
+.stage span{display:block;font-size:.88rem;color:var(--muted);margin-top:2px}
+.stage .best{color:var(--ok);font-weight:600}
+.stage.locked{background:transparent;border-style:dashed}
+.stage .lock{font:500 13px/1 var(--mono);color:var(--muted);white-space:nowrap}
+.stage .btn{min-height:46px;padding:0 18px;white-space:nowrap}
+.stagehint{font-size:.9rem;color:var(--muted);margin:4px 2px 0}

@@ -3,8 +3,7 @@
   "use strict";
   const KEY = "bqe_progress_v1";
   const EXTERNAL = [
-    { t: "Enzimas", m: "Desafío · se abre en otra pestaña", url: "https://enzimas.netlify.app/" },
-    { t: "Introducción al metabolismo", m: "Desafío · se abre en otra pestaña", url: "https://intromet.netlify.app/" }
+    { t: "Enzimas", m: "Desafío · se abre en otra pestaña", url: "https://enzimas.netlify.app/" }
   ];
   const SOON = [
     { t: "Metabolismo de lípidos", m: "Próximamente" },
@@ -57,7 +56,7 @@
     const failed = failedQs().length;
     const next = MODULES.find((m) => mastery(m.id).pct < PASS && m.id !== "casos") || MODULES[0];
     const k = mastery(next.id), started = k.seen > 0;
-    let n = 2;
+    let n = 1;
     const stops = [
       ...EXTERNAL.map((e, i) => `
         <li class="stop ext"><a href="${e.url}" target="_blank" rel="noopener">
@@ -98,7 +97,7 @@
 
   /* ---------- módulo ---------- */
   function shell(m, tab, inner) {
-    const idx = MODULES.indexOf(m) + 3;
+    const idx = MODULES.indexOf(m) + 2;
     if (tab === "quiz") return `
       <div class="topbar"><a class="back" href="#/m/${m.id}/resumen">${ICON.back} ${esc(m.title)}</a></div>
       <div style="padding-top:8px">${inner}</div>`;
@@ -118,7 +117,10 @@
 
   function viewModule(id, tab) {
     const m = mod(id);
-    if (tab === "quiz") { app.innerHTML = shell(m, tab, '<div id="body" class="narrow"></div>'); return runQuiz(m, qsOf(id), document.getElementById("body")); }
+    if (tab === "quiz") {
+      app.innerHTML = shell(m, tab, '<div id="body" class="narrow"></div>');
+      return m.desafio ? viewStages(m, document.getElementById("body")) : runQuiz(m, qsOf(id), document.getElementById("body"));
+    }
     const facts = (m.facts || []).map((f) => `<div class="fact"><b>${esc(f[0])}</b><span>${esc(f[1])}</span></div>`).join("");
     const blocks = m.summary.map((s) => `
       <section class="block${/pr[aá]ctica/i.test(s.h) ? " clinical" : ""}">
@@ -136,10 +138,31 @@
     runQuiz(null, failedQs(), document.getElementById("body"));
   }
 
+
+  /* ---------- desafío por etapas ---------- */
+  function viewStages(m, body) {
+    const g = store.get().g, need = m.desafio.need;
+    const best = (e) => g[m.id + "-" + e];
+    const open2 = (best(1) || 0) >= need;
+    const card = (e, locked, txt) => `
+      <div class="stage${locked ? " locked" : ""}">
+        <div><b>Etapa ${e}</b><span>10 preguntas${e === 1 ? " · necesitas " + need + " correctas para abrir la Etapa 2" : ""}</span>
+        ${best(e) !== undefined ? `<span class="best">Mejor resultado: ${best(e)}/10</span>` : ""}</div>
+        ${locked ? `<span class="lock">Bloqueada</span>` : `<button class="btn ${e === 1 ? "btn-primary" : "btn-ghost"}" data-e="${e}">${txt}</button>`}
+      </div>`;
+    body.innerHTML = `
+      <p class="lead" style="margin-bottom:14px">Es un desafío por etapas: cumple el mínimo de respuestas correctas para avanzar a la siguiente.</p>
+      ${card(1, false, best(1) !== undefined ? "Repetir" : "Empezar")}
+      ${card(2, !open2, best(2) !== undefined ? "Repetir" : "Empezar")}
+      ${open2 ? "" : `<p class="stagehint">La Etapa 2 se desbloquea con ${need} o más correctas en la Etapa 1.</p>`}`;
+    body.querySelectorAll("[data-e]").forEach((b) => b.onclick = () => runQuiz(m, QUESTIONS.filter((q) => q.m === m.id && q.etapa === +b.dataset.e), body, { etapa: +b.dataset.e }));
+  }
+
   /* ---------- preguntas ---------- */
-  function runQuiz(m, pool, body) {
+  function runQuiz(m, pool, body, opts) {
+    const stg = opts && opts.etapa;
     if (!pool.length) { body.innerHTML = `<div class="block"><h2>Todo al día</h2><p>No hay preguntas para repasar.</p></div>`; return; }
-    const st = { i: 0, ok: 0, wrong: [], list: m && m.all ? shuffle(pool) : pick(pool, QUIZ_SIZE) };
+    const st = { i: 0, ok: 0, wrong: [], list: stg || (m && m.all) ? shuffle(pool) : pick(pool, QUIZ_SIZE) };
     const L = "ABCD";
     render();
     function render() {
@@ -148,7 +171,7 @@
       let answered = false;
       body.innerHTML = `
         <div class="bars" role="progressbar" aria-valuemin="1" aria-valuemax="${st.list.length}" aria-valuenow="${st.i + 1}">${st.list.map((_, k) => `<i class="${k < st.i ? "on" : k === st.i ? "cur" : ""}"></i>`).join("")}</div>
-        <div class="qmeta"><span>Pregunta ${st.i + 1} de ${st.list.length}</span></div>
+        <div class="qmeta"><span>${stg ? "Etapa " + stg + " · " : ""}Pregunta ${st.i + 1} de ${st.list.length}</span></div>
         ${q.case ? `<div class="case"><b>Situación</b>${esc(q.case)}${q.img ? `<a href="${q.img}" target="_blank" rel="noopener" aria-label="Ampliar la gráfica"><img class="qimg" src="${q.img}" alt="${esc(q.imgAlt || "")}"></a><small class="qzoom">Toca la gráfica para ampliarla</small>` : ""}</div>` : ""}
         <h2 class="q">${esc(q.q)}</h2>
         <div class="opts">${opts.map((o, k) => `<button class="opt" data-k="${k}"><span class="k">${L[k]}</span><span>${esc(o.t)}</span><span class="st"></span></button>`).join("")}</div>
@@ -175,15 +198,38 @@
     }
     function end() {
       const n = st.list.length, c = 2 * Math.PI * 56, f = st.ok / n;
-      const msg = st.ok === n ? "Dominas este tema por ahora." : st.ok >= n * 0.7 ? "Vas muy bien. Repasa lo que falló." : "Vuelve al resumen y prueba otra ronda.";
+      let msg = st.ok === n ? "Dominas este tema por ahora." : st.ok >= n * 0.7 ? "Vas muy bien. Repasa lo que falló." : "Vuelve al resumen y prueba otra ronda.";
+      let extra = "", actions = "";
+      if (stg) {
+        const s0 = store.get(); const key = m.id + "-" + stg;
+        if (s0.g[key] === undefined || st.ok > s0.g[key]) s0.g[key] = st.ok;
+        store.set(s0);
+        const need = m.desafio.need;
+        if (stg === 1) {
+          const pass = st.ok >= need;
+          msg = pass ? "¡Requisito cumplido!" : "Casi: te faltan respuestas para avanzar.";
+          extra = pass ? `<p>Puedes avanzar a la Etapa 2.</p>` : `<p>Necesitas ${need} o más correctas para abrir la Etapa 2.</p>`;
+          actions = (pass ? `<button class="btn btn-primary" id="next2">Ir a la Etapa 2</button>` : "") + `<button class="btn ${pass ? "btn-ghost" : "btn-primary"}" id="again">Reintentar Etapa 1</button>`;
+        } else {
+          msg = "¡Etapa 2 completada!";
+          actions = `<button class="btn btn-primary" id="again">Reintentar Etapa 2</button><button class="btn btn-ghost" id="stages">Ver etapas</button>`;
+        }
+      } else {
+        actions = `<button class="btn btn-primary" id="again">Otra ronda</button>`;
+      }
       body.innerHTML = `
         <div class="result">
           <div class="ring"><svg width="132" height="132" viewBox="0 0 132 132" aria-hidden="true"><circle cx="66" cy="66" r="56" fill="none" stroke="var(--line)" stroke-width="10"/><circle cx="66" cy="66" r="56" fill="none" stroke="var(--brand)" stroke-width="10" stroke-linecap="round" stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${(c * (1 - f)).toFixed(1)}"/></svg><b>${st.ok}/${n}</b></div>
-          <h2>${msg}</h2>
+          <h2>${msg}</h2>${extra}
           ${st.wrong.length ? `<div class="wrong"><h3>Para reforzar</h3>${st.wrong.map((q) => `<div><b>${esc(q.q)}</b><small>Correcta: ${esc(q.o[0])}</small><small>${esc(q.e)}</small></div>`).join("")}</div>` : ""}
-          <div class="actions"><button class="btn btn-primary" id="again">Otra ronda</button>${m ? `<a class="btn btn-ghost" href="#/m/${m.id}/resumen">Volver al resumen</a>` : `<a class="btn btn-ghost" href="#/">Ruta del curso</a>`}</div>
+          <div class="actions">${actions}${m ? `<a class="btn btn-ghost" href="#/m/${m.id}/resumen">Volver al resumen</a>` : `<a class="btn btn-ghost" href="#/">Ruta del curso</a>`}</div>
         </div>`;
-      body.querySelector("#again").onclick = () => (m ? runQuiz(m, qsOf(m.id), body) : runQuiz(null, failedQs(), body));
+      const again = body.querySelector("#again");
+      if (again) again.onclick = () => (stg ? runQuiz(m, pool, body, opts) : m ? runQuiz(m, qsOf(m.id), body) : runQuiz(null, failedQs(), body));
+      const sg = body.querySelector("#stages");
+      if (sg) sg.onclick = () => viewStages(m, body);
+      const nx = body.querySelector("#next2");
+      if (nx) nx.onclick = () => runQuiz(m, QUESTIONS.filter((q) => q.m === m.id && q.etapa === 2), body, { etapa: 2 });
     }
   }
 
