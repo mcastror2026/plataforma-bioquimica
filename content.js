@@ -143,7 +143,7 @@ const MODULES = [
       ]},
       { h: "Para la práctica de enfermería", items: [
         "Los <b>eritrocitos</b> no tienen mitocondrias: dependen solo de la glicólisis.",
-        "El cerebro humano consume aproximadamente 120 a 130 gramos de glucosa al día, lo que equivale a cerca del 20 % al 25 % de la energía total que el cuerpo utiliza en reposo."
+        "El cerebro humano consume aproximadamente 120 a 130 gramos de glucosa al día, lo que equivale a cerca del 20 % al 25 % de la energía total que el cuerpo utiliza en reposo. Por eso la glicemia debe mantenerse estable."
       ]}
     ]
   },
