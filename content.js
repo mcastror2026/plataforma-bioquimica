@@ -125,7 +125,7 @@ const MODULES = [
     facts: [["2", "ATP netos"], ["2", "NADH"], ["2", "piruvato"]],
     title: "Glicólisis",
     tag: "Citosol · 10 reacciones",
-    blurb: "La vía que parte la glucosa en dos piruvatos y deja ATP y NADH.",
+    blurb: "Es la vía metabólica que desde glucosa genera dos piruvatos, dos ATP y dos NADH.",
     summary: [
       { h: "Lo esencial", items: [
         "Ocurre en el <b>citosol</b> de todas las células; no necesita oxígeno.",
@@ -136,14 +136,14 @@ const MODULES = [
       ]},
       { h: "Puntos de control (enzimas reguladas)", items: [
         "Se regula en sus <b>3 puntos irreversibles</b>: hexoquinasa, fosfofructoquinasa-1 (PFK-1) y piruvato quinasa.",
-        "<b>Hexoquinasa / glucoquinasa</b>: atrapa la glucosa como glucosa-6-fosfato. La hexoquinasa es inhibida por su producto, la glucosa-6-fosfato; la glucoquinasa (hígado) tiene Km alto y actúa cuando hay mucha glucosa.",
+        "<b>Hexoquinasa / glucoquinasa</b>: cataliza la conversión de glucosa a glucosa-6-fosfato. La hexoquinasa es inhibida por su producto, la glucosa-6-fosfato; la glucoquinasa (hígado) tiene Km alto y actúa cuando hay mucha glucosa.",
         "<b>Fosfofructoquinasa-1 (PFK-1)</b>: paso limitante. Activada por ADP y AMP; inhibida por ATP y citrato.",
         "<b>Piruvato quinasa</b>: inhibida por ATP y acetil-CoA.",
-        "<b>Hormonas</b>: al subir la glicemia, la insulina (que libera el páncreas) activa la vía; el glucagón la disminuye."
+        "<b>Hormonas</b>: al subir la glicemia, la insulina (que libera el páncreas) activa la vía; el glucagón disminuye su actividad."
       ]},
       { h: "Para la práctica de enfermería", items: [
         "Los <b>eritrocitos</b> no tienen mitocondrias: dependen solo de la glicólisis.",
-        "El cerebro consume ~120 g de glucosa al día: por eso la glicemia debe mantenerse estable."
+        "El cerebro humano consume aproximadamente 120 a 130 gramos de glucosa al día, lo que equivale a cerca del 20 % al 25 % de la energía total que el cuerpo utiliza en reposo."
       ]}
     ]
   },
