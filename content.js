@@ -82,6 +82,20 @@ const MODULES = [
     ]
   },
   {
+    id: "aplic1",
+    all: true, // cada ronda muestra todas las preguntas del módulo
+    title: "Preguntas de aplicación: Enzimas",
+    tag: "Razonamiento analítico",
+    blurb: "Situaciones que aplican lo aprendido sobre enzimas.",
+    summary: [
+      { h: "Cómo abordar una pregunta de aplicación", items: [
+        "1. Identifica <b>qué ocurre en la situación</b> (hipoxia, ayuno, falta de insulina…).",
+        "2. Piensa en la <b>vía o enzima</b> comprometida.",
+        "3. Deduce la <b>consecuencia fisiológica</b> y qué esperarías en los exámenes o síntomas."
+      ]}
+    ]
+  },
+  {
     id: "intro",
     desafio: { need: 8 }, // desafío por etapas: se necesitan 8 de 10 correctas para abrir la Etapa 2
     facts: [["Catabolismo", "degrada y libera ATP"], ["Anabolismo", "sintetiza y usa ATP"], ["Acetil-CoA", "punto de integración"]],
@@ -285,6 +299,20 @@ const MODULES = [
         "<b>Diabetes mellitus tipo 1:</b> falta de insulina → hiperglicemia y, si es grave, cetoacidosis.",
         "<b>Diabetes mellitus tipo 2:</b> resistencia a la insulina.",
         "<b>Hipoglicemia</b> (&lt; 70 mg/dL): sudoración, temblor y taquicardia por liberación de adrenalina."
+      ]}
+    ]
+  },
+  {
+    id: "aplic2",
+    all: true, // cada ronda muestra todas las preguntas del módulo
+    title: "Preguntas de aplicación: Carbohidratos",
+    tag: "Razonamiento analítico",
+    blurb: "Situaciones que integran las vías de los carbohidratos y las hormonas.",
+    summary: [
+      { h: "Cómo abordar una pregunta de aplicación", items: [
+        "1. Identifica <b>qué ocurre en la situación</b> (hipoxia, ayuno, falta de insulina…).",
+        "2. Piensa en la <b>vía o enzima</b> comprometida.",
+        "3. Deduce la <b>consecuencia fisiológica</b> y qué esperarías en los exámenes o síntomas."
       ]}
     ]
   },
@@ -577,18 +605,18 @@ const MODULES = [
     ]
   },
   {
-    id: "casos",
+    id: "aplic3",
     all: true, // cada ronda muestra todas las preguntas del módulo
-    title: "Preguntas de aplicación",
+    title: "Preguntas de aplicación: Lípidos y aminoácidos",
     tag: "Razonamiento analítico",
-    blurb: "Situaciones que integran las vías y las hormonas.",
+    blurb: "Situaciones que integran el metabolismo de lípidos y aminoácidos.",
     summary: [
       { h: "Cómo abordar una pregunta de aplicación", items: [
         "1. Identifica <b>qué ocurre en la situación</b> (hipoxia, ayuno, falta de insulina…).",
         "2. Piensa en la <b>vía o enzima</b> comprometida.",
         "3. Deduce la <b>consecuencia fisiológica</b> y qué esperarías en los exámenes o síntomas."
       ]}
-    ],
+    ]
   }
 ];
 
@@ -754,41 +782,41 @@ const QUESTIONS = [
     e: "Sin insulina la glucosa no entra a las células, hay lipólisis exagerada y producción de cuerpos cetónicos." },
 
   /* ---------------- PREGUNTAS DE APLICACIÓN ---------------- */
-  { m: "casos",
+  { m: "aplic2",
     case: "Un maratonista de 30 años llega con calambres después de una carrera. Su lactato sérico está elevado.",
     q: "¿Qué explica el aumento de lactato?",
     o: ["Con poco oxígeno, el piruvato se convierte en lactato por fermentación láctica", "El ciclo de Krebs se acelera por exceso de oxígeno", "Aumenta la gluconeogénesis en el músculo", "Hay un déficit de insulina"],
     hint: "¿Qué hace el músculo cuando el oxígeno no alcanza?",
     e: "Cuando el oxígeno no alcanza para la demanda del músculo, el piruvato se convierte en lactato (fermentación láctica). Así la célula sigue obteniendo ATP por glicólisis." },
-  { m: "casos",
+  { m: "aplic2",
     case: "Una persona es rescatada de un incendio en un recinto cerrado. Tiene dolor de cabeza, confusión y lactato muy elevado. Se diagnostica intoxicación por monóxido de carbono (CO).",
     q: "¿Por qué aumenta el lactato?",
     o: ["El CO inhibe la citocromo oxidasa: la cadena respiratoria se detiene y el piruvato se convierte en lactato", "El CO inhibe la hexoquinasa: la glucosa se acumula y se convierte en lactato", "El CO activa el ciclo de Krebs: se forma más acetil-CoA y sube el lactato", "El CO aumenta la insulina: se bloquea la glicólisis y sube el lactato"],
     hint: "Piensa en qué ocurre con la cadena respiratoria si se bloquea uno de sus complejos.",
     e: "El monóxido de carbono inhibe la citocromo oxidasa (complejo IV), por lo que la cadena respiratoria se detiene aunque haya oxígeno. Sin poder reoxidar el NADH, el piruvato se convierte en lactato (fermentación láctica) y la célula sigue obteniendo ATP por glicólisis. Además, el CO se une a la hemoglobina y reduce el transporte de oxígeno a los tejidos." },
-  { m: "casos",
+  { m: "aplic2",
     case: "Una persona lleva 18 horas en ayunas por una cirugía programada. Su glicemia es de 78 mg/dL.",
     q: "¿Qué mecanismo hormonal y metabólico mantiene su glicemia?",
     o: ["Glucagón: glicogenólisis y gluconeogénesis hepática", "Insulina: glicogenogénesis hepática", "Aumento de GLUT4 en músculo", "Glicólisis hepática acelerada"],
     hint: "¿Hay insulina alta o baja en ayuno?",
     e: "Con insulina baja y glucagón alto, el hígado libera glucosa desde el glicógeno y sintetiza glucosa nueva." },
-  { m: "casos",
+  { m: "aplic2",
     case: "Un paciente con diabetes mellitus tipo 1 se administra su dosis habitual de insulina rápida pero omite el almuerzo. A los 40 minutos presenta sudoración, temblor y confusión.",
     q: "¿Qué ocurre en este paciente?",
     o: ["La insulina bajó la glicemia sin aporte de glucosa: hipoglicemia con respuesta de adrenalina", "Falta de insulina: cetoacidosis", "Exceso de glucagón: hiperglicemia", "Aumento de la gluconeogénesis por la insulina"],
     e: "La insulina activa GLUT4 y bloquea la producción hepática de glucosa. La conducta es administrar glucosa de absorción rápida según protocolo." },
-  { m: "casos",
+  { m: "aplic2",
     case: "Un adolescente con diabetes mellitus tipo 1 no se ha administrado insulina en los últimos días. Su glicemia es de 400 mg/dL.",
     q: "¿Qué explica la glicemia tan alta?",
     o: ["Sin insulina, la glucosa no entra a las células y se acumula en la sangre", "Hay un exceso de insulina que impide usar la glucosa", "El hígado dejó de producir glucosa", "El glucagón está ausente"],
     hint: "La insulina permite que la glucosa entre a las células.",
     e: "Sin insulina, el músculo y el tejido adiposo no captan glucosa, y el hígado sigue produciéndola. Por eso la glucosa se acumula en la sangre." },
-  { m: "casos",
+  { m: "aplic2",
     case: "Un lactante presenta hipoglicemia cuando pasa varias horas sin comer y su hígado está aumentado de tamaño. Tiene la enfermedad de Von Gierke: le falta la enzima glucosa-6-fosfatasa, que permite al hígado liberar glucosa a la sangre.",
     q: "¿Por qué el lactante presenta hipoglicemia en ayuno?",
     o: ["El hígado no puede liberar glucosa a la sangre, aunque degrade el glicógeno", "No puede sintetizar glicógeno", "Tiene exceso de glucagón", "No hay glicólisis"],
     e: "Sin glucosa-6-fosfatasa, la glucosa del glicógeno queda en el hígado y no llega a la sangre. Por eso el hígado crece y la glicemia baja en el ayuno." },
-  { m: "casos",
+  { m: "aplic2",
     case: "Una joven presenta calambres y dolor muscular intenso con el ejercicio. Durante la prueba, su lactato no aumenta. Se diagnostica enfermedad de McArdle (déficit de fosforilasa muscular).",
     q: "¿Por qué el lactato no aumenta?",
     o: ["No puede degradar el glicógeno muscular, por lo que no hay sustrato para la glicólisis", "Se forma más ATP por la fosforilación oxidativa", "Su LDH es hiperactiva", "No tiene glicólisis"],
@@ -843,7 +871,7 @@ const QUESTIONS = [
     o: ["Pasan por el canal F₀ y el ATP se forma en F₁", "Pasan por F₁ y el ATP se forma en F₀", "Pasan por el complejo I", "Pasan por la ubiquinona"],
     e: "El retorno de H⁺ por F₀ impulsa la reacción entre ADP y Pi en la unidad catalítica F₁." },
   /* ---------- Caso con gráfica de dobles recíprocos ---------- */
-  { m: "casos",
+  { m: "aplic1",
     case: "En un laboratorio se estudia I-234, un fármaco nuevo que inhibe una enzima del metabolismo. Se midió la velocidad de la reacción con distintas cantidades de sustrato, con y sin el fármaco, y se hizo la gráfica de dobles recíprocos que se muestra.",
     img: "assets/lineweaver-burk.png",
     imgAlt: "Gráfica de dobles recíprocos. Las rectas con y sin inhibidor se cortan en el mismo punto del eje vertical, en 4. La recta sin inhibidor cruza el eje horizontal en menos 3 y la recta con inhibidor, en menos 2.",
@@ -851,7 +879,7 @@ const QUESTIONS = [
     o: ["Competitivo", "No competitivo", "Irreversible", "No es un inhibidor"],
     hint: "Fíjate dónde se cortan las dos rectas: si lo hacen en el eje vertical, la velocidad máxima no cambia.",
     e: "Las dos rectas se cortan en el mismo punto del eje vertical, así que la velocidad máxima (Vmax) no cambia. Eso es característico del inhibidor competitivo, que compite con el sustrato por el sitio activo de la enzima." },
-  { m: "casos",
+  { m: "aplic1",
     case: "En un laboratorio se estudia I-234, un fármaco nuevo que inhibe una enzima del metabolismo. Se midió la velocidad de la reacción con distintas cantidades de sustrato, con y sin el fármaco, y se hizo la gráfica de dobles recíprocos que se muestra.",
     img: "assets/lineweaver-burk.png",
     imgAlt: "Gráfica de dobles recíprocos. Las rectas con y sin inhibidor se cortan en el mismo punto del eje vertical, en 4. La recta sin inhibidor cruza el eje horizontal en menos 3 y la recta con inhibidor, en menos 2.",
@@ -860,7 +888,7 @@ const QUESTIONS = [
     hint: "La recta con inhibidor cruza el eje horizontal más cerca de cero, y ese valor es el inverso del Km con signo negativo.",
     e: "Sin inhibidor la recta cruza el eje horizontal en −3 (Km ≈ 0,33 mM) y con inhibidor en −2 (Km = 0,5 mM). El Km aumenta, es decir, baja la afinidad aparente por el sustrato, y la Vmax se mantiene." },
   /* ---------- Caso: enfermedad de Hers ---------- */
-  { m: "casos",
+  { m: "aplic2",
     case: "La enfermedad de Hers afecta a las células del hígado, que no pueden producir la enzima glicógeno fosforilasa, necesaria para degradar el glicógeno hepático. Los pacientes tienen períodos de glicemia muy baja (hipoglicemia).",
     q: "Después de correr 15 minutos, ¿cómo estará el glicógeno del músculo de un paciente con esta enfermedad, comparado con una persona sana?",
     o: ["Igual que en una persona sana: disminuido, porque la enfermedad solo afecta al hígado", "Más alto, porque el músculo no puede degradar su glicógeno", "Más bajo que en una persona sana, porque el hígado no libera glucosa", "No se puede degradar el glicógeno en ningún tejido"],
@@ -1131,7 +1159,7 @@ const QUESTIONS = [
     hint: "El olor afrutado se debe a la acetona.",
     e: "El aliento con olor afrutado (acetona) y el pH bajo indican exceso de cuerpos cetónicos: cetoacidosis diabética." },
   /* ---------- Caso: enfermedad de Hers (cuerpos cetónicos) ---------- */
-  { m: "casos",
+  { m: "aplic3",
     case: "La enfermedad de Hers afecta a las células del hígado, que no pueden producir la enzima glicógeno fosforilasa, necesaria para degradar el glicógeno hepático. Los pacientes tienen períodos de glicemia muy baja (hipoglicemia).",
     q: "¿Por qué aumentan los cuerpos cetónicos en la sangre de estos pacientes?",
     o: ["El glucagón activa la lipólisis; los ácidos grasos llegan al hígado y se transforman en cuerpos cetónicos", "La insulina aumenta y activa la formación de cuerpos cetónicos en el hígado", "El hígado convierte el glicógeno acumulado en cuerpos cetónicos directamente", "El músculo libera cuerpos cetónicos al degradar su glicógeno"],
@@ -1405,18 +1433,18 @@ const QUESTIONS = [
     o: ["Amonio, que es tóxico", "Urea en exceso", "Ornitina", "Glicógeno"],
     hint: "El ciclo de la urea ocurre en el hígado.",
     e: "Si el hígado falla, no se forma urea, y el amonio, que es tóxico, se acumula en la sangre." },
-  { m: "casos",
+  { m: "aplic3",
     case: "Un estudiante pasa tres días consumiendo solo carnes y bebidas sin glucosa: su dieta es casi solo proteínas. Al cuarto día se le toman exámenes.",
     q: "¿Cómo se mantiene su glicemia al cuarto día?",
     o: ["El hígado produce glucosa a partir de los esqueletos de carbono de los aminoácidos", "Baja mucho, porque las proteínas no pueden dar glucosa", "Sube mucho, porque las proteínas se convierten en glicógeno al instante", "Se mantiene porque los aminoácidos pasan directo a la sangre como glucosa"],
     hint: "Los aminoácidos glucogénicos pueden dar glucosa.",
     e: "Sin carbohidratos en la dieta, el hígado fabrica glucosa (gluconeogénesis) a partir de los esqueletos de carbono de los aminoácidos. Por eso la glicemia se mantiene. El grupo amino se elimina como urea." },
-  { m: "casos",
+  { m: "aplic3",
     case: "Un deportista en preparación llega, después de un ejercicio prolongado, con la glicemia baja y la alanina en sangre alta.",
     q: "¿Qué explica la alanina alta y la glicemia baja?",
     o: ["El músculo libera alanina, que lleva amonio y carbonos al hígado para producir glucosa, mientras el ejercicio consume glucosa", "El hígado libera alanina en exceso y eso bloquea la glucosa", "La insulina convierte la glucosa de la sangre en alanina", "El ejercicio detiene la glicólisis del músculo"],
     e: "Durante el ejercicio prolongado el músculo consume glucosa y libera alanina. Esa alanina viaja al hígado, que fabrica glucosa con su carbono (ciclo glucosa-alanina)." },
-  { m: "casos",
+  { m: "aplic3",
     case: "Un deportista en preparación llega, después de un ejercicio prolongado, con la glicemia baja y la alanina en sangre alta.",
     q: "¿Cuál será el destino de la alanina que llega al hígado?",
     o: ["El amonio irá al ciclo de la urea y el piruvato se usará para fabricar glucosa", "Se eliminará directamente por la orina", "Se convertirá en ácidos grasos en el músculo", "Se transformará en glutamina en la sangre"],

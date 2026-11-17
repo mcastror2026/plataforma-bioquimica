@@ -50,7 +50,7 @@
   /* ---------- inicio ---------- */
   function viewHome() {
     const failed = failedQs().length;
-    const next = MODULES.find((m) => mastery(m.id).pct < PASS && m.id !== "casos") || MODULES[0];
+    const next = MODULES.find((m) => mastery(m.id).pct < PASS && !m.id.startsWith("aplic")) || MODULES[0];
     const k = mastery(next.id), started = k.seen > 0;
     let n = 0;
     const stops = [
