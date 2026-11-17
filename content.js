@@ -291,7 +291,7 @@ const MODULES = [
   {
     id: "digestionlipidos",
     facts: [["Lipasa", "separa los ácidos grasos del glicerol"], ["Bilis", "emulsiona las grasas"], ["Quilomicrones", "llevan las grasas por la linfa"]],
-    title: "Digestión y absorción de lípidos",
+    title: "Digestión y absorción de lípidos (complementario opcional)",
     tag: "Boca · estómago · intestino",
     blurb: "Cómo se descomponen y se absorben las grasas de la dieta.",
     summary: [
