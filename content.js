@@ -367,6 +367,40 @@ const MODULES = [
     ]
   },
   {
+    id: "lipoproteinas",
+    facts: [["Quilomicrones", "transportan los lípidos de la dieta"], ["LDL", "lleva colesterol a los tejidos"], ["HDL", "lleva colesterol al hígado"]],
+    title: "Lipoproteínas",
+    tag: "Transporte de lípidos",
+    blurb: "Cómo viajan los lípidos por la sangre.",
+    summary: [
+      { h: "¿Por qué existen las lipoproteínas?", items: [
+        "Los lípidos no se disuelven en agua.",
+        "Llegan a la sangre desde la <b>dieta</b>, desde la <b>síntesis en el hígado</b> y desde el <b>tejido adiposo</b>.",
+        "Para viajar por la sangre hasta los tejidos que los necesitan, se asocian a proteínas y a otras moléculas y forman las <b>lipoproteínas</b>."
+      ]},
+      { h: "Las 5 lipoproteínas", items: [
+        "<b>Quilomicrones</b>: se forman en el intestino y transportan los lípidos de la dieta.",
+        "<b>VLDL</b> (de muy baja densidad): se forman en el hígado y transportan los lípidos propios del organismo, sobre todo triglicéridos.",
+        "<b>IDL</b> (de densidad intermedia): se forman a partir de la VLDL, por acción de la lipoproteína lipasa.",
+        "<b>LDL</b> (de baja densidad): se forman a partir de la IDL y llevan <b>colesterol del hígado a los tejidos</b>.",
+        "<b>HDL</b> (de alta densidad): se forman en el intestino y en el hígado, y llevan <b>colesterol desde los tejidos al hígado</b> (transporte reverso del colesterol)."
+      ]},
+      { h: "Lipoproteína lipasa", items: [
+        "Es una enzima que está en los capilares del tejido adiposo, del músculo y de la glándula mamaria.",
+        "Descompone los triglicéridos de los quilomicrones y de las VLDL, y libera <b>ácidos grasos</b> para esos tejidos.",
+        "Lo que queda de las partículas (remanentes) vuelve al hígado."
+      ]},
+      { h: "Densidad y tamaño", items: [
+        "Las lipoproteínas se clasifican según su <b>densidad</b>.",
+        "A más lípidos, la partícula es <b>más grande y menos densa</b>. De mayor a menor contenido de lípidos: quilomicrón (QM en la figura, 99 %), VLDL (92 %), IDL (89 %), LDL (79 %) y HDL (43 %).",
+        "La <b>HDL</b> es la más pequeña y la más densa: tiene 57 % de proteínas."
+      ]},
+      { h: "Para la práctica de enfermería", items: [
+        "Un LDL elevado se asocia a mayor riesgo cardiovascular, porque deposita colesterol en los tejidos. La HDL ayuda a retirar el colesterol de los tejidos."
+      ]}
+    ]
+  },
+  {
     id: "casos",
     all: true, // cada ronda muestra todas las preguntas del módulo
     title: "Preguntas de aplicación",
@@ -926,5 +960,56 @@ const QUESTIONS = [
     q: "¿Por qué aumentan los cuerpos cetónicos en la sangre de estos pacientes?",
     o: ["El glucagón activa la lipólisis; los ácidos grasos llegan al hígado y se transforman en cuerpos cetónicos", "La insulina aumenta y activa la formación de cuerpos cetónicos en el hígado", "El hígado convierte el glicógeno acumulado en cuerpos cetónicos directamente", "El músculo libera cuerpos cetónicos al degradar su glicógeno"],
     hint: "Con la glicemia baja se libera glucagón.",
-    e: "Por la hipoglicemia, el glucagón favorece la lipólisis en el tejido adiposo. Los ácidos grasos libres llegan al hígado, donde se degradan por β-oxidación y se forman cuerpos cetónicos (cetogénesis)." }
+    e: "Por la hipoglicemia, el glucagón favorece la lipólisis en el tejido adiposo. Los ácidos grasos libres llegan al hígado, donde se degradan por β-oxidación y se forman cuerpos cetónicos (cetogénesis)." },
+  /* ---------- Lipoproteínas ---------- */
+  { m: "lipoproteinas",
+    q: "¿Por qué los lípidos viajan en la sangre formando lipoproteínas?",
+    o: ["Porque los lípidos no se disuelven en agua", "Porque los lípidos son muy pequeños para circular solos", "Porque necesitan oxígeno para llegar a los tejidos", "Porque así se transforman en glucosa"],
+    e: "Los lípidos son insolubles en agua. Por eso se asocian a proteínas y a otras moléculas y forman lipoproteínas que sí pueden viajar por la sangre." },
+  { m: "lipoproteinas",
+    q: "¿Qué lipoproteína transporta los lípidos de la dieta?",
+    o: ["Los quilomicrones", "La VLDL", "La LDL", "La HDL"],
+    hint: "Se forman en el intestino.",
+    e: "Los quilomicrones se forman en el intestino y llevan los lípidos que vienen de los alimentos." },
+  { m: "lipoproteinas",
+    q: "¿Dónde se forman los quilomicrones?",
+    o: ["En el intestino", "En el hígado", "En el músculo", "En el páncreas"],
+    e: "Los quilomicrones se forman en el intestino, después de la absorción de los lípidos de la dieta." },
+  { m: "lipoproteinas",
+    q: "¿Qué lipoproteína transporta sobre todo triglicéridos producidos por el hígado?",
+    o: ["La VLDL", "La HDL", "La LDL", "Los quilomicrones"],
+    hint: "Su nombre significa lipoproteína de muy baja densidad.",
+    e: "La VLDL se forma en el hígado y lleva a los tejidos los triglicéridos que produce el propio organismo." },
+  { m: "lipoproteinas",
+    q: "¿Qué transporta la LDL?",
+    o: ["Colesterol del hígado hacia los tejidos", "Colesterol desde los tejidos hacia el hígado", "Triglicéridos de la dieta desde el intestino", "Ácidos grasos libres unidos a albúmina"],
+    hint: "Es la que lleva el colesterol hacia los tejidos.",
+    e: "La LDL se forma a partir de la IDL y lleva colesterol del hígado a los tejidos." },
+  { m: "lipoproteinas",
+    q: "¿Qué transporta la HDL?",
+    o: ["Colesterol desde los tejidos hacia el hígado", "Colesterol del hígado hacia los tejidos", "Triglicéridos de la dieta desde el intestino", "Ácidos grasos libres unidos a albúmina"],
+    hint: "Hace el transporte reverso del colesterol.",
+    e: "La HDL retira el colesterol de los tejidos y lo lleva al hígado: se llama transporte reverso del colesterol." },
+  { m: "lipoproteinas",
+    q: "¿Qué enzima libera ácidos grasos de los quilomicrones y las VLDL en los capilares?",
+    o: ["La lipoproteína lipasa", "La glucógeno fosforilasa", "La citrato sintasa", "La piruvato quinasa"],
+    e: "La lipoproteína lipasa hidroliza los triglicéridos de estas partículas y libera ácidos grasos para el tejido adiposo y el músculo." },
+  { m: "lipoproteinas",
+    q: "¿A partir de qué lipoproteína se forma la IDL?",
+    o: ["De la VLDL", "De la HDL", "De los quilomicrones", "De la LDL"],
+    e: "La IDL surge de la VLDL por la acción de la lipoproteína lipasa. A su vez, la LDL se forma a partir de la IDL." },
+  { m: "lipoproteinas",
+    img: "assets/lipoproteinas-densidad.png",
+    imgAlt: "Gráfica de densidad frente a diámetro de las lipoproteínas. De menor a mayor tamaño: HDL (43 % lípidos y 57 % proteínas), LDL (79 % y 21 %), IDL (89 % y 11 %), VLDL (92 % y 8 %) y quilomicrón (99 % y 1 %).",
+    q: "Según la figura, ¿qué lipoproteína tiene mayor porcentaje de lípidos y es la menos densa?",
+    o: ["Los quilomicrones", "La HDL", "La LDL", "La IDL"],
+    hint: "Fíjate en el porcentaje de lípidos, en rojo. QM significa quilomicrones.",
+    e: "Los quilomicrones tienen 99 % de lípidos. A más lípidos, la partícula es más grande y menos densa." },
+  { m: "lipoproteinas",
+    img: "assets/lipoproteinas-densidad.png",
+    imgAlt: "Gráfica de densidad frente a diámetro de las lipoproteínas. De menor a mayor tamaño: HDL (43 % lípidos y 57 % proteínas), LDL (79 % y 21 %), IDL (89 % y 11 %), VLDL (92 % y 8 %) y quilomicrón (99 % y 1 %).",
+    q: "Según la figura, ¿qué lipoproteína tiene mayor porcentaje de proteínas y es la más densa?",
+    o: ["La HDL", "La LDL", "La VLDL", "Los quilomicrones"],
+    hint: "Fíjate en el porcentaje de proteínas, en azul.",
+    e: "La HDL tiene 57 % de proteínas, por eso es la más pequeña y la más densa." }
 ];
