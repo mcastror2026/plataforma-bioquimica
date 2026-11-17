@@ -4,7 +4,7 @@
   const KEY = "bqe_progress_v1";
   const EXTERNAL = [];
   const SOON = [
-    { t: "Metabolismo de lípidos", m: "Próximamente" },
+    { t: "Cuerpos cetónicos y lipoproteínas", m: "Próximamente" },
     { t: "Aminoácidos y ciclo de la urea", m: "Próximamente" }
   ];
   const BOT_URL = "https://bot-bioquimico.zapier.app/";

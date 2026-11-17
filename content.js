@@ -289,6 +289,46 @@ const MODULES = [
     ]
   },
   {
+    id: "boxidacion",
+    facts: [["Carnitina", "transporta los ácidos grasos"], ["2 C", "se pierden por vuelta"], ["Acetil-CoA", "entra al ciclo de Krebs"]],
+    title: "β-oxidación de ácidos grasos",
+    tag: "Matriz mitocondrial",
+    blurb: "Cómo se degradan los ácidos grasos para obtener energía.",
+    summary: [
+      { h: "Movilización de los triglicéridos", items: [
+        "Cuando la glicemia está baja se libera <b>glucagón</b>.",
+        "En el tejido adiposo, el glucagón activa una <b>lipasa</b> que hidroliza los triglicéridos y libera ácidos grasos.",
+        "Los ácidos grasos salen del adipocito y viajan por la sangre unidos a la <b>albúmina</b>, porque no son solubles en agua.",
+        "Entran a las células que los necesitan, como el músculo, donde se oxidan por <b>β-oxidación</b>."
+      ]},
+      { h: "Activación y entrada a la mitocondria", items: [
+        "En el citosol, los ácidos grasos se <b>activan</b>: se transforman en <b>acil-CoA</b>, con gasto de ATP.",
+        "La membrana mitocondrial interna no deja pasar los ácidos grasos. La <b>carnitina</b>, una molécula derivada de aminoácidos, los transporta hacia la matriz."
+      ]},
+      { h: "β-oxidación", items: [
+        "Ocurre en la <b>matriz mitocondrial</b>.",
+        "Es un ciclo de 4 reacciones que acorta la cadena del ácido graso en <b>2 carbonos por vuelta</b>.",
+        "Cada vuelta produce <b>acetil-CoA, NADH y FADH₂</b>.",
+        "Se repite hasta degradar por completo el ácido graso. Por ejemplo, el ácido palmítico tiene 16 carbonos."
+      ]},
+      { h: "¿Qué pasa con los productos?", items: [
+        "El <b>acetil-CoA</b> entra al ciclo de Krebs.",
+        "El NADH y el FADH₂ llevan sus electrones a la cadena respiratoria, donde se produce ATP."
+      ]},
+      { h: "Ácidos grasos de cadena larga: peroxisoma", items: [
+        "Los ácidos grasos de cadena muy larga (más de 20 carbonos) se oxidan primero en el <b>peroxisoma</b>. El acetil-CoA que se forma puede pasar a la mitocondria.",
+        "En el peroxisoma se produce H₂O₂, una sustancia tóxica que la enzima catalasa convierte en agua y oxígeno."
+      ]},
+      { h: "Regulación hormonal", items: [
+        "<b>Glucagón</b> y <b>adrenalina</b>: <b>activan</b> la degradación de los triglicéridos del tejido adiposo.",
+        "<b>Insulina</b>: <b>inhibe</b> esa degradación y favorece el almacenamiento de grasa."
+      ]},
+      { h: "Para la práctica de enfermería", items: [
+        "Si falta <b>carnitina</b>, los ácidos grasos no pueden entrar a la mitocondria y no se pueden oxidar. El paciente tolera mal los períodos largos de ayuno y se le suplementa con L-carnitina."
+      ]}
+    ]
+  },
+  {
     id: "casos",
     all: true, // cada ronda muestra todas las preguntas del módulo
     title: "Preguntas de aplicación",
@@ -746,5 +786,54 @@ const QUESTIONS = [
     etapa: 2,
     q: "En la inhibición acompetitiva, ¿qué ocurre con Km y Vmax?",
     o: ["Disminuyen ambos en igual proporción", "Sólo disminuye Vmax", "Aumenta Km sin cambiar Vmax", "Aumentan ambos"],
-    e: "En la inhibición acompetitiva, el Km y la Vmax disminuyen en igual proporción (rectas paralelas)." }
+    e: "En la inhibición acompetitiva, el Km y la Vmax disminuyen en igual proporción (rectas paralelas)." },
+  /* ---------- β-oxidación de ácidos grasos ---------- */
+  { m: "boxidacion",
+    q: "¿Dónde ocurre la β-oxidación de los ácidos grasos?",
+    o: ["En la matriz mitocondrial", "En el citosol", "En el núcleo", "En el aparato de Golgi"],
+    hint: "Es el mismo lugar donde ocurre el ciclo de Krebs.",
+    e: "La β-oxidación ocurre en la matriz mitocondrial, donde el acetil-CoA que se forma entra directamente al ciclo de Krebs." },
+  { m: "boxidacion",
+    q: "¿Qué molécula transporta los ácidos grasos al interior de la mitocondria?",
+    o: ["La carnitina", "La albúmina", "La insulina", "El acetil-CoA"],
+    hint: "Es una molécula derivada de aminoácidos.",
+    e: "La carnitina permite que los ácidos grasos activados atraviesen la membrana mitocondrial interna. La albúmina los transporta por la sangre, no dentro de la célula." },
+  { m: "boxidacion",
+    q: "¿Qué ocurre con un ácido graso en el citosol, antes de entrar a la mitocondria?",
+    o: ["Se activa: se transforma en acil-CoA, con gasto de ATP", "Se convierte en glucosa", "Se une a la albúmina dentro de la célula", "Se transforma en colesterol"],
+    hint: "La activación consume energía.",
+    e: "Antes de entrar a la mitocondria, el ácido graso se activa y se convierte en acil-CoA. Para eso la célula gasta ATP." },
+  { m: "boxidacion",
+    q: "¿Cuántos carbonos se pierden del ácido graso en cada vuelta de la β-oxidación?",
+    o: ["2", "1", "4", "16"],
+    hint: "En cada vuelta se libera una molécula de acetil-CoA.",
+    e: "Cada vuelta acorta la cadena en 2 carbonos, que salen como acetil-CoA." },
+  { m: "boxidacion",
+    q: "¿Qué se produce en cada vuelta de la β-oxidación?",
+    o: ["Acetil-CoA, NADH y FADH₂", "Piruvato, NADH y FADH₂", "Acetil-CoA, lactato y GTP", "Glucosa, NADH y CO₂"],
+    e: "Cada vuelta produce acetil-CoA y dos coenzimas reducidas: NADH y FADH₂, que llevan electrones a la cadena respiratoria." },
+  { m: "boxidacion",
+    q: "¿Qué hormona activa la degradación de los triglicéridos del tejido adiposo cuando la glicemia está baja?",
+    o: ["Glucagón", "Insulina", "Aldosterona", "Tiroxina"],
+    hint: "Con la glicemia baja se libera la hormona del ayuno.",
+    e: "El glucagón activa la lipasa del tejido adiposo, que libera ácidos grasos. La insulina hace lo contrario: favorece el almacenamiento." },
+  { m: "boxidacion",
+    q: "¿Cómo viajan los ácidos grasos por la sangre desde el tejido adiposo hasta el músculo?",
+    o: ["Unidos a la proteína albúmina", "Disueltos libremente en el plasma, porque son solubles en agua", "Dentro de los glóbulos rojos", "Transformados en glucosa"],
+    hint: "Los lípidos no se disuelven en agua.",
+    e: "Los ácidos grasos son insolubles en agua, por lo que viajan unidos a la albúmina sérica." },
+  { m: "boxidacion",
+    q: "¿Qué ocurre con el acetil-CoA que se produce en la β-oxidación?",
+    o: ["Entra al ciclo de Krebs", "Se convierte en glucosa en el hígado", "Se transforma en lactato", "Se almacena como glicógeno"],
+    e: "El acetil-CoA entra al ciclo de Krebs. Los ácidos grasos no pueden convertirse en glucosa." },
+  { m: "boxidacion",
+    q: "Un paciente tiene déficit de carnitina. ¿Qué consecuencia tiene?",
+    o: ["Los ácidos grasos no entran a la mitocondria y no se pueden oxidar", "Aumenta la β-oxidación porque hay más ácidos grasos libres", "Los ácidos grasos se convierten en glucosa", "No hay ningún efecto sobre el metabolismo"],
+    hint: "Piensa en quién transporta los ácidos grasos a la mitocondria.",
+    e: "Sin carnitina, los ácidos grasos no atraviesan la membrana mitocondrial interna. La célula no puede obtener energía de ellos." },
+  { m: "boxidacion",
+    q: "El mismo paciente con déficit de carnitina, ¿puede pasar largos períodos de ayuno?",
+    o: ["No: en el ayuno depende de los ácidos grasos y no puede oxidarlos", "Sí: la β-oxidación no se usa en el ayuno", "Sí: los ácidos grasos se convierten en glucosa", "Sí: el músculo no usa ácidos grasos"],
+    hint: "¿De dónde obtiene energía el cuerpo en el ayuno?",
+    e: "En el ayuno el organismo obtiene mucha energía de los ácidos grasos. Sin carnitina no puede oxidarlos, por eso tolera mal el ayuno y requiere suplemento de L-carnitina." }
 ];
