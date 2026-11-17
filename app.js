@@ -4,7 +4,7 @@
   const KEY = "bqe_progress_v1";
   const EXTERNAL = [];
   const SOON = [
-    { t: "Biosíntesis de lípidos", m: "Próximamente" },
+    { t: "Estructura y funciones de los lípidos", m: "Próximamente" },
     { t: "Aminoácidos y ciclo de la urea", m: "Próximamente" }
   ];
   const BOT_URL = "https://bot-bioquimico.zapier.app/";

@@ -401,6 +401,48 @@ const MODULES = [
     ]
   },
   {
+    id: "lipogenesis",
+    facts: [["Citosol", "lugar de la síntesis"], ["Palmitato", "producto principal (16 C)"], ["Insulina", "activa la síntesis"]],
+    title: "Biosíntesis de ácidos grasos",
+    tag: "Citosol · lipogénesis",
+    blurb: "Cómo la célula fabrica ácidos grasos a partir del acetil-CoA.",
+    summary: [
+      { h: "¿Qué es?", items: [
+        "Es la síntesis de ácidos grasos (lipogénesis), una vía <b>anabólica</b>.",
+        "Ocurre en el <b>citosol</b>, a partir de <b>acetil-CoA</b>.",
+        "El producto principal es el <b>ácido palmítico</b> (palmitato), de 16 carbonos, que sirve de precursor de otros ácidos grasos."
+      ]},
+      { h: "Cómo sale el acetil-CoA de la mitocondria", items: [
+        "El acetil-CoA se forma en la mitocondria y no puede salir de ella.",
+        "Se une al oxaloacetato y forma <b>citrato</b>, en la primera reacción del ciclo de Krebs.",
+        "El citrato sale al citosol, donde se regenera el acetil-CoA, con gasto de ATP."
+      ]},
+      { h: "Paso limitante", items: [
+        "La enzima <b>acetil-CoA carboxilasa</b> transforma el acetil-CoA en <b>malonil-CoA</b>.",
+        "Es el paso que limita la velocidad de toda la vía."
+      ]},
+      { h: "Alargamiento de la cadena", items: [
+        "La <b>ácido graso sintasa</b> va agregando 2 carbonos cada vez, por condensación y reducción (7 reacciones).",
+        "El malonil-CoA aporta casi todos los carbonos; solo 2 vienen directamente del acetil-CoA inicial.",
+        "El proceso necesita <b>NADPH</b>."
+      ]},
+      { h: "Otros ácidos grasos", items: [
+        "El palmitato puede modificarse para formar ácidos grasos más largos o insaturados."
+      ]},
+      { h: "Regulación hormonal", items: [
+        "<b>Insulina</b>: <b>activa</b> la síntesis de ácidos grasos y de triglicéridos, en el hígado y en el tejido adiposo.",
+        "<b>Glucagón</b>: <b>inhibe</b> la síntesis de ácidos grasos en el hígado."
+      ]},
+      { h: "Síntesis y β-oxidación: lo contrario", items: [
+        "<b>Síntesis</b>: citosol, usa NADPH, se activa con insulina (después de comer).",
+        "<b>β-oxidación</b>: matriz mitocondrial, produce NADH y FADH₂, se activa con glucagón (ayuno)."
+      ]},
+      { h: "Para la práctica de enfermería", items: [
+        "Después de comer, el exceso de carbohidratos puede transformarse en acetil-CoA, luego en ácidos grasos y almacenarse como triglicéridos en el tejido adiposo."
+      ]}
+    ]
+  },
+  {
     id: "casos",
     all: true, // cada ronda muestra todas las preguntas del módulo
     title: "Preguntas de aplicación",
@@ -1011,5 +1053,50 @@ const QUESTIONS = [
     q: "Según la figura, ¿qué lipoproteína tiene mayor porcentaje de proteínas y es la más densa?",
     o: ["La HDL", "La LDL", "La VLDL", "Los quilomicrones"],
     hint: "Fíjate en el porcentaje de proteínas, en azul.",
-    e: "La HDL tiene 57 % de proteínas, por eso es la más pequeña y la más densa." }
+    e: "La HDL tiene 57 % de proteínas, por eso es la más pequeña y la más densa." },
+  /* ---------- Biosíntesis de ácidos grasos ---------- */
+  { m: "lipogenesis",
+    q: "¿Dónde ocurre la síntesis de ácidos grasos?",
+    o: ["En el citosol", "En la matriz mitocondrial", "En el núcleo", "En la membrana mitocondrial interna"],
+    e: "La síntesis de ácidos grasos ocurre en el citosol. La β-oxidación, en cambio, ocurre en la matriz mitocondrial." },
+  { m: "lipogenesis",
+    q: "¿A partir de qué molécula se sintetizan los ácidos grasos?",
+    o: ["Acetil-CoA", "Lactato", "Urea", "Colesterol"],
+    e: "Los ácidos grasos se construyen a partir de unidades de acetil-CoA." },
+  { m: "lipogenesis",
+    q: "¿Cuál es el producto principal de la síntesis de ácidos grasos?",
+    o: ["El ácido palmítico", "El colesterol", "Los cuerpos cetónicos", "El glicógeno"],
+    hint: "Tiene 16 carbonos.",
+    e: "El producto principal es el ácido palmítico (palmitato), de 16 carbonos. A partir de él se forman otros ácidos grasos." },
+  { m: "lipogenesis",
+    q: "¿Cómo sale el acetil-CoA de la mitocondria hacia el citosol?",
+    o: ["Formando citrato", "Unido a la carnitina", "Como cuerpo cetónico", "Atravesando libre la membrana"],
+    hint: "El acetil-CoA no puede salir solo de la mitocondria.",
+    e: "El acetil-CoA se une al oxaloacetato y forma citrato, que sale al citosol. Allí se regenera el acetil-CoA." },
+  { m: "lipogenesis",
+    q: "¿Qué enzima cataliza el paso limitante de la síntesis de ácidos grasos?",
+    o: ["La acetil-CoA carboxilasa", "La hexoquinasa", "La glucógeno fosforilasa", "La lipoproteína lipasa"],
+    e: "La acetil-CoA carboxilasa limita la velocidad de la vía y es una de las enzimas que regula la insulina." },
+  { m: "lipogenesis",
+    q: "¿Qué molécula forma la acetil-CoA carboxilasa?",
+    o: ["Malonil-CoA", "Citrato", "Palmitato", "Acetoacetato"],
+    e: "La acetil-CoA carboxilasa transforma el acetil-CoA en malonil-CoA, que aporta los carbonos para alargar la cadena." },
+  { m: "lipogenesis",
+    q: "¿Cuántos carbonos se agregan a la cadena en cada ciclo de alargamiento?",
+    o: ["2", "1", "4", "16"],
+    e: "La cadena crece de a 2 carbonos en cada ciclo, hasta llegar a los 16 del palmitato." },
+  { m: "lipogenesis",
+    q: "¿Qué hormona activa la síntesis de ácidos grasos y de triglicéridos?",
+    o: ["La insulina", "El glucagón", "La adrenalina", "Ninguna hormona la regula"],
+    hint: "Se activa después de comer.",
+    e: "La insulina activa la síntesis de ácidos grasos y triglicéridos. El glucagón la inhibe en el hígado." },
+  { m: "lipogenesis",
+    q: "¿Qué diferencia a la síntesis de ácidos grasos de la β-oxidación?",
+    o: ["La síntesis ocurre en el citosol y la β-oxidación en la matriz mitocondrial", "Ambas ocurren en el citosol", "La síntesis ocurre en la mitocondria y la β-oxidación en el citosol", "Ambas ocurren en la matriz mitocondrial"],
+    e: "La síntesis ocurre en el citosol y la β-oxidación en la matriz mitocondrial. Además, la síntesis se activa con insulina y la β-oxidación con glucagón." },
+  { m: "lipogenesis",
+    q: "Una persona come una comida rica en carbohidratos. ¿Qué ocurre con el exceso de glucosa?",
+    o: ["Se transforma en acetil-CoA y luego en ácidos grasos, que se almacenan como triglicéridos", "Se convierte en cuerpos cetónicos que el hígado libera a la sangre", "Se elimina por la orina sin transformarse en otras moléculas", "Se almacena solo como glicógeno, sin ningún límite"],
+    hint: "Con la glicemia alta se libera insulina.",
+    e: "Con insulina alta, el exceso de glucosa se convierte en acetil-CoA y en ácidos grasos, que se almacenan como triglicéridos en el tejido adiposo." }
 ];
