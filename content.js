@@ -289,6 +289,84 @@ const MODULES = [
     ]
   },
   {
+    id: "digestionlipidos",
+    facts: [["Lipasa", "separa los ácidos grasos del glicerol"], ["Bilis", "emulsiona las grasas"], ["Quilomicrones", "llevan las grasas por la linfa"]],
+    title: "Digestión y absorción de lípidos",
+    tag: "Boca · estómago · intestino",
+    blurb: "Cómo se descomponen y se absorben las grasas de la dieta.",
+    summary: [
+      { h: "El desafío de digerir grasas", items: [
+        "Los lípidos no se disuelven en agua, y casi todo el tubo digestivo y sus enzimas son acuosos.",
+        "El objetivo de la digestión es separar los ácidos grasos del glicerol, con la enzima <b>lipasa</b>."
+      ]},
+      { h: "Boca y estómago", items: [
+        "En la boca, la masticación y la <b>lipasa lingual</b> inician la digestión: las grasas se separan en gotitas pequeñas.",
+        "En el estómago, la <b>lipasa gástrica</b> rompe los triglicéridos en diglicéridos y ácidos grasos.",
+        "En estos dos lugares se digiere muy poca grasa."
+      ]},
+      { h: "Intestino delgado: bilis y lipasa pancreática", items: [
+        "La <b>bilis</b>, que produce el hígado, <b>emulsiona</b> las grasas: las divide en gotitas y aumenta mucho su superficie, para que las enzimas actúen mejor.",
+        "La <b>lipasa pancreática</b> rompe los triglicéridos y diglicéridos en <b>ácidos grasos libres y monoglicéridos</b>.",
+        "Aquí ocurre la mayor parte de la digestión de las grasas."
+      ]},
+      { h: "Micelas: cómo llegan a las células del intestino", items: [
+        "Las sales biliares rodean a los ácidos grasos y monoglicéridos y forman <b>micelas</b>.",
+        "Las micelas tienen un núcleo graso y un exterior soluble en agua, por eso atraviesan la capa acuosa que cubre el intestino.",
+        "Así los lípidos llegan a las células de la pared intestinal, donde se absorben."
+      ]},
+      { h: "Dentro de las células del intestino", items: [
+        "Los ácidos grasos y los monoglicéridos se vuelven a unir y forman <b>triglicéridos</b>.",
+        "Los triglicéridos, el colesterol y los fosfolípidos se unen a proteínas y forman los <b>quilomicrones</b>."
+      ]},
+      { h: "Quilomicrones: transporte en el cuerpo", items: [
+        "Son demasiado grandes para entrar a la vena porta, que lleva los nutrientes solubles en agua al hígado.",
+        "Pasan al <b>sistema linfático</b> y llegan a la sangre por la vena subclavia.",
+        "Llevan los triglicéridos de la dieta al tejido adiposo y al músculo, donde se usan como energía o se almacenan.",
+        "El remanente del quilomicrón vuelve al hígado."
+      ]},
+      { h: "Para la práctica de enfermería", items: [
+        "El examen de colesterol (perfil lipídico) se toma después de un ayuno de <b>9 a 12 horas</b>, para que los lípidos de la última comida ya hayan circulado y la medición sea estable."
+      ]},
+      { h: "Fuente", items: [
+        "Adaptado de «6.3 Lipid Digestion, Absorption, and Transport», en <i>Nutrition and Physical Fitness</i> (A. Harter Alger, licencia CC BY-NC-SA 4.0)."
+      ]}
+    ]
+  },
+  {
+    id: "lipoproteinas",
+    facts: [["Quilomicrones", "transportan los lípidos de la dieta"], ["LDL", "lleva colesterol a los tejidos"], ["HDL", "lleva colesterol al hígado"]],
+    title: "Lipoproteínas",
+    tag: "Transporte de lípidos",
+    blurb: "Cómo viajan los lípidos por la sangre.",
+    summary: [
+      { h: "¿Por qué existen las lipoproteínas?", items: [
+        "Los lípidos no se disuelven en agua.",
+        "Llegan a la sangre desde la <b>dieta</b>, desde la <b>síntesis en el hígado</b> y desde el <b>tejido adiposo</b>.",
+        "Para viajar por la sangre hasta los tejidos que los necesitan, se asocian a proteínas y a otras moléculas y forman las <b>lipoproteínas</b>."
+      ]},
+      { h: "Las 5 lipoproteínas", items: [
+        "<b>Quilomicrones</b>: se forman en el intestino y transportan los lípidos de la dieta.",
+        "<b>VLDL</b> (de muy baja densidad): se forman en el hígado y transportan los lípidos propios del organismo, sobre todo triglicéridos.",
+        "<b>IDL</b> (de densidad intermedia): se forman a partir de la VLDL, por acción de la lipoproteína lipasa.",
+        "<b>LDL</b> (de baja densidad): se forman a partir de la IDL y llevan <b>colesterol del hígado a los tejidos</b>.",
+        "<b>HDL</b> (de alta densidad): se forman en el intestino y en el hígado, y llevan <b>colesterol desde los tejidos al hígado</b> (transporte reverso del colesterol)."
+      ]},
+      { h: "Lipoproteína lipasa", items: [
+        "Es una enzima que está en los capilares del tejido adiposo, del músculo y de la glándula mamaria.",
+        "Descompone los triglicéridos de los quilomicrones y de las VLDL, y libera <b>ácidos grasos</b> para esos tejidos.",
+        "Lo que queda de las partículas (remanentes) vuelve al hígado."
+      ]},
+      { h: "Densidad y tamaño", items: [
+        "Las lipoproteínas se clasifican según su <b>densidad</b>.",
+        "A más lípidos, la partícula es <b>más grande y menos densa</b>. De mayor a menor contenido de lípidos: quilomicrón (QM en la figura, 99 %), VLDL (92 %), IDL (89 %), LDL (79 %) y HDL (43 %).",
+        "La <b>HDL</b> es la más pequeña y la más densa: tiene 57 % de proteínas."
+      ]},
+      { h: "Para la práctica de enfermería", items: [
+        "Un LDL elevado se asocia a mayor riesgo cardiovascular, porque deposita colesterol en los tejidos. La HDL ayuda a retirar el colesterol de los tejidos."
+      ]}
+    ]
+  },
+  {
     id: "boxidacion",
     facts: [["Carnitina", "transporta los ácidos grasos"], ["2 C", "se pierden por vuelta"], ["Acetil-CoA", "entra al ciclo de Krebs"]],
     title: "β-oxidación de ácidos grasos",
@@ -363,40 +441,6 @@ const MODULES = [
       ]},
       { h: "Para la práctica de enfermería", items: [
         "Un paciente diabético con aliento de olor afrutado y pH sanguíneo bajo puede estar en cetoacidosis diabética."
-      ]}
-    ]
-  },
-  {
-    id: "lipoproteinas",
-    facts: [["Quilomicrones", "transportan los lípidos de la dieta"], ["LDL", "lleva colesterol a los tejidos"], ["HDL", "lleva colesterol al hígado"]],
-    title: "Lipoproteínas",
-    tag: "Transporte de lípidos",
-    blurb: "Cómo viajan los lípidos por la sangre.",
-    summary: [
-      { h: "¿Por qué existen las lipoproteínas?", items: [
-        "Los lípidos no se disuelven en agua.",
-        "Llegan a la sangre desde la <b>dieta</b>, desde la <b>síntesis en el hígado</b> y desde el <b>tejido adiposo</b>.",
-        "Para viajar por la sangre hasta los tejidos que los necesitan, se asocian a proteínas y a otras moléculas y forman las <b>lipoproteínas</b>."
-      ]},
-      { h: "Las 5 lipoproteínas", items: [
-        "<b>Quilomicrones</b>: se forman en el intestino y transportan los lípidos de la dieta.",
-        "<b>VLDL</b> (de muy baja densidad): se forman en el hígado y transportan los lípidos propios del organismo, sobre todo triglicéridos.",
-        "<b>IDL</b> (de densidad intermedia): se forman a partir de la VLDL, por acción de la lipoproteína lipasa.",
-        "<b>LDL</b> (de baja densidad): se forman a partir de la IDL y llevan <b>colesterol del hígado a los tejidos</b>.",
-        "<b>HDL</b> (de alta densidad): se forman en el intestino y en el hígado, y llevan <b>colesterol desde los tejidos al hígado</b> (transporte reverso del colesterol)."
-      ]},
-      { h: "Lipoproteína lipasa", items: [
-        "Es una enzima que está en los capilares del tejido adiposo, del músculo y de la glándula mamaria.",
-        "Descompone los triglicéridos de los quilomicrones y de las VLDL, y libera <b>ácidos grasos</b> para esos tejidos.",
-        "Lo que queda de las partículas (remanentes) vuelve al hígado."
-      ]},
-      { h: "Densidad y tamaño", items: [
-        "Las lipoproteínas se clasifican según su <b>densidad</b>.",
-        "A más lípidos, la partícula es <b>más grande y menos densa</b>. De mayor a menor contenido de lípidos: quilomicrón (QM en la figura, 99 %), VLDL (92 %), IDL (89 %), LDL (79 %) y HDL (43 %).",
-        "La <b>HDL</b> es la más pequeña y la más densa: tiene 57 % de proteínas."
-      ]},
-      { h: "Para la práctica de enfermería", items: [
-        "Un LDL elevado se asocia a mayor riesgo cardiovascular, porque deposita colesterol en los tejidos. La HDL ayuda a retirar el colesterol de los tejidos."
       ]}
     ]
   },
@@ -1100,5 +1144,49 @@ const QUESTIONS = [
     q: "Una persona come una comida rica en carbohidratos. ¿Qué ocurre con el exceso de glucosa?",
     o: ["Se transforma en acetil-CoA y luego en ácidos grasos, que se almacenan como triglicéridos", "Se convierte en cuerpos cetónicos que el hígado libera a la sangre", "Se elimina por la orina sin transformarse en otras moléculas", "Se almacena solo como glicógeno, sin ningún límite"],
     hint: "Con la glicemia alta se libera insulina.",
-    e: "Con insulina alta, el exceso de glucosa se convierte en acetil-CoA y en ácidos grasos, que se almacenan como triglicéridos en el tejido adiposo." }
+    e: "Con insulina alta, el exceso de glucosa se convierte en acetil-CoA y en ácidos grasos, que se almacenan como triglicéridos en el tejido adiposo." },
+  /* ---------- Digestión y absorción de lípidos ---------- */
+  { m: "digestionlipidos",
+    q: "¿Cuál es el objetivo de la digestión de los lípidos?",
+    o: ["Separar los ácidos grasos del glicerol con la enzima lipasa", "Convertir los triglicéridos en glucosa", "Transformar los ácidos grasos en aminoácidos", "Unir los ácidos grasos al glicerol"],
+    e: "La digestión de los lípidos busca separar los ácidos grasos del glicerol, y lo hace la lipasa." },
+  { m: "digestionlipidos",
+    q: "¿Qué enzima rompe los triglicéridos en el estómago?",
+    o: ["La lipasa gástrica", "La lipasa pancreática", "La amilasa salival", "La pepsina"],
+    e: "La lipasa gástrica rompe triglicéridos en diglicéridos y ácidos grasos, pero en el estómago se digiere muy poca grasa." },
+  { m: "digestionlipidos",
+    q: "¿Qué función cumple la bilis en la digestión de las grasas?",
+    o: ["Emulsiona las grasas: las divide en gotitas pequeñas", "Rompe los enlaces del triglicérido, como una lipasa", "Transforma los lípidos en proteínas", "Absorbe los ácidos grasos en la sangre"],
+    hint: "La bilis no es una enzima.",
+    e: "La bilis emulsiona las grasas. Al dividirlas en gotitas aumenta su superficie, y las enzimas pueden actuar mejor." },
+  { m: "digestionlipidos",
+    q: "¿Dónde ocurre la mayor parte de la digestión de las grasas?",
+    o: ["En el intestino delgado", "En la boca", "En el estómago", "En el intestino grueso"],
+    e: "En el intestino delgado actúan la bilis y la lipasa pancreática, por eso allí se digiere la mayor parte de la grasa." },
+  { m: "digestionlipidos",
+    q: "¿Qué productos forma la lipasa pancreática al digerir los triglicéridos?",
+    o: ["Ácidos grasos libres y monoglicéridos", "Glucosa y aminoácidos", "Colesterol y fosfolípidos", "Quilomicrones y VLDL"],
+    e: "La lipasa pancreática rompe los triglicéridos en ácidos grasos libres y monoglicéridos, que ya se pueden absorber." },
+  { m: "digestionlipidos",
+    q: "¿Qué son las micelas?",
+    o: ["Partículas de sales biliares con ácidos grasos y monoglicéridos, que los llevan a las células del intestino", "Enzimas que digieren los lípidos en el estómago", "Lipoproteínas que viajan por la sangre hacia el hígado", "Gotitas de grasa que se forman en la boca"],
+    hint: "Tienen un exterior soluble en agua.",
+    e: "Las micelas tienen un núcleo graso y un exterior soluble en agua. Así transportan los lípidos hasta las células de la pared intestinal." },
+  { m: "digestionlipidos",
+    q: "¿Qué ocurre con los ácidos grasos y los monoglicéridos dentro de las células del intestino?",
+    o: ["Se vuelven a unir y forman triglicéridos", "Se convierten en glucosa", "Pasan directo a la vena porta", "Se eliminan en las heces"],
+    e: "Dentro de las células intestinales se forman de nuevo triglicéridos, que se incorporan a los quilomicrones." },
+  { m: "digestionlipidos",
+    q: "¿Qué lipoproteína se forma en las células del intestino con los lípidos de la dieta?",
+    o: ["Los quilomicrones", "La VLDL", "La LDL", "La IDL"],
+    e: "Los quilomicrones se forman en el intestino y transportan los lípidos de la dieta." },
+  { m: "digestionlipidos",
+    q: "¿Por qué los quilomicrones no entran a la vena porta?",
+    o: ["Porque son demasiado grandes, y pasan al sistema linfático", "Porque son demasiado pequeños y se pierden", "Porque la bilis los destruye", "Porque se digieren antes en el estómago"],
+    hint: "La vena porta lleva nutrientes solubles en agua.",
+    e: "Los quilomicrones son muy grandes. Pasan al sistema linfático y llegan a la sangre por la vena subclavia." },
+  { m: "digestionlipidos",
+    q: "¿Por qué el examen de colesterol se toma después de 9 a 12 horas de ayuno?",
+    o: ["Para que los lípidos de la última comida ya hayan circulado y la medición sea estable", "Para que haya más quilomicrones en la sangre", "Porque en el ayuno el colesterol desaparece de la sangre", "Porque la bilis interfiere con el examen"],
+    e: "Tras 9 a 12 horas de ayuno, los lípidos de la comida anterior ya circularon y la concentración de lipoproteínas se estabiliza." }
 ];
