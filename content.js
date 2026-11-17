@@ -329,6 +329,44 @@ const MODULES = [
     ]
   },
   {
+    id: "cetonicos",
+    facts: [["Hígado", "órgano que los produce"], ["Acetil-CoA", "molécula de la que se forman"], ["pH ↓", "cetoacidosis si hay exceso"]],
+    title: "Cuerpos cetónicos",
+    tag: "Hígado · ayuno",
+    blurb: "Combustible alternativo que produce el hígado cuando hay poca glucosa.",
+    summary: [
+      { h: "¿Qué son?", items: [
+        "Son tres moléculas: el <b>acetoacetato</b>, el <b>β-hidroxibutirato</b> y la <b>acetona</b>.",
+        "Los produce el <b>hígado</b> a partir del <b>acetil-CoA</b>.",
+        "Se forman en la <b>matriz mitocondrial</b> de las células del hígado."
+      ]},
+      { h: "¿Cuándo se forman?", items: [
+        "En el <b>ayuno</b>, o cuando la célula no tiene suficiente glucosa, el hígado oxida muchos ácidos grasos por β-oxidación y se produce mucho acetil-CoA.",
+        "En los mamíferos, el acetil-CoA no puede convertirse en glucosa. Por eso el hígado lo transforma en cuerpos cetónicos."
+      ]},
+      { h: "¿Para qué sirven?", items: [
+        "Viajan por la sangre hacia otros tejidos, que los oxidan en el ciclo de Krebs para obtener energía.",
+        "En el ayuno prolongado son un combustible alternativo a la glucosa."
+      ]},
+      { h: "La acetona", items: [
+        "Se forma por la descarboxilación del acetoacetato.",
+        "Se elimina por la respiración y produce un <b>olor afrutado</b> en el aliento de las personas con diabetes."
+      ]},
+      { h: "Cetoacidosis", items: [
+        "El acetoacetato y el β-hidroxibutirato son <b>ácidos</b>.",
+        "Si sus niveles en la sangre son muy altos, el <b>pH de la sangre baja</b>: se llama <b>cetoacidosis diabética</b>.",
+        "En la diabetes sin insulina, la glucosa no entra a las células. La célula se comporta como si no tuviera glucosa, oxida muchos ácidos grasos y se producen cuerpos cetónicos en exceso."
+      ]},
+      { h: "Regulación hormonal", items: [
+        "<b>Glucagón</b>: favorece su formación, porque activa la degradación de grasa y la β-oxidación en el hígado.",
+        "<b>Insulina</b>: la inhibe."
+      ]},
+      { h: "Para la práctica de enfermería", items: [
+        "Un paciente diabético con aliento de olor afrutado y pH sanguíneo bajo puede estar en cetoacidosis diabética."
+      ]}
+    ]
+  },
+  {
     id: "casos",
     all: true, // cada ronda muestra todas las preguntas del módulo
     title: "Preguntas de aplicación",
@@ -835,5 +873,58 @@ const QUESTIONS = [
     q: "El mismo paciente con déficit de carnitina, ¿puede pasar largos períodos de ayuno?",
     o: ["No: en el ayuno depende de los ácidos grasos y no puede oxidarlos", "Sí: la β-oxidación no se usa en el ayuno", "Sí: los ácidos grasos se convierten en glucosa", "Sí: el músculo no usa ácidos grasos"],
     hint: "¿De dónde obtiene energía el cuerpo en el ayuno?",
-    e: "En el ayuno el organismo obtiene mucha energía de los ácidos grasos. Sin carnitina no puede oxidarlos, por eso tolera mal el ayuno y requiere suplemento de L-carnitina." }
+    e: "En el ayuno el organismo obtiene mucha energía de los ácidos grasos. Sin carnitina no puede oxidarlos, por eso tolera mal el ayuno y requiere suplemento de L-carnitina." },
+  /* ---------- Cuerpos cetónicos ---------- */
+  { m: "cetonicos",
+    q: "¿Qué órgano produce los cuerpos cetónicos?",
+    o: ["El hígado", "El músculo", "El páncreas", "El cerebro"],
+    e: "El hígado forma los cuerpos cetónicos en la matriz mitocondrial y los envía por la sangre a los demás tejidos." },
+  { m: "cetonicos",
+    q: "¿A partir de qué molécula se forman los cuerpos cetónicos?",
+    o: ["Acetil-CoA", "Glucosa", "Piruvato", "Lactato"],
+    hint: "Es el producto de la β-oxidación.",
+    e: "El acetil-CoA que se produce al degradar ácidos grasos es la materia prima de los cuerpos cetónicos." },
+  { m: "cetonicos",
+    q: "¿Cuál de estas moléculas es un cuerpo cetónico?",
+    o: ["Acetoacetato", "Piruvato", "Citrato", "Lactato"],
+    e: "Los tres cuerpos cetónicos son el acetoacetato, el β-hidroxibutirato y la acetona." },
+  { m: "cetonicos",
+    q: "¿En qué situación el hígado forma más cuerpos cetónicos?",
+    o: ["En el ayuno prolongado", "Justo después de una comida con carbohidratos", "Cuando la insulina está alta", "Cuando hay exceso de glucosa en la célula"],
+    hint: "Piensa en una situación con poca glucosa disponible.",
+    e: "En el ayuno hay poca glucosa y se oxidan muchos ácidos grasos. Así se acumula acetil-CoA y el hígado produce cuerpos cetónicos." },
+  { m: "cetonicos",
+    q: "¿Qué hacen los demás tejidos con los cuerpos cetónicos que llegan por la sangre?",
+    o: ["Los oxidan en el ciclo de Krebs para obtener energía", "Los convierten en glucosa", "Los almacenan como glicógeno", "Los eliminan sin usarlos"],
+    e: "Los cuerpos cetónicos son un combustible: los tejidos los oxidan para obtener energía." },
+  { m: "cetonicos",
+    q: "En los mamíferos, ¿por qué el exceso de acetil-CoA del hígado se transforma en cuerpos cetónicos y no en glucosa?",
+    o: ["Porque en los mamíferos el acetil-CoA no puede convertirse en glucosa", "Porque el hígado no puede producir glucosa", "Porque los cuerpos cetónicos se forman a partir de glucosa", "Porque el acetil-CoA no entra a la mitocondria"],
+    e: "El acetil-CoA no puede dar origen a glucosa. Su destino es el ciclo de Krebs o la formación de cuerpos cetónicos." },
+  { m: "cetonicos",
+    q: "¿Qué molécula se forma por descarboxilación del acetoacetato y se elimina por la respiración?",
+    o: ["Acetona", "Lactato", "Urea", "Piruvato"],
+    e: "La acetona se exhala y produce un olor afrutado en el aliento de algunos pacientes diabéticos." },
+  { m: "cetonicos",
+    q: "¿Qué ocurre cuando hay exceso de cuerpos cetónicos en la sangre?",
+    o: ["Baja el pH de la sangre: cetoacidosis", "Sube el pH de la sangre: alcalosis", "Disminuye la producción de acetil-CoA", "Aumenta la captación de glucosa"],
+    hint: "El acetoacetato y el β-hidroxibutirato son ácidos.",
+    e: "Los cuerpos cetónicos son ácidos. En exceso bajan el pH de la sangre." },
+  { m: "cetonicos",
+    q: "En la diabetes mellitus tipo 1 sin insulina, ¿por qué aumentan los cuerpos cetónicos?",
+    o: ["La glucosa no entra a las células y estas oxidan más ácidos grasos", "Hay exceso de insulina, que activa la formación de cuerpos cetónicos", "El hígado almacena más glicógeno y libera acetil-CoA", "Los eritrocitos producen cuerpos cetónicos en exceso"],
+    hint: "La insulina permite que la glucosa entre a las células.",
+    e: "Sin insulina la glucosa no entra a las células. Estas obtienen energía de los ácidos grasos, y el hígado produce cuerpos cetónicos en exceso." },
+  { m: "cetonicos",
+    q: "Un paciente diabético tiene aliento con olor afrutado y pH sanguíneo bajo. ¿Qué se sospecha?",
+    o: ["Cetoacidosis diabética", "Hipoglicemia por exceso de insulina", "Déficit de carnitina", "Falta de glucagón"],
+    hint: "El olor afrutado se debe a la acetona.",
+    e: "El aliento con olor afrutado (acetona) y el pH bajo indican exceso de cuerpos cetónicos: cetoacidosis diabética." },
+  /* ---------- Caso: enfermedad de Hers (cuerpos cetónicos) ---------- */
+  { m: "casos",
+    case: "La enfermedad de Hers afecta a las células del hígado, que no pueden producir la enzima glicógeno fosforilasa, necesaria para degradar el glicógeno hepático. Los pacientes tienen períodos de glicemia muy baja (hipoglicemia).",
+    q: "¿Por qué aumentan los cuerpos cetónicos en la sangre de estos pacientes?",
+    o: ["El glucagón activa la lipólisis; los ácidos grasos llegan al hígado y se transforman en cuerpos cetónicos", "La insulina aumenta y activa la formación de cuerpos cetónicos en el hígado", "El hígado convierte el glicógeno acumulado en cuerpos cetónicos directamente", "El músculo libera cuerpos cetónicos al degradar su glicógeno"],
+    hint: "Con la glicemia baja se libera glucagón.",
+    e: "Por la hipoglicemia, el glucagón favorece la lipólisis en el tejido adiposo. Los ácidos grasos libres llegan al hígado, donde se degradan por β-oxidación y se forman cuerpos cetónicos (cetogénesis)." }
 ];
