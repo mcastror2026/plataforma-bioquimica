@@ -417,14 +417,16 @@ const MODULES = [
         "Se une al oxaloacetato y forma <b>citrato</b>, en la primera reacción del ciclo de Krebs.",
         "El citrato sale al citosol, donde se regenera el acetil-CoA, con gasto de ATP."
       ]},
-      { h: "Paso limitante", items: [
-        "La enzima <b>acetil-CoA carboxilasa</b> transforma el acetil-CoA en <b>malonil-CoA</b>.",
-        "Es el paso que limita la velocidad de toda la vía."
+      { h: "Inicio de la síntesis: acetil-CoA → malonil-CoA", items: [
+        "La enzima <b>acetil-CoA carboxilasa</b> cataliza el paso de <b>acetil-CoA</b> a <b>malonil-CoA</b>.",
+        "A partir del malonil-CoA se inicia la síntesis del ácido graso.",
+        "Es el <b>paso limitante</b>: el que controla la velocidad de toda la vía."
       ]},
       { h: "Alargamiento de la cadena", items: [
         "La <b>ácido graso sintasa</b> va agregando 2 carbonos cada vez, por condensación y reducción (7 reacciones).",
         "El malonil-CoA aporta casi todos los carbonos; solo 2 vienen directamente del acetil-CoA inicial.",
-        "El proceso necesita <b>NADPH</b>."
+        "El proceso necesita <b>NADPH</b>.",
+        "El producto que se obtiene es el <b>ácido palmítico</b> (palmitato), de 16 carbonos."
       ]},
       { h: "Otros ácidos grasos", items: [
         "El palmitato puede modificarse para formar ácidos grasos más largos o insaturados."
@@ -1080,7 +1082,7 @@ const QUESTIONS = [
   { m: "lipogenesis",
     q: "¿Qué molécula forma la acetil-CoA carboxilasa?",
     o: ["Malonil-CoA", "Citrato", "Palmitato", "Acetoacetato"],
-    e: "La acetil-CoA carboxilasa transforma el acetil-CoA en malonil-CoA, que aporta los carbonos para alargar la cadena." },
+    e: "La acetil-CoA carboxilasa cataliza el paso de acetil-CoA a malonil-CoA. A partir de él se inicia la síntesis del ácido graso." },
   { m: "lipogenesis",
     q: "¿Cuántos carbonos se agregan a la cadena en cada ciclo de alargamiento?",
     o: ["2", "1", "4", "16"],
