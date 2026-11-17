@@ -1504,5 +1504,22 @@ const QUESTIONS = [
     q: "¿Puede el glicógeno del músculo aportar glucosa a la sangre para otros órganos?",
     o: ["No: el músculo no tiene glucosa-6-fosfatasa, así que usa esa glucosa solo para sí mismo", "Sí: el glucagón activa su degradación y libera glucosa a la sangre", "Sí: se convierte en glucosa libre dentro del músculo y sale por la sangre", "No: el músculo no puede degradar su glicógeno en el ayuno"],
     hint: "Piensa en qué enzima convierte la glucosa-6-fosfato en glucosa libre.",
-    e: "El glicógeno del músculo es de uso exclusivo del músculo. No se libera a la sangre porque el músculo no tiene la enzima glucosa-6-fosfatasa." }
+    e: "El glicógeno del músculo es de uso exclusivo del músculo. No se libera a la sangre porque el músculo no tiene la enzima glucosa-6-fosfatasa." },
+  /* ---------- Cálculo de Km y Vmax (examen) ---------- */
+  { m: "aplic1",
+    case: "En un laboratorio se estudia I-234, un fármaco nuevo que inhibe una enzima del metabolismo. Se midió la velocidad de la reacción con distintas cantidades de sustrato, con y sin el fármaco, y se hizo la gráfica de dobles recíprocos que se muestra.",
+    img: "assets/lineweaver-burk.png",
+    imgAlt: "Gráfica de dobles recíprocos. Las rectas con y sin inhibidor se cortan en el mismo punto del eje vertical, en 4. La recta sin inhibidor cruza el eje horizontal en menos 3 y la recta con inhibidor, en menos 2.",
+    q: "En la gráfica, las dos rectas cortan el eje vertical en 4. ¿Cuál es el valor de la Vmax de la enzima?",
+    o: ["0,25 mM/min", "4 mM/min", "0,5 mM/min", "2 mM/min"],
+    hint: "El corte con el eje vertical es 1/Vmax, no la Vmax.",
+    e: "El corte con el eje vertical es 1/Vmax = 4. Entonces Vmax = 1/4 = 0,25 mM/min. Es el mismo valor con y sin inhibidor." },
+  { m: "aplic1",
+    case: "En un laboratorio se estudia I-234, un fármaco nuevo que inhibe una enzima del metabolismo. Se midió la velocidad de la reacción con distintas cantidades de sustrato, con y sin el fármaco, y se hizo la gráfica de dobles recíprocos que se muestra.",
+    img: "assets/lineweaver-burk.png",
+    imgAlt: "Gráfica de dobles recíprocos. Las rectas con y sin inhibidor se cortan en el mismo punto del eje vertical, en 4. La recta sin inhibidor cruza el eje horizontal en menos 3 y la recta con inhibidor, en menos 2.",
+    q: "Las rectas cortan el eje horizontal en −3 (sin inhibidor) y en −2 (con inhibidor). ¿Cuáles son los valores del Km?",
+    o: ["Sin inhibidor 0,33 mM y con inhibidor 0,5 mM", "Sin inhibidor 3 mM y con inhibidor 2 mM", "Sin inhibidor 0,5 mM y con inhibidor 0,33 mM", "Sin inhibidor 0,25 mM y con inhibidor 0,25 mM"],
+    hint: "El corte con el eje horizontal es −1/Km.",
+    e: "El corte con el eje horizontal es −1/Km. Sin inhibidor: −1/Km = −3, entonces Km = 1/3 ≈ 0,33 mM. Con inhibidor: −1/Km = −2, entonces Km = 1/2 = 0,5 mM." }
 ];
